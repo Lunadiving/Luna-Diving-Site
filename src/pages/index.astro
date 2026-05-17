@@ -7,47 +7,47 @@ const mainCategories = [
     name: 'Liveaboard',
     seoTitle: 'Liveaboard Cruises',
     description: 'Multi-day diving safaris to the Similan Islands and Richelieu Rock.',
-    image: '/hero-poster.webp',
-    link: '/liveboards',
+    image: '/thailand-liveaboards.webp',
+    link: '/thailand-liveaboards', 
     altText: 'Premium liveaboard diving boat navigating the Andaman Sea in Thailand'
   },
   {
     name: 'Yacht',
     seoTitle: 'Yacht Charter',
     description: 'Private luxury catamaran and yacht rentals for custom cruise itineraries.',
-    image: '/hero-poster.webp',
-    link: '/yacht-charter',
+    image: '/private-dive-boat-charters-phuket.webp', 
+    link: '/private-dive-boat-charters-phuket', 
     altText: 'Luxury private yacht charter anchored near a tropical island in Thailand'
   },
-  {
+ {
     name: 'Courses',
     seoTitle: 'Scuba Diving Courses',
-    description: 'PADI & SSI certifications from Open Water to professional divemaster levels.',
-    image: '/hero-poster.webp',
-    link: '/diving-courses',
+    description: 'PADI certifications from Open Water to professional divemaster levels.',
+    image: '/padi-scuba-diving-courses.webp', 
+    link: '/padi-scuba-diving-courses',
     altText: 'Scuba diving instructor teaching students open water skills in clear water'
   },
   {
     name: 'Day Trip',
     seoTitle: 'Daily Dive Trips',
     description: 'Daily diving excursions to local reefs, Phi Phi Islands, and Racha Islands.',
-    image: '/hero-poster.webp',
-    link: '/day-trips',
+    image: '/day-trip-phuket.webp',
+    link: '/day-trip-phuket',
     altText: 'Speedboat carrying scuba divers to local day trip dive sites'
   },
   {
     name: 'Itinerary',
     seoTitle: 'Cruise Itineraries',
     description: 'Detailed schedules and dynamic routing maps for our upcoming dive seasons.',
-    image: '/hero-poster.webp',
-    link: '/itineraries',
+    image: '/liveaboard-itinerary-thailand.webp',
+    link: '/liveaboard-itinerary-thailand',
     altText: 'Top view map overlay showing sailing routes across the Andaman Sea islands'
   },
   {
     name: 'Dive Sites',
     seoTitle: 'Andaman Dive Sites',
     description: 'Explore deep-sea marine life profiles of Richelieu Rock and national parks.',
-    image: '/hero-poster.webp',
+    image: '/dive-sites.webp',
     link: '/dive-sites',
     altText: 'Vibrant coral reef teeming with colorful marine life at Richelieu Rock Thailand'
   },
@@ -57,21 +57,43 @@ const mainCategories = [
 <Layout title="Luna Diving | Premium Thailand Liveboards & Scuba Adventures">
   <main class="main-wrapper" id="theme-wrapper">
     
-    <section class="hero-container">
-      <video autoplay muted loop playsinline poster="/hero-poster.webp" class="video-background">
-        <source src="/hero-background.mp4" type="video/mp4" />
+    <section class="hero-container relative w-full h-screen overflow-hidden flex items-center justify-center">
+      
+      <video 
+        autoplay 
+        muted 
+        loop 
+        playsinline 
+        class="video-background absolute top-0 left-0 w-full h-full object-cover -z-10"
+      >
+        <source src="/hero-background-optimized.webm" type="video/webm" />
       </video>
+
       <div class="video-overlay"></div>
-      <div class="hero-content">
+      
+      <div class="hero-content relative z-10 text-center flex flex-col items-center">
         <img src="/logo-luna.webp" alt="Luna Diving Official Logo" class="hero-logo animated-element fade-in-first" />
-        <h1 class="hero-title animated-element fade-in-second">EXPERIENCE THE DEPTHS</h1>
-        <p class="hero-subtitle animated-element fade-in-third">Premium Liveaboard & Diving Cruises in the Andaman Sea</p>
-        <button class="hero-cta-button animated-element fade-in-fourth" onclick="document.getElementById('dark-fleet-section').scrollIntoView({behavior: 'smooth'})">Explore Categories</button>
+        
+        <h1 class="hero-title animated-element fade-in-second">Thailand Liveaboard Cruises & Phuket Scuba Diving</h1>
+        
+        <p class="hero-subtitle animated-element fade-in-third">Explore the best of the Andaman Sea. Premium liveaboard safaris, private boat charters, and PADI courses to the Similan Islands and Richelieu Rock.</p>
+        
+        <button class="hero-cta-button animated-element fade-in-fourth" onclick="document.getElementById('dark-fleet-section').scrollIntoView({behavior: 'smooth'})">Book Your Dive Safari</button>
       </div>
     </section>
 
-    <section class="adventure-starts">
-      <h2>Your Andaman Sea Adventure Starts Here.</h2>
+   <section class="adventure-starts max-w-4xl mx-auto text-center px-6">
+      <h2>Premium Scuba Diving & Liveaboard Safaris in Thailand</h2>
+      <p class="seo-intro-text">
+        Welcome to Luna Diving, your premier gateway to exploring the underwater wonders of the Andaman Sea. 
+        Based in Thailand's top diving hubs, Phuket and Khao Lak, we specialize in organizing world-class 
+        liveaboard cruises, private yacht charters, and daily diving excursions to the region’s most iconic marine parks.
+      </p>
+      <p class="seo-intro-text">
+        Whether you are looking to dive the legendary granite walls of the Similan Islands, witness the vibrant 
+        marine life at Richelieu Rock, or take your next PADI scuba course with professional instructors, 
+        we tailor every adventure to ensure safety, comfort, and unforgettable memories.
+      </p>
     </section>
 
     <section class="liveaboard-fleet" id="dark-fleet-section">
@@ -105,12 +127,14 @@ const mainCategories = [
           <span class="banner-tag">Limited Availability</span>
           <h2>Last Minute Deals & Liveaboard Offers</h2>
           <p>Grab exclusive empty-cabin discounts and last-second seasonal promotions for upcoming trips.</p>
-          <a href="/last-minute" class="banner-btn">Check Live Deals</a>
-        </div>
+          <a href="/last-minute" class="banner-btn">Check Live Deals</a> </div>
       </div>
     </section>
 
-    <style>
+  </main>
+</Layout>
+
+<style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,600&display=swap');
 
@@ -129,7 +153,7 @@ const mainCategories = [
     color: #ffffff;
   }
 
-  /* HERO STYLING */
+  /* HERO STYLING ORIGINALE CORRETTO */
   .hero-container {
     position: relative;
     height: 100vh;
@@ -160,7 +184,7 @@ const mainCategories = [
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.12);
+    background: rgba(0, 0, 0, 0.35); /* Forzato overlay scuro nativo per far leggere il testo bianco su video chiaro */
     z-index: 2;
   }
 
@@ -174,30 +198,35 @@ const mainCategories = [
     width: 160px;
     height: auto;
     margin-bottom: 2.5rem;
-    filter: drop-shadow(0 2px 8px rgba(255, 255, 255, 0.8)); 
+    filter: drop-shadow(0 2px 8px rgba(255, 255, 255, 0.2)); 
   }
 
   .hero-title {
-    color: #000000;
-    font-size: clamp(2.2rem, 6vw, 4.5rem); 
+    color: #ffffff !important; /* Forzato bianco per contrasto */
+    font-size: clamp(2rem, 5vw, 3.8rem); 
     font-weight: 900;
-    letter-spacing: 5px; 
-    margin: 0 0 1rem 0;
+    letter-spacing: 2px; 
+    margin: 0 0 1.5rem 0;
     text-transform: uppercase;
+    line-height: 1.2;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.6);
   }
 
   .hero-subtitle {
-    color: #1c1c1e;
-    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    color: #f3f3f3 !important; /* Forzato chiaro per contrasto */
+    font-size: clamp(0.95rem, 2vw, 1.25rem);
     font-weight: 400;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     margin-bottom: 3.5rem;
+    line-height: 1.6;
+    max-width: 800px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.6);
   }
 
   .hero-cta-button {
-    background-color: #000000;
-    border: 1px solid #000000;
-    color: #ffffff;
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    color: #000000;
     padding: 1.2rem 3rem;
     font-size: 0.85rem;
     font-weight: 700;
@@ -208,8 +237,8 @@ const mainCategories = [
   }
 
   .hero-cta-button:hover {
-    background-color: #ffffff;
-    color: #000000;
+    background-color: transparent;
+    color: #ffffff;
   }
 
   .adventure-starts {
@@ -328,7 +357,7 @@ const mainCategories = [
   }
   .card-cta:hover .luna-arrow { transform: translateX(5px); }
 
-  /* --- 4. LAST MINUTE HORIZONTAL BANNER --- */
+  /* LAST MINUTE BANNER CON LA TUA FOTO REALMENTE AGGIORNATA */
   .last-minute-banner {
     position: relative;
     width: 100%;
@@ -343,14 +372,13 @@ const mainCategories = [
     align-items: center;
   }
 
-  /* Fixed background syntax error here */
   .banner-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(90deg, rgba(0,0,0,0.85) 40%, rgba(0,0,0,0.1) 100%), url('/hero-poster.webp');
+    background-image: linear-gradient(90deg, rgba(0,0,0,0.85) 40%, rgba(0,0,0,0.1) 100%), url('/last-minute.webp');
     background-size: cover;
     background-position: center;
     z-index: 1;
@@ -406,28 +434,6 @@ const mainCategories = [
     .last-minute-banner { padding: 2.5rem; }
     .banner-overlay { background-image: linear-gradient(180deg, rgba(0,0,0,0.9) 100%, rgba(0,0,0,0.5) 100%); }
   }
-
-  /* EXIT SECTION */
-  .next-section-placeholder {
-    text-align: center;
-    padding: 12rem 2rem;
-  }
-
-  .next-section-placeholder h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    transition: color 0.5s ease;
-  }
-
-  .next-section-placeholder p {
-    font-size: 1.1rem;
-    color: #666666;
-    max-width: 600px;
-    margin: 0 auto;
-    transition: color 0.5s ease;
-  }
-  .main-wrapper.is-dark .next-section-placeholder p { color: #aaaaaa; }
 
   .animated-element {
     opacity: 0;
