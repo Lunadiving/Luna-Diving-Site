@@ -1,0 +1,142 @@
+---
+// Import the global Tailwind stylesheet
+import '../../styles/global.css';
+
+// Data structures reflecting the exact fields from the source code
+const fleet = [
+  {
+    name: "MV Deep Andaman Queen",
+    image: "/deep-andaman-liveaboard.webp",
+    tags: ["Standard Route", "Steel Hull", "Nitrox Available"],
+    specs: [
+      { val: "22-Guest", desc: "Maximum Capacity, 11 Twin/Double Cabins" },
+      { val: "30 Meters", desc: "Overall Length (LOA)" },
+      { val: "12 Knots", desc: "Cruising Speed (Twin Engines)" }
+    ],
+    legal: "Fuel consumption and marine park fees calculated separately. Route includes Similan Islands, Surin Islands, and Richelieu Rock."
+  },
+  {
+    name: "The Junk",
+    image: "/thailand-liveaboards.webp",
+    tags: ["Classic Teak", "Historical", "Nitrox Available"],
+    specs: [
+      { val: "18-Guest", desc: "Maximum Capacity, Traditional Style" },
+      { val: "33 Meters", desc: "Overall Length (LOA)" },
+      { val: "9 Knots", desc: "Cruising Speed under Sail" }
+    ],
+    legal: "Heritage vessel fully refitted for modern scuba safety and comfort. Unique charm and traditional atmosphere."
+  },
+  {
+    name: "MV Sawasdee Fasai",
+    image: "/thailand-liveaboards.webp",
+    tags: ["Premium Fleet", "Stabilized", "Nitrox Available"],
+    specs: [
+      { val: "30-Guest", desc: "Maximum Capacity, Premium Comfort" },
+      { val: "37 Meters", desc: "Overall Length (LOA)" },
+      { val: "11 Knots", desc: "Cruising Speed" }
+    ],
+    legal: "Exploring Hin Daeng, Hin Muang, and Koh Haa. Exceptional local and international cuisine served daily."
+  },
+  {
+    name: "MV Pawara",
+    image: "/thailand-liveaboards.webp",
+    tags: ["Budget Friendly", "Free Nitrox", "Nitrox Available"],
+    specs: [
+      { val: "24-Guest", desc: "Maximum Capacity, 12 Cabins" },
+      { val: "35 Meters", desc: "Overall Length (LOA)" },
+      { val: "12 Knots", desc: "Cruising Speed" }
+    ],
+    legal: "Free Nitrox for certified divers. Designed specifically for maximum bottom time and optimal surface intervals."
+  }
+];
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luna Diving Thailand - Fleet Overview</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #ffffff;
+    }
+  </style>
+</head>
+<body class="min-h-screen font-sans antialiased text-[#1A1A1A] pb-16">
+
+  <header class="max-w-5xl mx-auto pt-16 px-6 text-center">
+    <h1 class="text-3xl md:text-4xl font-bold tracking-tight text-[#1A1A1A] mb-12">
+      Thailand Liveaboard Fleet
+    </h1>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12">
+      {fleet.map((boat) => (
+        <article class="group relative flex flex-col justify-between bg-white border border-gray-200 p-6 rounded-[24px] shadow-sm transition-all duration-300 hover:shadow-md">
+          
+          <div>
+<div class="w-full aspect-video bg-[#f8f8fa] overflow-hidden relative rounded-xl mb-6">              <img 
+                src={boat.image} 
+                alt={boat.name} 
+                class="w-full h-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-[1.02]"
+                loading="lazy"
+                decoding="async"
+              />
+              <a href="#" class="absolute inset-0 z-10" aria-label={`Explore ${boat.name} in detail`}></a>
+            </div>
+
+            <div class="space-y-3">
+              <h3 class="text-xl font-bold tracking-tight text-[#1A1A1A] transition-colors group-hover:text-[#008EA7]">
+                {boat.name}
+              </h3>
+              
+              <div class="flex flex-wrap gap-2">
+                {boat.tags.map((tag) => (
+                  <span class="bg-[#008EA7]/10 text-[#008EA7] text-xs font-medium px-3 py-1 rounded-md border border-[#008EA7]/20">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <ul class="grid grid-cols-3 gap-4 my-6 py-4 border-t border-b border-gray-100" aria-label="Technical highlights">
+              {boat.specs.map((spec) => (
+                <li class="space-y-1">
+                  <div class="text-base font-semibold text-[#1A1A1A] tracking-tight leading-none">
+                    {spec.val}
+                  </div>
+                  <div class="text-[11px] text-[#706F6F] font-normal leading-tight">
+                    {spec.desc}
+                  </div>
+                </li>
+              ))}
+            </ul>
+
+            <div class="mb-6">
+              <p class="text-[12px] text-[#706F6F] font-normal leading-relaxed">
+                {boat.legal}
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-auto pt-2 z-20">
+            <a 
+              href="#" 
+              class="flex items-center justify-center bg-[#1A1A1A] text-white text-xs font-medium py-3 w-full rounded-full hover:bg-[#008EA7] transition-colors duration-300 text-center"
+            >
+              Explore in Detail
+            </a>
+          </div>
+
+        </article>
+      ))}
+    </div>
+  </main>
+
+</body>
+</html>
