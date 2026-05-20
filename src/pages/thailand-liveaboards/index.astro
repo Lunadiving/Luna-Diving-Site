@@ -2,12 +2,13 @@
 // Import the global Tailwind stylesheet
 import '../../styles/global.css';
 
-// Data structures reflecting the exact fields from the source code
+// Struttura dati allineata al 100% con le pagine singole e senza "MV"
 const fleet = [
   {
-    name: "MV Deep Andaman Queen",
-    image: "/images/liveaboard/deep-andaman-liveaboard.webp",
-    altText: "MV Deep Andaman Queen liveaboard scuba diving boat cruising in the Andaman Sea, Thailand", 
+    slug: "deep-andaman-queen",
+    name: "Deep Andaman Queen",
+    image: "/images/liveaboard/deep-andaman-queen-liveaboard.webp",
+    altText: "Deep Andaman Queen liveaboard scuba diving boat cruising in the Andaman Sea, Thailand", 
     tags: ["Standard Route", "Steel Hull", "Nitrox Available"],
     specs: [
       { val: "22-Guest", desc: "Maximum Capacity, 11 Twin/Double Cabins" },
@@ -17,8 +18,10 @@ const fleet = [
     legal: "Fuel consumption and marine park fees calculated separately. Route includes Similan Islands, Surin Islands, and Richelieu Rock."
   },
   {
+    slug: "the-junk",
     name: "The Junk",
     image: "/images/liveaboard/the-junk-liveaboard.webp",
+    altText: "The Junk traditional teak wood sailing vessel operating scuba diving charters",
     tags: ["Classic Teak", "Historical", "Nitrox Available"],
     specs: [
       { val: "18-Guest", desc: "Maximum Capacity, Traditional Style" },
@@ -28,9 +31,10 @@ const fleet = [
     legal: "Heritage vessel fully refitted for modern scuba safety and comfort. Unique charm and traditional atmosphere."
   },
   {
-    name: "MV Sawasdee Fasai",
+    slug: "sawasdee-fasai",
+    name: "Sawasdee Fasai",
     image: "/images/liveaboard/sawasdee-fasai-liveaboard.webp",
-    altText: "MV Sawasdee Fasai luxury liveaboard diving boat at Similan Islands national park", 
+    altText: "Sawasdee Fasai luxury liveaboard diving boat at Similan Islands national park", 
     tags: ["Premium Fleet", "Stabilized", "Nitrox Available"],
     specs: [
       { val: "30-Guest", desc: "Maximum Capacity, Premium Comfort" },
@@ -40,9 +44,10 @@ const fleet = [
     legal: "Exploring Similan Islands, Koh Bon, and Koh Tachai. Exceptional local and international cuisine served daily."
   },
   {
-    name: "MV Pawara",
+    slug: "pawara",
+    name: "Pawara",
     image: "/images/liveaboard/pawara-liveaboard.webp",
-    altText: "MV Pawara luxury liveaboard scuba diving boat in the Andaman Sea, Thailand",
+    altText: "Pawara luxury liveaboard scuba diving boat in the Andaman Sea, Thailand",
     tags: ["Budget Friendly", "Free Nitrox", "Nitrox Available"],
     specs: [
       { val: "24-Guest", desc: "Maximum Capacity, 12 Cabins" },
@@ -83,14 +88,15 @@ const fleet = [
         <article class="group relative flex flex-col justify-between bg-white border border-gray-200 p-6 rounded-[24px] shadow-sm transition-all duration-300 hover:shadow-md">
           
           <div>
-<div class="w-full aspect-video bg-[#f8f8fa] overflow-hidden relative rounded-xl mb-6">              <img 
+            <div class="w-full aspect-video bg-[#f8f8fa] overflow-hidden relative rounded-xl mb-6">              
+              <img 
                 src={boat.image} 
-                alt={boat.name} 
+                alt={boat.altText || boat.name} 
                 class="w-full h-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-[1.02]"
                 loading="lazy"
                 decoding="async"
               />
-              <a href="#" class="absolute inset-0 z-10" aria-label={`Explore ${boat.name} in detail`}></a>
+              <a href={`/thailand-liveaboards/${boat.slug}`} class="absolute inset-0 z-10" aria-label={`Explore ${boat.name} in detail`}></a>
             </div>
 
             <div class="space-y-3">
@@ -128,13 +134,13 @@ const fleet = [
           </div>
 
           <div class="mt-auto pt-2 z-20">
-            <a 
-              href="#" 
-              class="flex items-center justify-center bg-[#1A1A1A] text-white text-xs font-medium py-3 w-full rounded-full hover:bg-[#008EA7] transition-colors duration-300 text-center"
-            >
-              Explore in Detail
-            </a>
-          </div>
+  <a 
+    href={`/thailand-liveaboards/${boat.slug}`} 
+    class="flex items-center justify-center bg-[#1A1A1A] text-white text-xs font-medium py-3 w-full rounded-full hover:bg-[#008EA7] transition-colors duration-300 text-center"
+  >
+    Explore in Detail
+  </a>
+</div>
 
         </article>
       ))}
