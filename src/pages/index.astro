@@ -7,39 +7,39 @@ const mainCategories = [
     name: 'Liveaboard',
     seoTitle: 'Liveaboard Cruises',
     description: 'Multi-day diving safaris to the Similan Islands and Richelieu Rock.',
-    image: '/thailand-liveaboards.webp',
-    link: '/thailand-liveaboards', 
+    image: '/images/hero/thailand-liveaboards.webp',
+    link: '/images/hero/thailand-liveaboards', 
     altText: 'Premium liveaboard diving boat navigating the Andaman Sea in Thailand'
   },
   {
     name: 'Yacht',
     seoTitle: 'Yacht Charter',
     description: 'Private luxury catamaran and yacht rentals for custom cruise itineraries.',
-    image: '/private-dive-boat-charters-phuket.webp', 
-    link: '/private-dive-boat-charters-phuket', 
+    image: '/images/hero/private-dive-boat-charters-phuket.webp', 
+    link: '/images/hero/private-dive-boat-charters-phuket', 
     altText: 'Luxury private yacht charter anchored near a tropical island in Thailand'
   },
  {
     name: 'Courses',
     seoTitle: 'Scuba Diving Courses',
     description: 'PADI certifications from Open Water to professional divemaster levels.',
-    image: '/padi-scuba-diving-courses.webp', 
-    link: '/padi-scuba-diving-courses',
+    image: '/images/hero/padi-scuba-diving-courses.webp', 
+    link: '/images/hero/padi-scuba-diving-courses',
     altText: 'Scuba diving instructor teaching students open water skills in clear water'
   },
   {
     name: 'Day Trip',
     seoTitle: 'Daily Dive Trips',
     description: 'Daily diving excursions to local reefs, Phi Phi Islands, and Racha Islands.',
-    image: '/day-trip-phuket.webp',
-    link: '/day-trip-phuket',
+    image: '/images/hero/day-trip-phuket.webp',
+    link: '/images/hero/day-trip-phuket',
     altText: 'Speedboat carrying scuba divers to local day trip dive sites'
   },
   {
     name: 'Itinerary',
     seoTitle: 'Cruise Itineraries',
     description: 'Detailed schedules and dynamic routing maps for our upcoming dive seasons.',
-    image: '/liveaboard-itinerary-thailand.webp',
+    image: '/images/hero/liveaboard-itinerary-thailand.webp',
     link: '/liveaboard-itinerary-thailand',
     altText: 'Top view map overlay showing sailing routes across the Andaman Sea islands'
   },
@@ -47,8 +47,8 @@ const mainCategories = [
     name: 'Dive Sites',
     seoTitle: 'Andaman Dive Sites',
     description: 'Explore deep-sea marine life profiles of Richelieu Rock and national parks.',
-    image: '/dive-sites.webp',
-    link: '/dive-sites',
+    image: '/images/hero/dive-sites.webp',
+    link: '/images/hero/dive-sites',
     altText: 'Vibrant coral reef teeming with colorful marine life at Richelieu Rock Thailand'
   },
 ];
@@ -64,15 +64,16 @@ const mainCategories = [
         muted 
         loop 
         playsinline 
+        poster="/images/hero/hero-poster.webp" class="video-background absolute top-0 left-0 w-full h-full object-cover -z-10"
         class="video-background absolute top-0 left-0 w-full h-full object-cover -z-10"
       >
-        <source src="/hero-background-optimized.webm" type="video/webm" />
+        <source src="/images/hero/hero-background-optimized.webm" type="video/webm" />
       </video>
 
       <div class="video-overlay"></div>
       
       <div class="hero-content relative z-10 text-center flex flex-col items-center">
-        <img src="/logo-luna.webp" alt="Luna Diving Official Logo" class="hero-logo animated-element fade-in-first" />
+        <img src="/images/hero/logo-luna.webp" alt="Luna Diving Official Logo" class="hero-logo animated-element fade-in-first" />
         
         <h1 class="hero-title animated-element fade-in-second">Thailand Liveaboard Cruises & Phuket Scuba Diving</h1>
         
@@ -195,7 +196,7 @@ const mainCategories = [
   }
 
   .hero-logo {
-    width: 160px;
+    width: 250px;
     height: auto;
     margin-bottom: 2.5rem;
     filter: drop-shadow(0 2px 8px rgba(255, 255, 255, 0.2)); 
@@ -217,7 +218,7 @@ const mainCategories = [
     font-size: clamp(0.95rem, 2vw, 1.25rem);
     font-weight: 400;
     letter-spacing: 1px;
-    margin-bottom: 3.5rem;
+    margin: 0 auto 3.5rem auto;
     line-height: 1.6;
     max-width: 800px;
     text-shadow: 0 2px 8px rgba(0,0,0,0.6);
@@ -378,7 +379,7 @@ const mainCategories = [
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(90deg, rgba(0,0,0,0.85) 40%, rgba(0,0,0,0.1) 100%), url('/last-minute.webp');
+    background-image: linear-gradient(90deg, rgba(0,0,0,0.85) 40%, rgba(0,0,0,0.1) 100%), url('/images/hero/last-minute.webp');
     background-size: cover;
     background-position: center;
     z-index: 1;
