@@ -1,8 +1,7 @@
 ---
-// Import the global Tailwind stylesheet
+// Import the global Tailwind stylesheet (assicurati che il percorso sia corretto)
 import '../../styles/global.css';
 
-// Struttura dati allineata al 100% con le pagine singole e senza "MV"
 const fleet = [
   {
     slug: "deep-andaman-queen",
@@ -59,93 +58,73 @@ const fleet = [
 ];
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Luna Diving Thailand - Fleet Overview</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-    
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #ffffff;
-    }
-  </style>
-</head>
-<body class="min-h-screen font-sans antialiased text-[#1A1A1A] pb-16">
 
-  <header class="max-w-5xl mx-auto pt-16 px-6 text-center">
-    <h1 class="text-3xl md:text-4xl font-bold tracking-tight text-[#1A1A1A] mb-12">
-      Thailand Liveaboard Fleet
-    </h1>
-  </header>
+<header class="max-w-5xl mx-auto pt-16 px-6 text-center">
+  <h1 class="text-3xl md:text-4xl font-bold tracking-tight text-[#1A1A1A] mb-12">
+    Thailand Liveaboard Fleet
+  </h1>
+</header>
 
-  <main class="max-w-5xl mx-auto px-6">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12">
-      {fleet.map((boat) => (
-        <article class="group relative flex flex-col justify-between bg-white border border-gray-200 p-6 rounded-[24px] shadow-sm transition-all duration-300 hover:shadow-md">
-          
-          <div>
-            <div class="w-full aspect-video bg-[#f8f8fa] overflow-hidden relative rounded-xl mb-6">              
-              <img 
-                src={boat.image} 
-                alt={boat.altText || boat.name} 
-                class="w-full h-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-[1.02]"
-                loading="lazy"
-                decoding="async"
-              />
-              <a href={`/thailand-liveaboards/${boat.slug}`} class="absolute inset-0 z-10" aria-label={`Explore ${boat.name} in detail`}></a>
-            </div>
+<main class="max-w-5xl mx-auto px-6 pb-16">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-12">    {fleet.map((boat) => (
+      <article class="group relative flex flex-col justify-between bg-white border border-gray-200 p-6 rounded-[24px] shadow-sm transition-all duration-300 hover:shadow-md">
+        
+        <div>
+          <div class="w-full aspect-video bg-[#f8f8fa] overflow-hidden relative rounded-xl mb-6">              
+            <img 
+              src={boat.image} 
+              alt={boat.altText || boat.name} 
+              class="w-full h-full object-cover object-center transition-transform duration-500 ease-out group-hover:scale-[1.02]"
+              loading="lazy"
+              decoding="async"
+            />
+            <a href={`/thailand-liveaboards/${boat.slug}`} class="absolute inset-0 z-10" aria-label={`Explore ${boat.name} in detail`}></a>
+          </div>
 
-            <div class="space-y-3">
-              <h3 class="text-xl font-bold tracking-tight text-[#1A1A1A] transition-colors group-hover:text-[#008EA7]">
-                {boat.name}
-              </h3>
-              
-              <div class="flex flex-wrap gap-2">
-                {boat.tags.map((tag) => (
-                  <span class="bg-[#008EA7]/10 text-[#008EA7] text-xs font-medium px-3 py-1 rounded-md border border-[#008EA7]/20">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            <ul class="grid grid-cols-3 gap-4 my-6 py-4 border-t border-b border-gray-100" aria-label="Technical highlights">
-              {boat.specs.map((spec) => (
-                <li class="space-y-1">
-                  <div class="text-base font-semibold text-[#1A1A1A] tracking-tight leading-none">
-                    {spec.val}
-                  </div>
-                  <div class="text-[11px] text-[#706F6F] font-normal leading-tight">
-                    {spec.desc}
-                  </div>
-                </li>
+          <div class="space-y-3">
+            <h3 class="text-xl font-bold tracking-tight text-[#1A1A1A] transition-colors group-hover:text-[#008EA7]">
+              {boat.name}
+            </h3>
+            
+            <div class="flex flex-wrap gap-2">
+              {boat.tags.map((tag) => (
+                <span class="bg-[#008EA7]/10 text-[#008EA7] text-xs font-medium px-3 py-1 rounded-md border border-[#008EA7]/20">
+                  {tag}
+                </span>
               ))}
-            </ul>
-
-            <div class="mb-6">
-              <p class="text-[12px] text-[#706F6F] font-normal leading-relaxed">
-                {boat.legal}
-              </p>
             </div>
           </div>
 
-          <div class="mt-auto pt-2 z-20">
-  <a 
-    href={`/thailand-liveaboards/${boat.slug}`} 
-    class="flex items-center justify-center bg-[#1A1A1A] text-white text-xs font-medium py-3 w-full rounded-full hover:bg-[#008EA7] transition-colors duration-300 text-center"
-  >
-    Explore in Detail
-  </a>
-</div>
+          <ul class="grid grid-cols-3 gap-4 my-6 py-4 border-t border-b border-gray-100" aria-label="Technical highlights">
+            {boat.specs.map((spec) => (
+              <li class="space-y-1">
+                <div class="text-base font-semibold text-[#1A1A1A] tracking-tight leading-none">
+                  {spec.val}
+                </div>
+                <div class="text-[11px] text-[#706F6F] font-normal leading-tight">
+                  {spec.desc}
+                </div>
+              </li>
+            ))}
+          </ul>
 
-        </article>
-      ))}
-    </div>
-  </main>
+          <div class="mb-6">
+            <p class="text-[12px] text-[#706F6F] font-normal leading-relaxed">
+              {boat.legal}
+            </p>
+          </div>
+        </div>
 
-</body>
-</html>
+        <div class="mt-auto pt-2 z-20">
+          <a 
+            href={`/thailand-liveaboards/${boat.slug}`} 
+            class="flex items-center justify-center bg-[#1A1A1A] text-white text-xs font-medium py-3 w-full rounded-full hover:bg-[#008EA7] transition-colors duration-300 text-center"
+          >
+            Explore in Detail
+          </a>
+        </div>
+
+      </article>
+    ))}
+  </div>
+</main>
