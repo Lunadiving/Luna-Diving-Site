@@ -1,88 +1,96 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 
-const vesselName = "MV Pawara";
-const tagline = "Premium Steel-Hull Cruise to the Similan Islands & Richelieu Rock";
+const vesselName = "Thailand Master";
+const tagline = "Luxurious Cruises to the Best of Thailand & Myanmar (Mergui Archipelago)";
 
 const slideshow = [
-  { img: '/images/liveaboard/pawara/pawara-liveaboard.webp', text: 'Premium twin-engine steel vessel cruising the crystal waters of the Andaman Sea.' },
-  { img: '/images/liveaboard/pawara/pawara-master-cabin.webp', text: 'Spacious Master Cabin on the main deck featuring a private en-suite bathroom.' },
-  { img: '/images/liveaboard/pawara/pawara-double-master-cabin.webp', text: 'Comfortable Double Master Cabin layout with panoramic window views and air conditioning.' },
-  { img: '/images/liveaboard/pawara/pawara-deluxe-cabin.webp', text: 'Deluxe Cabin configuration on the main deck, optimized for guest comfort.' },
-  { img: '/images/liveaboard/pawara/pawara-twin-deluxe-cabin.webp', text: 'Deluxe Twin Cabin with bunk beds, private bathroom, and ample storage space.' },
-  { img: '/images/liveaboard/pawara/pawara-double-standard-cabin.webp', text: 'Standard Cabin on the lower deck featuring a double bed and private ensuite.' },
-  { img: '/images/liveaboard/pawara/pawara-twin-standard-cabin.webp', text: 'Standard Twin Cabin with two single beds, fully air-conditioned with private bathroom.' },
-  { img: '/images/liveaboard/pawara/pawara-budget-cabin.webp', text: 'Budget Cabin option with bunk beds, perfect for smart travelers looking for top-tier diving.' },
-  { img: '/images/liveaboard/pawara/pawara-saloon.webp', text: 'Air-conditioned main dining saloon and indoor lounge area for delicious buffet meals.' },
-  { img: '/images/liveaboard/pawara/pawara-main-deck.webp', text: 'Spacious main deck and dive station area, optimized for easy prep and gear storage.' },
-  { img: '/images/liveaboard/pawara/pawara-top-deck.webp', text: 'Massive open sun deck with comfortable loungers for relaxing between dives.' },
-  { img: '/images/liveaboard/pawara/pawara-liveaboard-similan-islands-.webp', text: 'MV Pawara cruising across the pristine waters of the Similan Islands.' }
+  { img: '/images/liveaboard/thailand-master/thailand-master-thailand-liveaboard.webp', text: 'The Thailand Master, officially known as Cheng I Sao, cruising the Andaman Sea.' },
+  { img: '/images/liveaboard/thailand-master/thailand-master-double-cabin.webp', text: 'Luxurious Double Cabin with private en-suite bathroom and air conditioning.' },
+  { img: '/images/liveaboard/thailand-master/thailand-master-twin-cabin.webp', text: 'Comfortable Twin Cabin configuration with private bathroom and climate control.' },
+  { img: '/images/liveaboard/thailand-master/thaialnd-master-twin-double-cabin.webp', text: 'Flexible Twin/Double Cabin setup optimized for guest comfort.' },
+  { img: '/images/liveaboard/thailand-master/thailand-master-quad-cabin.webp', text: 'Spacious Quadruple Cabin, perfect for groups and families.' },
+  { img: '/images/liveaboard/thailand-master/thailand-master-saloon.webp', text: 'Air-conditioned main lounge featuring comfortable sofas and entertainment systems.' },
+  { img: '/images/liveaboard/thailand-master/thailand-master-indoor-dining-area.webp', text: 'Indoor saloon area where fresh Thai and international fusion buffet is served.' },
+  { img: '/images/liveaboard/thailand-master/the-phinisi-dining-area.webp', text: 'Beautifully designed indoor dining space.' },
+  { img: '/images/liveaboard/thailand-master/thailand-master-main-deck.webp', text: 'Spacious main deck with covered areas to enjoy the refreshing tropical sea breeze.' },
+  { img: '/images/liveaboard/thailand-master/thailand-master-dive-deck.webp', text: 'Functional and highly organized dive deck for seamless gear preparation.' },
+  { img: '/images/liveaboard/thailand-master/thailand-master-sun-deck.webp', text: 'Massive open solarium deck with loungers for sunbathing and relaxing between dives.' },
+  { img: '/images/liveaboard/thailand-master/thailand-master-similan-islands-liveaboard.webp', text: 'Thailand Master anchored in the pristine crystal waters of the Similan Islands.' }
 ];
 
 const technicalSpecs = [
-  { label: 'Length Overall', value: '35 Meters' },
-  { label: 'Max Capacity', value: '24 Guests / 12 Cabins' }, 
-  { label: 'Cruising Speed', value: '12 Knots' },
-  { label: 'Hull Material', value: 'Steel Hull' }
+  { label: 'Year Built / Refit', value: '2007 / 2018' },
+  { label: 'Max Capacity', value: '18 Guests / 7 Cabins' }, 
+  { label: 'Itineraries', value: '4, 6, 7 & 10 Nights' },
+  { label: 'Destinations', value: 'Thailand & Myanmar' }
 ];
 
 const cabins = [
   {
-    name: 'Master Cabin',
-    price: '37,700 ฿',
-    location: 'Main Deck – 2 Cabins',
-    details: 'Queen Size Bed/Double – Private Bathroom – Hot Shower – Air Con – Panoramic Windows',
+    name: 'Double/Twin Cabin',
+    price: '1,580$',
+    location: 'Lower Deck – 2 Cabins',
+    details: 'Double or Twin – Private Bathroom – Hot Shower – Air Con & Fan',
     trip: '5 Days / 4 Nights – 14 Dives'
   },
   {
-    name: 'Deluxe Cabin',
-    price: '34,700 ฿',
-    location: 'Main Deck – 4 Cabins',
-    details: 'Bunk Bed – Private Bathroom – Hot Shower – Air Conditioning – Panoramic Window',
+    name: 'Twin Cabin',
+    price: '1,580$',
+    location: 'Lower Deck – 3 Cabins',
+    details: 'Twin Bed – Private Bathroom – Hot Shower – Air Con & Fan',
     trip: '5 Days / 4 Nights – 14 Dives'
   },
   {
-    name: 'Standard Cabin',
-    price: '30,700 ฿',
-    location: 'Lower Deck – 4 Cabins',
-    details: 'Double OR Twin Bed – Private Ensuite Bathroom – Hot Shower – Air Conditioning',
-    trip: '5 Days / 4 Nights – 14 Dives'
-  },
-  {
-    name: 'Budget Cabin',
-    price: '26,700 ฿',
-    location: 'Lower Deck 2 Cabins – Upper Deck 1 Cabin',
-    details: 'Bunk Bed – Sharing Bathroom – Hot Shower – Air Conditioning',
+    name: 'Quad Cabin',
+    price: '1,180$',
+    location: 'Lower Deck – 2 Cabins',
+    details: 'Twin Bed – Private Bathroom – Hot Shower – Air Con & Fan',
     trip: '5 Days / 4 Nights – 14 Dives'
   }
 ];
 
 const includedItems = [
-  'Transfer Phuket / Khao Lak Hotel / Pawara / Phuket Hotel',
-  'Accommodation in a private or shared cabin',
-  'Breakfast, lunch, dinner on board',
-  'Water, tea, coffee, snacks, soft drinks',
-  'Towels and hot drinks after each dive',
-  '14 Dives',
-  'Scuba cylinders, weights and belt',
-  'FREE Nitrox for certified divers',
-  'English Speaking Dive Guide – Ratio 4:1'
+  'Transfer Phuket / Khao Lak Hotel to the Vessel and return',
+  'Accommodation in selected private or shared luxury cabin',
+  'All meals on board (Breakfast, Lunch, Dinner buffet style)',
+  'Fresh water, tea, coffee, snacks, and soft drinks',
+  'Towels and warm drinks after every dive',
+  'Full dive guiding services with small groups',
+  'Scuba cylinders, weights, and weight belt'
 ];
 
 const notIncludedItems = [
   { text: 'Diving Accident Insurance', highlight: 'Compulsory' },
-  { text: 'Alcoholic beverages', highlight: '' },
-  { text: 'Marine Park Fees', highlight: '2,500 THB / diver cash on board' },
-  { text: 'Rental diving equipment', highlight: '600 THB / day' },
-  { text: 'Dive Torch Rental', highlight: '' },
-  { text: 'Dive Computer Rental', highlight: '' }
+  { text: 'Alcoholic beverages and espresso coffees', highlight: '' },
+  { text: 'Marine Park Fees & Port Taxes', highlight: 'Cash on board' },
+  { text: 'Mergui Archipelago Visa & Entry Fees (Myanmar trips)', highlight: 'Required' },
+  { text: 'Rental diving equipment & Dive computer', highlight: 'Available on request' },
+  { text: 'Crew and Guide Gratuities / Tips', highlight: 'Optional' }
 ];
 
 const schedule = [
-  { dates: "15 Oct - 19 Oct 26", itinerary: "5D/4N Similan", route: "Tablamu / Tablamu", type: "Similan" },
-  { dates: "20 Oct - 24 Oct 26", itinerary: "5D/4N Similan", route: "Tablamu / Tablamu", type: "Similan" },
-  { dates: "25 Oct - 29 Oct 26", itinerary: "5D/4N Similan", route: "Tablamu / Tablamu", type: "Similan" },
-  { dates: "02 Nov - 06 Nov 26", itinerary: "5D/4N Similan", route: "Tablamu / Tablamu", type: "Similan" }
+  { dates: "18 Oct - 26 Oct 26", itinerary: "9D/8N Best of Thailand", route: "Chalong / Tablamu", type: "Best of Thailand", isSoldOut: false },
+  { dates: "27 Oct - 04 Nov 26", itinerary: "9D/8N Best of Thailand", route: "Tablamu / Chalong", type: "Best of Thailand", isSoldOut: false },
+  { dates: "05 Nov - 15 Nov 26", itinerary: "11D/10N Best of Thailand", route: "SOLD OUT", type: "Best of Thailand", isSoldOut: true },
+  { dates: "16 Nov - 26 Nov 26", itinerary: "11D/10N Best of Thailand", route: "Tablamu / Chalong", type: "Best of Thailand", isSoldOut: false },
+  { dates: "27 Nov - 03 Dec 26", itinerary: "7D/6N Similan & Surin", route: "Chalong / Tablamu", type: "Similan & Surin", isSoldOut: false },
+  { dates: "04 Dec - 12 Dec 26", itinerary: "9D/8N Best of Thailand", route: "Tablamu / Chalong", type: "Best of Thailand", isSoldOut: false },
+  { dates: "13 Dec - 21 Dec 26", itinerary: "9D/8N Best of Thailand", route: "SOLD OUT", type: "Best of Thailand", isSoldOut: true },
+  { dates: "22 Dec - 30 Dec 26", itinerary: "9D/8N Best of Thailand", route: "Chalong / Tablamu", type: "Best of Thailand", isSoldOut: false },
+  { dates: "30 Dec 26 - 05 Jan 27", itinerary: "7D/6N Similan & Surin", route: "Tablamu / Tablamu", type: "Similan & Surin", isSoldOut: false },
+  { dates: "06 Jan - 20 Jan 27", itinerary: "Charter", route: "SOLD OUT", type: "Charter", isSoldOut: true },
+  { dates: "21 Jan - 28 Jan 27", itinerary: "8D/7N Mergui Archipelago", route: "Ranong / Ranong", type: "Mergui Archipelago", isSoldOut: false },
+  { dates: "29 Jan - 05 Feb 27", itinerary: "8D/7N Mergui Archipelago", route: "Ranong / Ranong", type: "Mergui Archipelago", isSoldOut: false },
+  { dates: "14 Feb - 24 Feb 27", itinerary: "11D/10N Mergui Archipelago", route: "Ranong / Ranong", type: "Mergui Archipelago", isSoldOut: false },
+  { dates: "25 Feb - 04 Mar 27", itinerary: "8D/7N Mergui Archipelago", route: "SOLD OUT", type: "Mergui Archipelago", isSoldOut: true },
+  { dates: "05 Mar - 15 Mar 27", itinerary: "11D/10N Mergui Archipelago", route: "SOLD OUT", type: "Mergui Archipelago", isSoldOut: true },
+  { dates: "16 Mar - 23 Mar 27", itinerary: "8D/7N Mergui Archipelago", route: "Ranong / Ranong", type: "Mergui Archipelago", isSoldOut: false },
+  { dates: "24 Mar - 31 Mar 27", itinerary: "8D/7N Mergui Archipelago", route: "Ranong / Ranong", type: "Mergui Archipelago", isSoldOut: false },
+  { dates: "02 Apr - 12 Apr 27", itinerary: "11D/10N Mergui Archipelago", route: "SOLD OUT", type: "Mergui Archipelago", isSoldOut: true },
+  { dates: "13 Apr - 23 Apr 27", itinerary: "11D/10N Best of Thailand", route: "Chalong / Tablamu", type: "Best of Thailand", isSoldOut: false },
+  { dates: "24 Apr - 30 Apr 27", itinerary: "7D/6N Similan & Surin", route: "SOLD OUT", type: "Similan & Surin", isSoldOut: true },
+  { dates: "30 Apr - 08 May 27", itinerary: "9D/8N Best of Thailand", route: "Chalong / Tablamu", type: "Best of Thailand", isSoldOut: false }
 ];
 ---
 
@@ -218,19 +226,25 @@ const schedule = [
           </thead>
           <tbody>
             {schedule.map((row) => (
-              <tr>
+              <tr class={row.isSoldOut ? "row-sold-out" : ""}>
                 <td class="td-dates">{row.dates}</td>
                 <td class="td-itinerary">
                   <span class="itinerary-text">{row.itinerary}</span>
-                  <span class={`type-badge badge-${row.type.toLowerCase().replace(' ', '-')}`}>
+                  <span class={`type-badge badge-${row.type.toLowerCase().replace(/&/g, 'and').replace(/\s+/g, '-')}`}>
                     {row.type}
                   </span>
                 </td>
-                <td class="td-route">{row.route}</td>
+                <td class="td-route">
+                  {row.isSoldOut ? <span class="sold-out-text">SOLD OUT</span> : row.route}
+                </td>
                 <td class="td-action">
-                  <a href={`/contact?vessel=${vesselName}&date=${encodeURIComponent(row.dates)}`} class="table-book-btn">
-                    Book
-                  </a>
+                  {row.isSoldOut ? (
+                    <span class="table-sold-btn">Sold Out</span>
+                  ) : (
+                    <a href={`/contact?vessel=${vesselName}&date=${encodeURIComponent(row.dates)}`} class="table-book-btn">
+                      Book
+                    </a>
+                  )}
                 </td>
               </tr>
             ))}
@@ -244,17 +258,20 @@ const schedule = [
         <h2 class="content-heading">Vessel Profile</h2>
         <div class="heading-line"></div>
         <p class="paragraph">
-          The <strong>MV Pawara</strong> is a premier steel-hulled liveaboard purposely built to offer top-tier diving expeditions to the world-famous <strong>Similan Islands, Koh Bon, Koh Tachai, and Richelieu Rock</strong>. Catering to up to 24 guests across 12 beautifully designed cabins, this spacious vessel ensures smooth cruising and a fantastic balance between maximum comfort and outdoor adventure in the Andaman Sea.
+          The <strong>Thailand Master</strong>, officially known as <strong>“Cheng I Sao”</strong>, is a premium liveaboard vessel engineered to offer top-tier dive cruises across the best destinations in Thailand and Myanmar. Originally built in Indonesia in 2007, she has successfully worked throughout Thailand, Indonesia, the Andaman Islands, and the Maldives. In 2018, she returned to Thailand fully equipped to offer unforgettable diving adventures across 4 different itineraries ranging from 4, 6, 7, and 10 nights.
         </p>
         <p class="paragraph">
-          One of the standout features of the MV Pawara is the spacious dive deck, layout-engineered to avoid congestion during prep times. Additionally, certified divers can take advantage of <strong>Free Nitrox</strong> on board, maximizing safety and bottom times across the typical 14-dive itinerary. Between dives, guests can enjoy hearty buffet meals matching local Thai and international flavors, relax in the cozy air-conditioned main saloon, or enjoy the massive open sun deck.
+          Onboard, you will find 7 luxurious cabins designed to comfortably accommodate up to 18 passengers. The layouts include two double cabins, three twin cabins, and two quadruple cabins—all fitted with private en-suite bathrooms, hot showers, individually regulated air conditioning, and a fan. 
+        </p>
+        <p class="paragraph">
+          The common areas feature a beautiful air-conditioned main lounge complete with an indoor bar, plush sofas, a television, stereo system, and a dedicated charging station for photography and video gear. Outside, guests can relax in pristine shaded social sections or lay down on the spacious solarium areas to enjoy the sea breeze. Meals are served buffet-style, presenting a high-quality fusion of authentic Thai recipes and international international favorites.
         </p>
       </div>
 
       <div class="content-sidebar">
         <div class="booking-sticky-box">
           <h3 class="sidebar-heading">Ready to Dive?</h3>
-          <p class="sidebar-text">Plan your trip aboard the MV Pawara. Slots fill up quickly during the peak diving season.</p>
+          <p class="sidebar-text">Plan your next scuba expedition aboard the Thailand Master. Places fill up quickly during peak Andaman season.</p>
           <a href="/contact" class="pcom-btn-primary">
             Inquire This Liveaboard
           </a>
@@ -262,8 +279,10 @@ const schedule = [
       </div>
     </section>
 
-  </main> <a 
-    href="https://wa.me/66918233120?text=Hi%20Luna%20Diving!%20I'm%20interested%20in%20booking%20the%20Pawara%20liveaboard." 
+  </main>
+
+  <a 
+    href="https://wa.me/66918233120?text=Hi%20Luna%20Diving!%20I'm%20interested%20in%20booking%20the%20Thailand%20Master%20liveaboard." 
     target="_blank" 
     rel="noopener noreferrer" 
     class="pcom-whatsapp-float"
@@ -832,9 +851,10 @@ const schedule = [
     display: inline-block;
   }
 
-  .badge-similan { background-color: rgba(0, 142, 167, 0.1); color: var(--pcom-color-accent); }
-  .badge-burma { background-color: rgba(179, 16, 16, 0.1); color: var(--pcom-color-danger); }
-  .badge-similan-burma { background-color: rgba(1, 2, 5, 0.08); color: var(--pcom-color-primary); }
+  .badge-best-of-thailand { background-color: rgba(0, 142, 167, 0.1); color: var(--pcom-color-accent); }
+  .badge-similan-and-surin { background-color: rgba(0, 142, 167, 0.1); color: var(--pcom-color-accent); }
+  .badge-charter { background-color: rgba(1, 2, 5, 0.08); color: var(--pcom-color-primary); }
+  .badge-mergui-archipelago { background-color: rgba(179, 16, 16, 0.1); color: var(--pcom-color-danger); }
 
   .td-route { color: var(--pcom-color-text-muted); font-weight: 400; }
   .table-action-header { text-align: right; }
@@ -856,7 +876,24 @@ const schedule = [
 
   .table-book-btn:hover { background-color: var(--pcom-color-accent); }
 
-  /* Bottom Structure & Reconstructed Missing Styles */
+  /* Sold out specific states */
+  .row-sold-out td { opacity: 0.6; }
+  .sold-out-text { color: var(--pcom-color-danger); font-weight: 700; font-size: 11px; letter-spacing: 0.5px; }
+  
+  .table-sold-btn {
+    display: inline-block;
+    background-color: var(--pcom-color-surface);
+    color: var(--pcom-color-text-muted);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 6px 16px;
+    border-radius: 4px;
+    cursor: not-allowed;
+  }
+
+  /* Content Structure */
   .pcom-content-grid {
     width: 100%;
     max-width: 820px;
@@ -867,9 +904,7 @@ const schedule = [
     box-sizing: border-box;
   }
 
-  .content-main {
-    text-align: left;
-  }
+  .content-main { text-align: left; }
 
   .content-heading {
     font-size: 20px;
@@ -893,9 +928,7 @@ const schedule = [
     margin: 0 0 20px 0;
   }
 
-  .content-sidebar {
-    text-align: left;
-  }
+  .content-sidebar { text-align: left; }
 
   .booking-sticky-box {
     background-color: #fafafa;
@@ -938,13 +971,8 @@ const schedule = [
   }
 
   @media (min-width: 768px) {
-    .pcom-content-grid {
-      grid-template-columns: 1fr 260px;
-    }
-    .booking-sticky-box {
-      position: sticky;
-      top: 160px;
-    }
+    .pcom-content-grid { grid-template-columns: 1fr 260px; }
+    .booking-sticky-box { position: sticky; top: 160px; }
   }
 
   /* WhatsApp Float Style */
@@ -968,24 +996,11 @@ const schedule = [
 
   .pcom-whatsapp-float:hover {
     transform: scale(1.05);
-    background-color: #20ba5a;
+    background-color: #128C7E;
   }
 
   .pcom-whatsapp-float svg {
     width: 32px;
     height: 32px;
-  }
-
-  @media (max-width: 768px) {
-    .pcom-whatsapp-float {
-      bottom: 20px;
-      right: 20px;
-      width: 54px;
-      height: 54px;
-    }
-    .pcom-whatsapp-float svg {
-      width: 28px;
-      height: 28px;
-    }
   }
 </style>

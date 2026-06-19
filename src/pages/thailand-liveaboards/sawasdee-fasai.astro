@@ -1,88 +1,127 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 
-const vesselName = "MV Pawara";
-const tagline = "Premium Steel-Hull Cruise to the Similan Islands & Richelieu Rock";
+const vesselName = "MV Sawasdee Fasai";
+const tagline = "Premium Dive Cruise to Similan Islands, Koh Bon, Tachai & Richelieu Rock";
 
 const slideshow = [
-  { img: '/images/liveaboard/pawara/pawara-liveaboard.webp', text: 'Premium twin-engine steel vessel cruising the crystal waters of the Andaman Sea.' },
-  { img: '/images/liveaboard/pawara/pawara-master-cabin.webp', text: 'Spacious Master Cabin on the main deck featuring a private en-suite bathroom.' },
-  { img: '/images/liveaboard/pawara/pawara-double-master-cabin.webp', text: 'Comfortable Double Master Cabin layout with panoramic window views and air conditioning.' },
-  { img: '/images/liveaboard/pawara/pawara-deluxe-cabin.webp', text: 'Deluxe Cabin configuration on the main deck, optimized for guest comfort.' },
-  { img: '/images/liveaboard/pawara/pawara-twin-deluxe-cabin.webp', text: 'Deluxe Twin Cabin with bunk beds, private bathroom, and ample storage space.' },
-  { img: '/images/liveaboard/pawara/pawara-double-standard-cabin.webp', text: 'Standard Cabin on the lower deck featuring a double bed and private ensuite.' },
-  { img: '/images/liveaboard/pawara/pawara-twin-standard-cabin.webp', text: 'Standard Twin Cabin with two single beds, fully air-conditioned with private bathroom.' },
-  { img: '/images/liveaboard/pawara/pawara-budget-cabin.webp', text: 'Budget Cabin option with bunk beds, perfect for smart travelers looking for top-tier diving.' },
-  { img: '/images/liveaboard/pawara/pawara-saloon.webp', text: 'Air-conditioned main dining saloon and indoor lounge area for delicious buffet meals.' },
-  { img: '/images/liveaboard/pawara/pawara-main-deck.webp', text: 'Spacious main deck and dive station area, optimized for easy prep and gear storage.' },
-  { img: '/images/liveaboard/pawara/pawara-top-deck.webp', text: 'Massive open sun deck with comfortable loungers for relaxing between dives.' },
-  { img: '/images/liveaboard/pawara/pawara-liveaboard-similan-islands-.webp', text: 'MV Pawara cruising across the pristine waters of the Similan Islands.' }
+  { img: '/images/liveaboard/sawasdee-fasai/sawasdee-fasai-thailand-liveaboard.webp', text: 'The 37-meter motorized diving cruise boat built for ultimate comfort in the Andaman Sea.' },
+  { img: '/images/liveaboard/sawasdee-fasai/sawasdee-fasai-double-master-cabin.webp', text: 'Elegant Double Master Cabin on the main deck with panoramic ocean views.' },
+  { img: '/images/liveaboard/sawasdee-fasai/sawasdee-fasai-twin-master-cabin.webp', text: 'Spacious Twin Master Cabin option with personalized air conditioning and private en-suite.' },
+  { img: '/images/liveaboard/sawasdee-fasai/sawasdee-fasai-deluxe-cabin.webp', text: 'Deluxe Cabin layout featuring comfortable bunk beds and full private bathroom facilities.' },
+  { img: '/images/liveaboard/sawasdee-fasai/sawasdee-fasai-double-standard-cabin.webp', text: 'Standard Double Cabin on the lower deck, fully air-conditioned.' },
+  { img: '/images/liveaboard/sawasdee-fasai/sawasdee-fasai-twin-standard-cabin.webp', text: 'Standard Twin Cabin configuration with cozy private ensuite hot shower setups.' },
+  { img: '/images/liveaboard/sawasdee-fasai/sawasdee-fasai-budget-cabin.webp', text: 'Budget Cabin configuration with twin beds, perfect for smart dive travelers.' },
+  { img: '/images/liveaboard/sawasdee-fasai/sawasdee-fasai-saloon.webp', text: 'Cozy indoor air-conditioned saloon detailed with traditional Thai wood décor.' },
+  { img: '/images/liveaboard/sawasdee-fasai/sawasdee-fasai-main-dining-deck.webp', text: 'Main dining area serving a wide selection of authentic Thai and international dishes.' },
+  { img: '/images/liveaboard/sawasdee-fasai/sawasdee-fasai-dinning-area.webp', text: 'Secondary shaded outdoor dining zone, perfectly optimized for ocean breezes.' },
+  { img: '/images/liveaboard/sawasdee-fasai/sawasdee-fasai-sun-deck.webp', text: 'Massive open top deck ideal for sunbathing and enjoying spectacular tropical sunrises.' },
+  { img: '/images/liveaboard/sawasdee-fasai/sawasdee-fasai-liveaboard-simila-islands.webp', text: 'MV Sawasdee Fasai cruising across the crystal clear waters of the Similan marine parks.' }
 ];
 
 const technicalSpecs = [
-  { label: 'Length Overall', value: '35 Meters' },
-  { label: 'Max Capacity', value: '24 Guests / 12 Cabins' }, 
-  { label: 'Cruising Speed', value: '12 Knots' },
-  { label: 'Hull Material', value: 'Steel Hull' }
+  { label: 'Length Overall', value: '37 Meters' },
+  { label: 'Max Capacity', value: '30 Guests / 15 Cabins' }, 
+  { label: 'Special Features', value: 'Keel Stabilizers' },
+  { label: 'Build Location', value: 'Phuket, Thailand' }
 ];
 
 const cabins = [
   {
     name: 'Master Cabin',
-    price: '37,700 ฿',
+    price: '45,700 ฿',
     location: 'Main Deck – 2 Cabins',
     details: 'Queen Size Bed/Double – Private Bathroom – Hot Shower – Air Con – Panoramic Windows',
     trip: '5 Days / 4 Nights – 14 Dives'
   },
   {
     name: 'Deluxe Cabin',
-    price: '34,700 ฿',
-    location: 'Main Deck – 4 Cabins',
+    price: '39,700 ฿',
+    location: 'Main Deck – 5 Cabins',
     details: 'Bunk Bed – Private Bathroom – Hot Shower – Air Conditioning – Panoramic Window',
     trip: '5 Days / 4 Nights – 14 Dives'
   },
   {
     name: 'Standard Cabin',
-    price: '30,700 ฿',
+    price: '37,700 ฿',
     location: 'Lower Deck – 4 Cabins',
     details: 'Double OR Twin Bed – Private Ensuite Bathroom – Hot Shower – Air Conditioning',
     trip: '5 Days / 4 Nights – 14 Dives'
   },
   {
     name: 'Budget Cabin',
-    price: '26,700 ฿',
-    location: 'Lower Deck 2 Cabins – Upper Deck 1 Cabin',
+    price: '30,700 ฿',
+    location: 'Lower Deck 2 Cabins – Upper Deck 2 Cabins',
     details: 'Bunk Bed – Sharing Bathroom – Hot Shower – Air Conditioning',
     trip: '5 Days / 4 Nights – 14 Dives'
   }
 ];
 
 const includedItems = [
-  'Transfer Phuket / Khao Lak Hotel / Pawara / Phuket Hotel',
-  'Accommodation in a private or shared cabin',
-  'Breakfast, lunch, dinner on board',
-  'Water, tea, coffee, snacks, soft drinks',
-  'Towels and hot drinks after each dive',
-  '14 Dives',
-  'Scuba cylinders, weights and belt',
-  'FREE Nitrox for certified divers',
-  'English Speaking Dive Guide – Ratio 4:1'
+  'Transfer Phuket / Khao Lak Hotel / Sawasdee Fasai / Phuket Hotel',
+  'Accommodation in selected private or shared cabin',
+  'All meals on board (Breakfast, lunch, dinner) prepared fresh',
+  'Water, tea, coffee, snacks, soft drinks throughout the cruise',
+  'Towels and comforting hot drinks after every single dive',
+  '14 Professional Guided Dives',
+  'Scuba cylinders, weights and weight belt',
+  'FREE Nitrox blending for certified Enriched Air divers',
+  'English Speaking Dive Guide – Small Ratio 4:1'
 ];
 
 const notIncludedItems = [
   { text: 'Diving Accident Insurance', highlight: 'Compulsory' },
   { text: 'Alcoholic beverages', highlight: '' },
   { text: 'Marine Park Fees', highlight: '2,500 THB / diver cash on board' },
-  { text: 'Rental diving equipment', highlight: '600 THB / day' },
+  { text: 'Rental diving equipment sets', highlight: '600 THB / day' },
   { text: 'Dive Torch Rental', highlight: '' },
   { text: 'Dive Computer Rental', highlight: '' }
 ];
 
 const schedule = [
-  { dates: "15 Oct - 19 Oct 26", itinerary: "5D/4N Similan", route: "Tablamu / Tablamu", type: "Similan" },
-  { dates: "20 Oct - 24 Oct 26", itinerary: "5D/4N Similan", route: "Tablamu / Tablamu", type: "Similan" },
-  { dates: "25 Oct - 29 Oct 26", itinerary: "5D/4N Similan", route: "Tablamu / Tablamu", type: "Similan" },
-  { dates: "02 Nov - 06 Nov 26", itinerary: "5D/4N Similan", route: "Tablamu / Tablamu", type: "Similan" }
+  { dates: "16 Oct - 20 Oct 26", itinerary: "5D/4N Similan", route: "Tablamu / Tablamu", type: "Similan" },
+  { dates: "21 Oct - 25 Oct 26", itinerary: "5D/4N Similan", route: "Tablamu / Tablamu", type: "Similan" },
+  { dates: "26 Oct - 30 Oct 26", itinerary: "5D/4N Similan", route: "Tablamu / Tablamu", type: "Similan" },
+  { dates: "01 Nov - 05 Nov 26", itinerary: "5D/4N Similan", route: "Tablamu / Tablamu", type: "Similan" },
+  { dates: "06 Nov - 10 Nov 26", itinerary: "5D/4N Similan", route: "Tablamu / Tablamu", type: "Similan" },
+  { dates: "11 Nov - 15 Nov 26", itinerary: "5D/4N Similan", route: "Tablamu / Tablamu", type: "Similan" },
+  { dates: "16 Nov - 20 Nov 26", itinerary: "5D/4N Similan", route: "Tablamu / Tablamu", type: "Similan" },
+  { dates: "21 Nov - 25 Nov 26", itinerary: "5D/4N Similan", route: "Tablamu / Tablamu", type: "Similan" },
+  { dates: "26 Nov - 30 Nov 26", itinerary: "5D/4N Similan", route: "Tablamu / Tablamu", type: "Similan" },
+  { dates: "01 Dec - 05 Dec 26", itinerary: "5D/4N Similan", route: "Tablamu / Tablamu", type: "Similan" },
+  { dates: "06 Dec - 10 Dec 26", itinerary: "5D/4N Similan", route: "Tablamu / Tablamu", type: "Similan" },
+  { dates: "11 Dec - 15 Dec 26", itinerary: "5D/4N Similan", route: "Tablamu / Tablamu", type: "Similan" },
+  { dates: "16 Dec - 20 Dec 26", itinerary: "5D/4N Similan", route: "Tablamu / Tablamu", type: "Similan" },
+  { dates: "21 Dec - 25 Dec 26", itinerary: "5D/4N Similan", route: "Tablamu / Tablamu", type: "Similan" },
+  { dates: "25 Dec - 29 Dec 26", itinerary: "5D/4N Similan", route: "Tablamu / Tablamu", type: "Similan" },
+  { dates: "30 Dec - 03 Jan 27", itinerary: "5D/4N Similan", route: "Tablamu / Tablamu", type: "Similan" },
+  { dates: "04 Jan - 08 Jan 27", itinerary: "5D/4N Similan", route: "Tablamu / Tablamu", type: "Similan" },
+  { dates: "09 Jan - 13 Jan 27", itinerary: "5D/4N Similan", route: "Tablamu / Tablamu", type: "Similan" },
+  { dates: "14 Jan - 18 Jan 27", itinerary: "5D/4N Similan", route: "Tablamu / Tablamu", type: "Similan" },
+  { dates: "19 Jan - 23 Jan 27", itinerary: "5D/4N Similan", route: "Tablamu / Tablamu", type: "Similan" },
+  { dates: "24 Jan - 28 Jan 27", itinerary: "5D/4N Similan", route: "Tablamu / Tablamu", type: "Similan" },
+  { dates: "29 Jan - 02 Feb 27", itinerary: "5D/4N Similan", route: "Tablamu / Tablamu", type: "Similan" },
+  { dates: "03 Feb - 07 Feb 27", itinerary: "5D/4N Similan", route: "Tablamu / Tablamu", type: "Similan" },
+  { dates: "08 Feb - 12 Feb 27", itinerary: "5D/4N Similan", route: "Tablamu / Tablamu", type: "Similan" },
+  { dates: "13 Feb - 17 Feb 27", itinerary: "5D/4N Similan", route: "Tablamu / Tablamu", type: "Similan" },
+  { dates: "18 Feb - 22 Feb 27", itinerary: "5D/4N Similan", route: "Tablamu / Tablamu", type: "Similan" },
+  { dates: "23 Feb - 27 Feb 27", itinerary: "5D/4N Similan", route: "Tablamu / Tablamu", type: "Similan" },
+  { dates: "27 Feb - 03 Mar 27", itinerary: "5D/4N Similan", route: "Tablamu / Tablamu", type: "Similan" },
+  { dates: "04 Mar - 08 Mar 27", itinerary: "5D/4N Similan", route: "Tablamu / Tablamu", type: "Similan" },
+  { dates: "08 Mar - 12 Mar 27", itinerary: "5D/4N Similan", route: "Tablamu / Tablamu", type: "Similan" },
+  { dates: "13 Mar - 17 Mar 27", itinerary: "5D/4N Similan", route: "Tablamu / Tablamu", type: "Similan" },
+  { dates: "18 Mar - 22 Mar 27", itinerary: "5D/4N Similan", route: "Tablamu / Tablamu", type: "Similan" },
+  { dates: "23 Mar - 26 Mar 27", itinerary: "5D/4N Similan", route: "Tablamu / Tablamu", type: "Similan" },
+  { dates: "27 Mar - 31 Mar 27", itinerary: "5D/4N Similan", route: "Tablamu / Tablamu", type: "Similan" },
+  { dates: "01 Apr - 05 Apr 27", itinerary: "5D/4N Similan", route: "Tablamu / Tablamu", type: "Similan" },
+  { dates: "06 Apr - 10 Apr 27", itinerary: "5D/4N Similan", route: "Tablamu / Tablamu", type: "Similan" },
+  { dates: "11 Apr - 15 Apr 27", itinerary: "5D/4N Similan", route: "Tablamu / Tablamu", type: "Similan" },
+  { dates: "16 Apr - 20 Apr 27", itinerary: "5D/4N Similan", route: "Tablamu / Tablamu", type: "Similan" },
+  { dates: "21 Apr - 25 Apr 27", itinerary: "5D/4N Similan", route: "Tablamu / Tablamu", type: "Similan" },
+  { dates: "26 Apr - 30 Apr 27", itinerary: "5D/4N Similan", route: "Tablamu / Tablamu", type: "Similan" },
+  { dates: "01 May - 05 May 27", itinerary: "5D/4N Similan", route: "Tablamu / Tablamu", type: "Similan" },
+  { dates: "06 May - 10 May 27", itinerary: "5D/4N Similan", route: "Tablamu / Tablamu", type: "Similan" },
+  { dates: "11 May - 15 May 27", itinerary: "5D/4N Similan", route: "Tablamu / Tablamu", type: "Similan" }
 ];
 ---
 
@@ -244,17 +283,20 @@ const schedule = [
         <h2 class="content-heading">Vessel Profile</h2>
         <div class="heading-line"></div>
         <p class="paragraph">
-          The <strong>MV Pawara</strong> is a premier steel-hulled liveaboard purposely built to offer top-tier diving expeditions to the world-famous <strong>Similan Islands, Koh Bon, Koh Tachai, and Richelieu Rock</strong>. Catering to up to 24 guests across 12 beautifully designed cabins, this spacious vessel ensures smooth cruising and a fantastic balance between maximum comfort and outdoor adventure in the Andaman Sea.
+          The <strong>MV Sawasdee Fasai</strong> is a magnificent 37-meter motorized diving cruise boat designed specifically to navigate the premium marine corridors of Thailand's west coast. Phuket-built and optimized for serious diving expeditions, this impressive vessel regularly journeys to world-renowned dive spots including the <strong>Similan Islands, Koh Bon, Koh Tachai</strong>, and the legendary pinnacles of <strong>Richelieu Rock</strong>. Equipped with advanced hull stabilizers and a recently enhanced keel framework, it provides remarkably steady navigation and excellent comfort throughout your cruise.
         </p>
         <p class="paragraph">
-          One of the standout features of the MV Pawara is the spacious dive deck, layout-engineered to avoid congestion during prep times. Additionally, certified divers can take advantage of <strong>Free Nitrox</strong> on board, maximizing safety and bottom times across the typical 14-dive itinerary. Between dives, guests can enjoy hearty buffet meals matching local Thai and international flavors, relax in the cozy air-conditioned main saloon, or enjoy the massive open sun deck.
+          Life onboard centers around premium hospitality and safety. The yacht is uniquely equipped with two separate dining spaces where dedicated onboard chefs prepare a rich variety of fresh local and international delicacies, completely accommodating special dietary demands upon request. Guests can unwind inside a beautifully appointed air-conditioned lounge designed with traditional Thai wood accents and equipped with high-speed Wi-Fi, entertainment consoles, card games, and media platforms. Outdoors, an expansive top-deck area offers plenty of space to enjoy panoramic views of the Andaman Sea.
+        </p>
+        <p class="paragraph">
+          Diving operations are flawlessly streamlined on the large, custom-engineered dive deck, providing effortless movement and storage space for up to 30 divers. To maximize bottom times and diver safety, the MV Sawasdee Fasai provides certified Enriched Air divers with <strong>FREE Nitrox</strong> installations. Spanning across 15 well-ventilated cabins, it represents a premier liveaboard choice for exploring Thailand's absolute finest underwater ecosystems.
         </p>
       </div>
 
       <div class="content-sidebar">
         <div class="booking-sticky-box">
           <h3 class="sidebar-heading">Ready to Dive?</h3>
-          <p class="sidebar-text">Plan your trip aboard the MV Pawara. Slots fill up quickly during the peak diving season.</p>
+          <p class="sidebar-text">Plan your trip aboard the MV Sawasdee Fasai. Slots fill up quickly during the peak diving season.</p>
           <a href="/contact" class="pcom-btn-primary">
             Inquire This Liveaboard
           </a>
@@ -262,8 +304,10 @@ const schedule = [
       </div>
     </section>
 
-  </main> <a 
-    href="https://wa.me/66918233120?text=Hi%20Luna%20Diving!%20I'm%20interested%20in%20booking%20the%20Pawara%20liveaboard." 
+  </main>
+
+  <a 
+    href="https://wa.me/66918233120?text=Hi%20Luna%20Diving!%20I'm%20interested%20in%20booking%20the%20Sawasdee%20Fasai%20liveaboard." 
     target="_blank" 
     rel="noopener noreferrer" 
     class="pcom-whatsapp-float"
