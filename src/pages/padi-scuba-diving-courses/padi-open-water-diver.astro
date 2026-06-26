@@ -1,0 +1,209 @@
+---
+// src/pages/padi-open-water-diver/index.astro
+
+import '../../styles/global.css';
+import Layout from '../../layouts/Layout.astro';
+
+const programSpecs = [
+  { title: "Duration", value: "4 Days Minimum" },
+  { title: "Max Depth", value: "18 Meters / 60 Feet" },
+  { title: "Prerequisites", value: "10+ Years Old", sub: "Able to swim, no experience required" }
+];
+
+const inclusions = [
+  "PADI Open Water Diver book and learning materials",
+  "Professional and experienced private instructor for 4 days",
+  "PADI worldwide certification fees",
+  "Official diving logbook",
+  "6 open water boat dives",
+  "All necessary scuba diving rental equipment",
+  "Full boat insurance"
+];
+---
+
+<Layout title="PADI Open Water Diver Course Phuket | Get Certified | Luna Diving">
+  
+  <div class="block w-full pt-24 md:pt-32 font-sans bg-[#fbfbfc]">
+    
+    <!-- Hero Section -->
+    <header class="max-w-4xl mx-auto pt-12 pb-8 px-6 text-center">
+      <span class="text-xs font-bold tracking-[0.25em] text-[#008EA7] uppercase block mb-3">
+        PADI Certification Course
+      </span>
+      <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-[#1A1A1A] mb-6 leading-tight">
+        Become a Certified Diver <br class="hidden md:inline"/>with PADI Open Water in Phuket
+      </h1>
+      <p class="text-base md:text-lg text-[#50555c] leading-relaxed max-w-2xl mx-auto">
+        Ready to take the plunge and start your underwater adventure? Our private PADI Open Water Diver course is the perfect way to learn everything you need to know to become a confident, competent, and globally recognized scuba diver.
+      </p>
+    </header>
+
+    <!-- Quick Specs Grid -->
+    <section class="max-w-5xl mx-auto px-6 mb-16">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {programSpecs.map((spec) => (
+          <div class="bg-white border border-gray-100 p-6 rounded-[20px] shadow-sm text-center flex flex-col items-center justify-center">
+            <h3 class="text-xs font-bold text-[#706F6F] uppercase tracking-wider mb-1">{spec.title}</h3>
+            <p class="text-lg font-bold text-[#1A1A1A]">{spec.value}</p>
+            {spec.sub && <p class="text-xs text-[#706F6F] font-normal mt-0.5">{spec.sub}</p>}
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Main Content & Details -->
+    <section class="max-w-5xl mx-auto px-6 pb-24">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        
+        <!-- Left Column: Details & Course Structure -->
+        <div class="lg:col-span-7 space-y-10">
+          
+          <!-- Course Overview -->
+          <div class="bg-white border border-gray-200 p-8 rounded-[24px] shadow-sm">
+            <h2 class="text-xl font-bold text-[#1A1A1A] mb-4">Your Private Diving Journey</h2>
+            <p class="text-[15px] text-[#40444b] leading-relaxed mb-4">
+              The PADI Open Water Diver course covers essential diving skills, including equipment operation, dive planning, and standard safety procedures. With our private classes, you will receive personalized attention and tailored guidance from your instructor, ensuring you feel completely secure and relaxed every step of the way.
+            </p>
+            <p class="text-[15px] text-[#40444b] leading-relaxed mb-6">
+              Phuket features some of the most beautiful dive sites in Thailand, boasting crystal-clear waters and an abundance of marine life. Upon successful completion, you will receive a worldwide recognized certification that allows you to dive independently with a buddy anywhere on the planet.
+            </p>
+            
+            <h3 class="text-sm font-bold text-[#1A1A1A] uppercase tracking-wide mb-3">Course Content Includes:</h3>
+            <ul class="space-y-3 text-[15px] text-[#40444b]">
+              <li class="flex items-start gap-3">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#008EA7] mt-2 shrink-0"></span>
+                <span>5 academic modules, 4 quizzes, and a final theoretical test</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#008EA7] mt-2 shrink-0"></span>
+                <span>Confined water training sessions to master basic safety skills</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#008EA7] mt-2 shrink-0"></span>
+                <span>6 open water boat dives to explore the stunning marine ecosystems</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Course Structure Phases -->
+          <div class="space-y-4">
+            <h2 class="text-xl font-bold text-[#1A1A1A] px-2">Course Structure</h2>
+            
+            <!-- Phase 1 -->
+            <div class="bg-white border border-gray-200 p-6 rounded-[20px] shadow-sm flex gap-4">
+              <div class="bg-[#008EA7]/10 text-[#008EA7] w-10 h-10 rounded-xl flex items-center justify-center font-bold text-sm shrink-0">
+                1
+              </div>
+              <div>
+                <h3 class="font-bold text-base text-[#1A1A1A] mb-1">Phase 1 – Knowledge Development</h3>
+                <p class="text-sm text-[#706F6F] leading-relaxed">
+                  Understand the basic principles and mechanics of scuba diving through digital learning, modules, and clear academic reviews.
+                </p>
+              </div>
+            </div>
+
+            <!-- Phase 2 -->
+            <div class="bg-white border border-gray-200 p-6 rounded-[20px] shadow-sm flex gap-4">
+              <div class="bg-[#008EA7]/10 text-[#008EA7] w-10 h-10 rounded-xl flex items-center justify-center font-bold text-sm shrink-0">
+                2
+              </div>
+              <div>
+                <h3 class="font-bold text-base text-[#1A1A1A] mb-1">Phase 2 – Confined Water Dives</h3>
+                <p class="text-sm text-[#706F6F] leading-relaxed">
+                  Practice and perfect vital scuba skills in a controlled swimming pool environment until you feel perfectly comfortable.
+                </p>
+              </div>
+            </div>
+
+            <!-- Phase 3 -->
+            <div class="bg-white border border-gray-200 p-6 rounded-[20px] shadow-sm flex gap-4">
+              <div class="bg-[#008EA7]/10 text-[#008EA7] w-10 h-10 rounded-xl flex items-center justify-center font-bold text-sm shrink-0">
+                3
+              </div>
+              <div>
+                <h3 class="font-bold text-base text-[#1A1A1A] mb-1">Phase 3 – Open Water Dives</h3>
+                <p class="text-sm text-[#706F6F] leading-relaxed">
+                  Apply your skills during 6 real ocean boat dives. You will explore Phuket's famous dive sites, gain real experience, and build ultimate confidence.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Pricing & Booking Card -->
+        <div class="lg:col-span-5 lg:sticky lg:top-32">
+          <div class="bg-[#1A1A1A] text-white p-8 rounded-[28px] shadow-lg relative overflow-hidden">
+            
+            <div class="absolute -right-12 -top-12 w-32 h-32 bg-[#008EA7]/20 rounded-full blur-xl"></div>
+            
+            <span class="text-[11px] font-bold tracking-widest text-[#008EA7] uppercase block mb-1">Private Class Package</span>
+            <h3 class="text-2xl font-bold mb-4">Book Your Course</h3>
+            
+            <div class="flex items-baseline gap-2 mb-6 border-b border-white/10 pb-6">
+              <span class="text-xs text-gray-400 font-normal">All-Inclusive Price</span>
+              <span class="text-4xl font-extrabold text-[#008EA7]">16,900 THB</span>
+            </div>
+
+            <!-- What's Included -->
+            <div class="space-y-4 mb-6">
+              <h4 class="text-xs font-bold uppercase tracking-wider text-gray-400">What's Included:</h4>
+              <ul class="space-y-3 text-sm text-gray-200">
+                {inclusions.map((item) => (
+                  <li class="flex items-start gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#008EA7] mt-2 shrink-0"></span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <!-- What's Not Included -->
+            <div class="space-y-3 mb-8 border-t border-white/10 pt-4">
+              <h4 class="text-xs font-bold uppercase tracking-wider text-gray-400">Not Included:</h4>
+              <p class="text-xs text-gray-300 leading-relaxed">
+                Transfers from/to your hotel or villa, meals, and anything not explicitly mentioned in the inclusions.
+              </p>
+            </div>
+
+            <!-- CTA Buttons -->
+            <div class="space-y-3">
+              <a 
+                href="https://wa.me/66918233120?text=Hi%20Luna%20Diving!%20I'm%20interested%20in%20booking%20the%20PADI%20Open%20Water%20Diver%20course%20for%2016,900%20THB."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center justify-center bg-[#25D366] hover:bg-[#20ba5a] text-white text-sm font-bold py-3.5 w-full rounded-full transition-all duration-300 text-center shadow-md"
+              >
+                Book via WhatsApp
+              </a>
+              <a 
+                href="/contact" 
+                class="flex items-center justify-center bg-white/10 hover:bg-white/20 text-white text-sm font-medium py-3.5 w-full rounded-full transition-all duration-300 text-center"
+              >
+                Inquire via Email
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+</Layout>
+
+<!-- Floating WhatsApp Button -->
+<div class="fixed bottom-6 right-6 z-[99999] pointer-events-auto">
+  <a 
+    href="https://wa.me/66918233120?text=Hi%20Luna%20Diving!%20I'm%20interested%20in%20the%20PADI%20Open%20Water%20Diver%20course." 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    class="flex items-center justify-center w-14 h-14 md:w-[60px] md:h-[60px] bg-[#25D366] text-white rounded-full shadow-[0_4px_16px_rgba(0,0,0,0.25)] hover:scale-105 hover:bg-[#20ba5a] transition-all duration-300 ease-out"
+    aria-label="Chat on WhatsApp"
+  >
+    <svg class="w-7 h-7 md:w-8 md:h-8" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.454 5.709 1.455h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+</div>
