@@ -155,8 +155,10 @@ const schedule = [
               <img 
                 src={slide.img} 
                 alt={`${vesselName} - ${slide.text}`} 
-                loading={index === 0 ? "eager" : "lazy"}
-                decoding={index === 0 ? "sync" : "async"}
+                width="1200"
+                height="675"
+                loading="lazy"
+                decoding="async"
               />
               <div class="gallery-caption">
                 <span class="caption-count">Vessel Tour {index + 1} / {slideshow.length}</span>
@@ -466,7 +468,7 @@ const schedule = [
     font-weight: 700;
   }
 
-  /* Gallery */
+  /* Gallery Container */
   .pcom-gallery-section {
     width: 100%;
     max-width: 820px;
@@ -490,28 +492,22 @@ const schedule = [
     scroll-behavior: smooth;
     border-radius: 8px;
     background-color: var(--pcom-color-primary);
-    height: 240px !important;
-  }
-
-  @media (min-width: 768px) {
-    .gallery-slider-inner {
-      height: 400px !important;
-    }
   }
 
   .gallery-slide {
-    width: 100% !important;
+    width: 100%;
     flex-shrink: 0;
-    height: 100% !important;
     position: relative;
     snap-align: start;
+    aspect-ratio: 16 / 9; /* Forza la proporzione nativa 1200x675 in modo fluido */
   }
 
   .gallery-slide img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    object-position: center !important;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
   }
 
   .gallery-caption {
@@ -949,7 +945,42 @@ const schedule = [
     border-radius: 6px;
   }
 
-  /* 🟢 STILE PULSANTE FLOTTANTE WHATSAPP (OTTIMIZZATO) */
+  .pcom-btn-primary {
+    display: block;
+    background-color: var(--pcom-color-primary);
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 14px;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-top: 16px;
+    transition: background-color 0.2s ease;
+  }
+
+  .pcom-btn-primary:hover {
+    background-color: var(--pcom-color-accent);
+  }
+
+  .sidebar-heading {
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0 0 8px 0;
+    letter-spacing: 0.5px;
+  }
+
+  .sidebar-text {
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--pcom-color-text-muted);
+    margin: 0;
+  }
+
+  /* Floating WhatsApp Button */
   .pcom-whatsapp-float {
     position: fixed;
     bottom: 24px;
@@ -963,7 +994,7 @@ const schedule = [
     align-items: center;
     justify-content: center;
     box-shadow: 0 4px 16px rgba(1, 2, 5, 0.2);
-    z-index: 999999; /* Aumentato per stare sopra a tutto */
+    z-index: 999999;
     transition: transform 0.3s ease-out, background-color 0.3s ease;
     text-decoration: none;
   }
@@ -978,12 +1009,11 @@ const schedule = [
     height: 32px;
   }
 
-  /* Rende il pulsante perfetto su schermi piccoli ed evita le barre di sistema */
   @media (max-width: 768px) {
     .pcom-whatsapp-float {
       bottom: 20px;
       right: 20px;
-      width: 54px; /* Leggermente più piccolo per non coprire i testi */
+      width: 54px;
       height: 54px;
     }
     .pcom-whatsapp-float svg {
