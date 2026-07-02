@@ -1,28 +1,27 @@
-name: Deploy sito tramite FTP
+name: Deploy sito
 
 on:
   push:
     branches:
-      - main  # Il deploy parte quando carichi codice sul ramo 'main'
+      - main
 
 jobs:
   web-deploy:
-    name: Build e Deploy
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout del codice
+      - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Installazione e Build
+      - name: Build
         run: |
           npm install
           npm run build
 
-      - name: Sincronizzazione via FTP
+      - name: Deploy FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./dist/  # Questa è la cartella che crea Astro
-          server-dir: /public_html/ # Cambia se il tuo hosting usa una cartella diversa
+          local-dir: ./dist/
+          server-dir: /public_html/
