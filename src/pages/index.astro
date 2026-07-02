@@ -15,7 +15,7 @@ const mainCategories = [
     seoTitle: 'Yacht Charter',
     description: 'Private luxury catamaran and yacht rentals for custom cruise itineraries.',
     image: '/images/hero/private-dive-boat-charters-phuket.webp', 
-    link: '/yacht-charter', 
+    link: '/thailand-yachts', 
     altText: 'Luxury private yacht charter anchored near a tropical island in Thailand'
   },
  {
@@ -23,7 +23,7 @@ const mainCategories = [
     seoTitle: 'Scuba Diving Courses',
     description: 'PADI certifications from Open Water to professional divemaster levels.',
     image: '/images/hero/padi-scuba-diving-courses.webp', 
-    link: '/scuba-diving-courses',
+    link: '/padi-scuba-diving-courses',
     altText: 'Scuba diving instructor teaching students open water skills in clear water'
   },
   {
@@ -31,7 +31,7 @@ const mainCategories = [
     seoTitle: 'Daily Dive Trips',
     description: 'Daily diving excursions to local reefs, Phi Phi Islands, and Racha Islands.',
     image: '/images/hero/day-trip-phuket.webp',
-    link: '/day-trips',
+    link: '/day-trip-phuket',
     altText: 'Speedboat carrying scuba divers to local day trip dive sites'
   },
   {
@@ -47,7 +47,7 @@ const mainCategories = [
     seoTitle: 'Andaman Dive Sites',
     description: 'Explore deep-sea marine life profiles of Richelieu Rock and national parks.',
     image: '/images/hero/dive-sites.webp',
-    link: '/dive-sites',
+    link: '/images/hero/dive-sites',
     altText: 'Vibrant coral reef teeming with colorful marine life at Richelieu Rock Thailand'
   },
 ];
@@ -57,6 +57,7 @@ const mainCategories = [
   <main class="main-wrapper" id="theme-wrapper">
     
     <section class="hero-container relative w-full h-screen overflow-hidden flex items-center justify-center">
+      
       <video 
         autoplay 
         muted 
@@ -70,10 +71,12 @@ const mainCategories = [
 
       <div class="video-overlay"></div>
       
-      <div class="hero-content relative z-10 text-center flex flex-col items-center">
-        <img src="/images/hero/logo-luna.webp" alt="Luna Diving Official Logo" class="hero-logo animated-element fade-in-first" />
+<div class="hero-content relative z-10 text-center flex flex-col items-center">
+        
         <h1 class="hero-title animated-element fade-in-second">Thailand Liveaboard Cruises & Phuket Scuba Diving</h1>
+        
         <p class="hero-subtitle animated-element fade-in-third">Explore the best of the Andaman Sea. Premium liveaboard safaris, private boat charters, and PADI courses to the Similan Islands and Richelieu Rock.</p>
+        
         <button class="hero-cta-button animated-element fade-in-fourth" onclick="document.getElementById('dark-fleet-section').scrollIntoView({behavior: 'smooth'})">Book Your Dive Safari</button>
       </div>
     </section>
@@ -82,56 +85,426 @@ const mainCategories = [
       <h2>Premium Scuba Diving & Liveaboard Safaris in Thailand</h2>
       <p class="seo-intro-text">
         Welcome to Luna Diving, your premier gateway to exploring the underwater wonders of the Andaman Sea. 
+        Based in Thailand's top diving hubs, Phuket and Khao Lak, we specialize in organizing world-class 
+        liveaboard cruises, private yacht charters, and daily diving excursions to the regions most iconic marine parks.
+      </p>
+      <p class="seo-intro-text">
+        Whether you are looking to dive the legendary granite walls of the Similan Islands, witness the vibrant 
+        marine life at Richelieu Rock, or take your next PADI scuba course with professional instructors, 
+        we tailor every adventure to ensure safety, comfort, and unforgettable memories.
       </p>
     </section>
 
-    <section class="liveaboard-fleet" id="dark-fleet-section">
-      <div class="card-grid">
-        {mainCategories.map((category, index) => (
-          <div class="liveaboard-card">
-            <div class="card-image-wrapper">
-              <img 
-                src={category.image} 
-                alt={category.altText} 
-                width="1200" 
-                height="675" 
-                loading={index < 2 ? "eager" : "lazy"} 
-                decoding={index < 2 ? "sync" : "async"} 
-                class="card-image" 
-              />
-              <div class="card-gradient"></div>
-            </div>
-            <div class="card-content">
-              <span class="card-name-cursive">{category.name}</span>
-              <div class="card-text-bottom">
-                <h3 class="card-name-bold">{category.seoTitle}</h3>
-                <p class="card-description">{category.description}</p>
-                <a href={category.link} class="card-cta">
-                  <span>View Details</span>
-                  <svg class="luna-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </a>
-              </div>
-            </div>
-          </div>
-        ))}
+<div class="card-grid">
+  {mainCategories.map((category) => (
+    <div class="liveaboard-card">
+      <div class="card-image-wrapper">
+        <img 
+          src={category.image} 
+          alt={category.altText} 
+          class="card-image" 
+          width="1200" 
+          height="650" 
+          loading="lazy" 
+        />
+        <div class="card-gradient"></div>
       </div>
+      <div class="card-content">
+        {/* Elegant cursive identifier at the top */}
+        <span class="card-name-cursive">{category.name}</span>
+        
+        <div class="card-text-bottom">
+          <h3 class="card-name-bold">{category.seoTitle}</h3>
+          <p class="card-description">{category.description}</p>
+          <a href={category.link} class="card-cta">
+            <span>View Details</span>
+            <svg class="luna-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  ))}
+</div>
 
       <div class="last-minute-banner">
         <div class="banner-overlay"></div>
         <div class="banner-content">
           <span class="banner-tag">Limited Availability</span>
           <h2>Last Minute Deals & Liveaboard Offers</h2>
-          <a href="/last-minute" class="banner-btn">Check Live Deals</a> 
-        </div>
+          <p>Grab exclusive empty-cabin discounts and last-second seasonal promotions for upcoming trips.</p>
+          <a href="/last-minute" class="banner-btn">Check Live Deals</a> </div>
       </div>
     </section>
 
-    <a href="https://wa.me/66918233120" target="_blank" class="luna-whatsapp-floating" aria-label="Chat on WhatsApp">
-      <svg class="whatsapp-icon-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.454 5.709 1.455h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <a 
+      href="https://wa.me/66918233120?text=Hi%20Luna%20Diving!%20I'm%20planning%20a%20diving%20trip%20to%20Thailand%20and%20would%20like%20more%20information." 
+      target="_blank" 
+      rel="noopener noreferrer" 
+      class="luna-whatsapp-floating"
+      aria-label="Chat on WhatsApp"
+    >
+      <svg class="whatsapp-icon-svg" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.454 5.709 1.455h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
     </a>
+
   </main>
 </Layout>
 
 <style>
-  /* Mantieni invariati i tuoi stili originali */
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,600&display=swap');
+
+  .main-wrapper {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+    color: #000000;
+    transition: background-color 0.8s cubic-bezier(0.25, 1, 0.5, 1), color 0.8s ease;
+  }
+
+  .main-wrapper.is-dark {
+    background-color: #000000;
+    color: #ffffff;
+  }
+
+  .hero-container {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .video-background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+  }
+
+  .video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.35); 
+    z-index: 2;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 3;
+    padding: 0 1.5rem;
+  }
+
+  .hero-logo {
+    width: 250px;
+    height: auto;
+    margin-bottom: 2.5rem;
+    filter: drop-shadow(0 2px 8px rgba(255, 255, 255, 0.2)); 
+  }
+
+  .hero-title {
+    color: #ffffff !important; 
+    font-size: clamp(2rem, 5vw, 3.8rem); 
+    font-weight: 900;
+    letter-spacing: 2px; 
+    margin: 0 0 1.5rem 0;
+    text-transform: uppercase;
+    line-height: 1.2;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.6);
+  }
+
+  .hero-subtitle {
+    color: #f3f3f3 !important; 
+    font-size: clamp(0.95rem, 2vw, 1.25rem);
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin: 0 auto 3.5rem auto;
+    line-height: 1.6;
+    max-width: 800px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+  }
+
+  .hero-cta-button {
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    color: #000000;
+    padding: 1.2rem 3rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .hero-cta-button:hover {
+    background-color: transparent;
+    color: #ffffff;
+  }
+
+  .adventure-starts {
+    text-align: center;
+    padding: 7rem 2rem 4rem 2rem;
+  }
+
+  .adventure-starts h2 {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 400;
+    letter-spacing: -0.5px;
+    margin: 0;
+    transition: color 0.5s ease;
+  }
+  .main-wrapper.is-dark .adventure-starts h2 { color: #ffffff; }
+
+  /* FLEET CONTAINER & GRID */
+  .liveaboard-fleet {
+    padding: 0 4rem 8rem 4rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  @media (max-width: 1100px) { .card-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 700px) {
+    .card-grid { grid-template-columns: 1fr; }
+    .liveaboard-fleet { padding: 0 1.5rem 4rem 1.5rem; }
+  }
+
+  /* CATEGORY CARD SQUARE IDENTITY */
+  .liveaboard-card {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: #121212;
+    aspect-ratio: 1.1 / 1;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  }
+
+  .card-image-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  .card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  .liveaboard-card:hover .card-image { transform: scale(1.04); }
+
+  .card-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 40%, rgba(0,0,0,0.85) 90%);
+    z-index: 2;
+  }
+
+  .card-content {
+    position: relative;
+    z-index: 3;
+    padding: 2.2rem;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    box-sizing: border-box;
+  }
+
+  .card-name-cursive {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.8rem;
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .card-text-bottom { display: flex; flex-direction: column; }
+  .card-name-bold { font-size: 1.4rem; font-weight: 700; margin: 0 0 0.4rem 0; letter-spacing: -0.2px; }
+  .card-description { font-size: 0.85rem; color: #aaaaaa; margin: 0 0 1.5rem 0; line-height: 1.4; }
+  
+  .card-cta {
+    display: inline-flex;
+    align-items: center;
+    color: #ffffff !important;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    gap: 0.5rem;
+  }
+
+  .luna-arrow {
+    width: 16px !important;
+    height: 16px !important;
+    color: #ffffff !important;
+    transition: transform 0.3s ease;
+  }
+  .card-cta:hover .luna-arrow { transform: translateX(5px); }
+
+  /* LAST MINUTE BANNER */
+  .last-minute-banner {
+    position: relative;
+    width: 100%;
+    background-color: #0c0c0e;
+    border: 1px solid #1c1c1e;
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 4rem;
+    box-sizing: border-box;
+    margin-top: 1.5rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(90deg, rgba(0,0,0,0.85) 40%, rgba(0,0,0,0.1) 100%), url('/images/hero/last-minute.webp');
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+  }
+
+  .banner-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    color: #ffffff;
+  }
+
+  .banner-tag {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #ff453a; 
+    font-weight: 700;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .banner-content h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 0.8rem 0;
+    letter-spacing: -0.5px;
+  }
+
+  .banner-content p {
+    font-size: 0.95rem;
+    color: #aaaaaa;
+    line-height: 1.5;
+    margin: 0 0 2rem 0;
+  }
+
+  .banner-btn {
+    background-color: #ffffff;
+    color: #000000;
+    text-decoration: none;
+    padding: 0.9rem 2.5rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 6px;
+    display: inline-block;
+    transition: background-color 0.3s;
+  }
+  .banner-btn:hover { background-color: #cccccc; }
+
+  @media (max-width: 700px) {
+    .last-minute-banner { padding: 2.5rem; }
+    .banner-overlay { background-image: linear-gradient(180deg, rgba(0,0,0,0.9) 100%, rgba(0,0,0,0.5) 100%); }
+  }
+
+  .animated-element {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: lunaFadeIn 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  }
+  .fade-in-first { animation-delay: 200ms; }
+  .fade-in-second { animation-delay: 500ms; }
+  .fade-in-third { animation-delay: 800ms; }
+  .fade-in-fourth { animation-delay: 1100ms; }
+
+  @keyframes lunaFadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* 💎 STILI DEL PULSANTE FLUTTUANTE WHATSAPP */
+  .luna-whatsapp-floating {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+    z-index: 999;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.2s ease;
+  }
+
+  .luna-whatsapp-floating:hover {
+    transform: scale(1.08);
+    background-color: #20ba5a;
+  }
+
+  .whatsapp-icon-svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  /* Evita che il pulsante copra elementi critici su schermi molto piccoli */
+  @media (max-width: 480px) {
+    .luna-whatsapp-floating {
+      bottom: 16px;
+      right: 16px;
+      width: 52px;
+      height: 52px;
+    }
+    .whatsapp-icon-svg {
+      width: 26px;
+      height: 26px;
+    }
+  }
 </style>
