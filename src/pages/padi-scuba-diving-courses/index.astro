@@ -1,0 +1,278 @@
+---
+// Clean slate for PADI Courses Page
+import Layout from '../../layouts/Layout.astro'; // Nota: usa '../../' se sei dentro una cartella, o '../' se è un file singolo
+
+const courses = [
+  {
+    title: "PADI Open Water Diver",
+    level: "Beginner",
+    duration: "3 Days",
+    price: "16,900 THB",
+    description: "The perfect starting point. Learn the basics of scuba diving, essential theory, and complete your first 4 open water dives surrounded by a tropical coral reef.",
+    features: ["Premium equipment included", "PADI Touch e-learning materials", "International certification (up to 18m)", "Logistics and transfers included"]
+  },
+  {
+    title: "PADI Advanced Open Water",
+    level: "Advanced",
+    duration: "2 Days",
+    price: "13,500 THB",
+    description: "Extend your limits and explore new adventures. This course certifies you to dive down to 30 meters, refining your buoyancy and underwater navigation skills.",
+    features: ["5 specialty boat dives", "Deep and Navigation dives included", "Lunches and drinks on board", "No final exam required"]
+  },
+  {
+    title: "PADI Rescue Diver",
+    level: "Intermediate",
+    duration: "2-3 Days",
+    price: "15,000 THB",
+    description: "Learn to prevent and manage problems in the water, becoming a safer and more confident dive buddy. A dynamic, serious, yet incredibly fun course.",
+    features: ["Realistic rescue scenarios", "Stress management & first aid", "Development of dive leadership", "Intensive practical sessions"]
+  }
+];
+---
+
+<Layout title="PADI Scuba Diving Courses Phuket & Similan | Luna Diving">
+  <main class="courses-page">
+    
+    <section class="hero-section">
+      <div class="container">
+        <span class="subtitle">PADI EDUCATION</span>
+        <h1>Premium Scuba Diving Courses in Thailand</h1>
+        <p class="hero-text">
+          From your very first breaths underwater to advanced certifications. Discover our PADI courses with dedicated instructors, top-tier equipment, and small groups to ensure maximum safety and comfort.
+        </p>
+      </div>
+    </section>
+
+    <section class="courses-section">
+      <div class="container">
+        <div class="courses-grid">
+          {courses.map(course => (
+            <div class="course-card">
+              <div class="card-header">
+                <span class="course-level">{course.level}</span>
+                <h2 class="course-title">{course.title}</h2>
+                <div class="course-meta">
+                  <span class="meta-item">⏱️ {course.duration}</span>
+                  <span class="meta-item price">{course.price}</span>
+                </div>
+              </div>
+              
+              <div class="card-body">
+                <p class="course-desc">{course.description}</p>
+                <ul class="features-list">
+                  {course.features.map(feature => (
+                    <li>✨ {feature}</li>
+                  ))}
+                </ul>
+              </div>
+              
+              <div class="card-footer">
+                <a href="/contact" class="btn-primary">Inquire Now</a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-box">
+          <h2>Ready to start your adventure?</h2>
+          <p>All our courses include flexible sessions and e-learning options, allowing you to study the theory comfortably from home before arriving in Phuket.</p>
+          <a href="/contact" class="btn-secondary">Contact us on WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</Layout>
+
+<style>
+  .courses-page {
+    padding-top: clamp(120px, 10vw, 160px);
+    background-color: #fbfbfc;
+    color: #010205;
+    font-family: Arial, sans-serif;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .hero-section {
+    text-align: center;
+    padding-bottom: 60px;
+  }
+
+  .subtitle {
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: #008EA7;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  h1 {
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin: 0 0 20px 0;
+    line-height: 1.15;
+  }
+
+  .hero-text {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #50555c;
+  }
+
+  .courses-section {
+    padding: 40px 0 80px 0;
+  }
+
+  .courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 32px;
+  }
+
+  .course-card {
+    background: #ffffff;
+    border: 1px solid #eef0f3;
+    border-radius: 12px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .course-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(1, 2, 5, 0.04);
+  }
+
+  .course-level {
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #71777f;
+    letter-spacing: 1px;
+  }
+
+  .course-title {
+    font-size: 22px;
+    margin: 8px 0 16px 0;
+    font-weight: 700;
+  }
+
+  .course-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed #eef0f3;
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .price {
+    color: #008EA7;
+    font-size: 16px;
+  }
+
+  .course-desc {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #40444b;
+    margin-bottom: 24px;
+  }
+
+  .features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 32px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-size: 14px;
+    color: #50555c;
+  }
+
+  .btn-primary {
+    display: block;
+    text-align: center;
+    background-color: #010205;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 14px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+  }
+
+  .btn-primary:hover {
+    background-color: #008EA7;
+  }
+
+  .cta-section {
+    padding-bottom: 80px;
+  }
+
+  .cta-box {
+    background-color: #010205;
+    color: #ffffff;
+    padding: 60px 40px;
+    border-radius: 16px;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .cta-box h2 {
+    font-size: 28px;
+    margin-top: 0;
+  }
+
+  .cta-box p {
+    color: #a0a5ad;
+    max-width: 500px;
+    margin: 16px auto 32px auto;
+    line-height: 1.6;
+  }
+
+  .btn-secondary {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #010205;
+    text-decoration: none;
+    padding: 14px 32px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 700;
+    transition: background-color 0.2s ease;
+  }
+
+  .btn-secondary:hover {
+    background-color: #008EA7;
+    color: #ffffff;
+  }
+
+  @media (max-width: 768px) {
+    .courses-grid {
+      grid-template-columns: 1fr;
+    }
+    .cta-box {
+      padding: 40px 20px;
+    }
+  }
+</style>

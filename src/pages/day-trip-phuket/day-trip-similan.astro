@@ -1,0 +1,255 @@
+---
+// src/pages/day-trip-similan/index.astro
+
+import '../../styles/global.css';
+import Layout from '../../layouts/Layout.astro';
+
+const quickSpecs = [
+  { title: "Duration", value: "1 Day" },
+  { title: "Dives per Trip", value: "2 Ocean Dives" },
+  { title: "Vessel", value: "Blue Marlin", sub: "Diving Speedboat" }
+];
+
+const schedule = [
+  { day: "Monday", destination: "Richelieu Rock" },
+  { day: "Tuesday", destination: "Koh Bon" },
+  { day: "Wednesday", destination: "Richelieu Rock" },
+  { day: "Thursday", destination: "Koh Bon" },
+  { day: "Friday", destination: "Richelieu Rock" },
+  { day: "Saturday", destination: "Richelieu Rock" },
+  { day: "Sunday", destination: "Koh Tachai" }
+];
+
+const destinations = [
+  { 
+    name: "Richelieu Rock", 
+    tagline: "Thailand's Best Dive Site", 
+    price: "6,700 THB",
+    desc: "A stunning pinnacle in open water, covered in soft corals and home to seahorses, ghost pipefish, harlequin shrimp, barracudas, and frequent whale shark encounters." 
+  },
+  { 
+    name: "Koh Bon", 
+    tagline: "Manta Ray Paradise", 
+    price: "6,400 THB",
+    desc: "A remote rocky island famous for regular manta ray sightings, whale sharks, sea snakes, octopuses, and rare guitarfish." 
+  },
+  { 
+    name: "Koh Tachai", 
+    tagline: "Stunning Granite Formations", 
+    price: "6,400 THB",
+    desc: "A top tier dive spot featuring strong currents, vibrant coral plateaus, mantis shrimp, ghost pipefish, and superb open-ocean marine life." 
+  },
+  { 
+    name: "Similan Islands", 
+    tagline: "A Diver's Dream", 
+    price: "6,500 THB",
+    desc: "Home to iconic towering granite formations, over 200 species of hard and soft coral, and an abundance of marine life ideal for macro and big fish photography." 
+  }
+];
+
+const inclusions = [
+  "Hotel transfers within the Khao Lak area",
+  "High-speed transport aboard the Blue Marlin speedboat",
+  "Professional dive guide and equipment setup",
+  "Onboard meals: light breakfast, delicious lunch, fresh fruits, and drinks",
+  "Scuba tanks and weights",
+  "Full diving and accident insurance coverage"
+];
+
+const itinerary = [
+  { time: "07:30 - 08:30 AM", activity: "Hotel pickup and transfer to Baan Nam Kem Pier. Our team welcomes you onboard and preps your gear." },
+  { time: "08:45 AM", activity: "Light breakfast and comprehensive boat safety briefing during the cruise (approx. 1h - 1h 20min)." },
+  { time: "10:15 AM", activity: "Dive 1 – Explore vibrant marine life and pristine coral reefs." },
+  { time: "11:30 AM", activity: "Surface Interval – Relax on board and enjoy a fresh buffet lunch." },
+  { time: "01:00 PM", activity: "Dive 2 – Dive into another spectacular underwater landscape." },
+  { time: "02:30 PM", activity: "Return journey to the mainland with fresh fruit and snacks served on board." },
+  { time: "04:00 PM", activity: "Arrival at the pier followed by a comfortable transfer back to your hotel or dive center in Ban Niang." }
+];
+---
+
+<Layout title="Similan Islands & Richelieu Rock Day Trips | Khao Lak Diving | Luna Diving">
+  
+  <div class="block w-full pt-24 md:pt-32 font-sans bg-[#fbfbfc]">
+    
+    <!-- Hero Section -->
+    <header class="max-w-4xl mx-auto pt-12 pb-8 px-6 text-center">
+      <span class="text-xs font-bold tracking-[0.25em] text-[#008EA7] uppercase block mb-3">
+        Premium Khao Lak Day Trips
+      </span>
+      <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-[#1A1A1A] mb-6 leading-tight">
+        Diving Day Trips from Khao Lak <br class="hidden md:inline"/>Explore Thailand's Absolute Best Sites
+      </h1>
+      <p class="text-base md:text-lg text-[#50555c] leading-relaxed max-w-2xl mx-auto">
+        Embark on an unforgettable underwater adventure. Discover the world-famous marine ecosystems of Richelieu Rock, the Similan Islands, Surin Islands, Koh Bon, and Koh Tachai aboard our high-performance diving speedboat, the Blue Marlin.
+      </p>
+    </header>
+
+    <!-- Quick Specs Grid -->
+    <section class="max-w-5xl mx-auto px-6 mb-16">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {quickSpecs.map((spec) => (
+          <div class="bg-white border border-gray-100 p-6 rounded-[20px] shadow-sm text-center flex flex-col items-center justify-center">
+            <h3 class="text-xs font-bold text-[#706F6F] uppercase tracking-wider mb-1">{spec.title}</h3>
+            <p class="text-lg font-bold text-[#1A1A1A]">{spec.value}</p>
+            {spec.sub && <p class="text-xs text-[#706F6F] font-normal mt-0.5">{spec.sub}</p>}
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Main Grid Content -->
+    <section class="max-w-5xl mx-auto px-6 pb-24">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        
+        <!-- Left Column: Destinations, Itinerary, National Park Regulations -->
+        <div class="lg:col-span-7 space-y-10">
+          
+          <!-- National Park Regulatory Warning (Crucial Info Block) -->
+          <div class="bg-amber-50/60 border border-amber-200/70 p-6 rounded-[24px]">
+            <h3 class="text-sm font-bold text-[#A76A00] uppercase tracking-wide mb-3">Important National Park Entry Requirements</h3>
+            <ul class="space-y-3 text-sm text-[#664300] leading-relaxed">
+              <li class="flex items-start gap-2">
+                <span class="font-bold mt-0.5">•</span>
+                <span><strong>Strict Ticket Deadlines:</strong> Similan National Park tickets are strictly limited. Passports are required for booking, and tickets must be secured before 3:00 PM on the day prior to departure. Park tickets are fully non-refundable. Please book early.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="font-bold mt-0.5">•</span>
+                <span><strong>Eco-Friendly Framework:</strong> To protect delicate reef structures, only reef-safe, biodegradable sunscreens are legally permitted within the Similan and Surin National Marine Parks.</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Destinations & Pricing Grid -->
+          <div class="space-y-4">
+            <h2 class="text-xl font-bold text-[#1A1A1A] px-2">Our Destinations & Rates</h2>
+            <div class="grid grid-cols-1 gap-4">
+              {destinations.map((dest) => (
+                <div class="bg-white border border-gray-200 p-6 rounded-[20px] shadow-sm flex flex-col justify-between">
+                  <div>
+                    <div class="flex justify-between items-start gap-4 mb-1">
+                      <h3 class="font-bold text-base text-[#1A1A1A]">{dest.name}</h3>
+                      <span class="text-base font-extrabold text-[#008EA7] shrink-0">{dest.price}</span>
+                    </div>
+                    <span class="text-xs font-semibold text-[#706F6F] block mb-3 uppercase tracking-wider">{dest.tagline}</span>
+                    <p class="text-sm text-[#50555c] leading-relaxed mb-2">{dest.desc}</p>
+                  </div>
+                  <span class="text-[11px] text-gray-400 font-medium pt-2 border-t border-gray-50">Rate details: 2 ocean boat dives, all-inclusive day package</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Chronological Sample Itinerary -->
+          <div class="bg-white border border-gray-200 p-8 rounded-[24px] shadow-sm">
+            <h2 class="text-xl font-bold text-[#1A1A1A] mb-6">Sample Trip Timeline</h2>
+            
+            <div class="relative border-l border-gray-200 ml-2 space-y-6">
+              {itinerary.map((step) => (
+                <div class="relative pl-6">
+                  <span class="absolute -left-[5px] top-1.5 w-2.5 h-2.5 rounded-full bg-[#008EA7]"></span>
+                  <div class="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4">
+                    <span class="text-sm font-bold text-[#1A1A1A] shrink-0 w-32">{step.time}</span>
+                    <span class="text-sm text-[#40444b] leading-relaxed">{step.activity}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Weekly Schedule, Inclusions & Booking Sticky Card -->
+        <div class="lg:col-span-5 lg:sticky lg:top-32 space-y-6">
+          
+          <!-- Schedule Card -->
+          <div class="bg-white border border-gray-200 p-6 rounded-[24px] shadow-sm">
+            <h3 class="text-sm font-bold text-[#1A1A1A] uppercase tracking-wider mb-4 border-b border-gray-100 pb-3">
+              Blue Marlin Weekly Schedule
+            </h3>
+            <div class="space-y-2.5">
+              {schedule.map((item) => (
+                <div class="flex justify-between items-center text-sm py-1 border-b border-gray-50 last:border-0 last:pb-0">
+                  <span class="font-medium text-[#706F6F]">{item.day}</span>
+                  <span class="font-bold text-[#1A1A1A]">{item.destination}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Booking & Pricing Mechanics -->
+          <div class="bg-[#1A1A1A] text-white p-8 rounded-[28px] shadow-lg relative overflow-hidden">
+            
+            <div class="absolute -right-12 -top-12 w-32 h-32 bg-[#008EA7]/20 rounded-full blur-xl"></div>
+            
+            <span class="text-[11px] font-bold tracking-widest text-[#008EA7] uppercase block mb-1">Diving Speedboat Package</span>
+            <h3 class="text-2xl font-bold mb-6">Book From Khao Lak</h3>
+
+            <!-- What's Included -->
+            <div class="space-y-4 mb-6">
+              <h4 class="text-xs font-bold uppercase tracking-wider text-gray-400">What's Included:</h4>
+              <ul class="space-y-3 text-sm text-gray-200">
+                {inclusions.map((item) => (
+                  <li class="flex items-start gap-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#008EA7] mt-2 shrink-0"></span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <!-- What's Not Included -->
+            <div class="space-y-3 mb-8 border-t border-white/10 pt-4">
+              <h4 class="text-xs font-bold uppercase tracking-wider text-gray-400">Not Included:</h4>
+              <ul class="space-y-2 text-xs text-gray-300 leading-relaxed">
+                <li class="flex items-start gap-2">
+                  <span class="text-red-400 font-bold">-</span>
+                  <span>Similan National Park Fees: 500 THB entry + 200 THB per diver/day (subject to change by park authorities)</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-red-400 font-bold">-</span>
+                  <span>Full scuba equipment rental: 600 THB per day</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- CTA Engagement Mechanics -->
+            <div class="space-y-3">
+              <a 
+                href="https://wa.me/66918233120?text=Hi%20Luna%20Diving!%20I'm%20interested%20in%20booking%20a%20Similan%20National%20Park%20Day%20Trip%20from%20Khao%20Lak."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center justify-center bg-[#25D366] hover:bg-[#20ba5a] text-white text-sm font-bold py-3.5 w-full rounded-full transition-all duration-300 text-center shadow-md"
+              >
+                Book via WhatsApp
+              </a>
+              <a 
+                href="/contact" 
+                class="flex items-center justify-center bg-white/10 hover:bg-white/20 text-white text-sm font-medium py-3.5 w-full rounded-full transition-all duration-300 text-center"
+              >
+                Inquire via Email
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+</Layout>
+
+<!-- Floating WhatsApp Action Node -->
+<div class="fixed bottom-6 right-6 z-[99999] pointer-events-auto">
+  <a 
+    href="https://wa.me/66918233120?text=Hi%20Luna%20Diving!%20I'm%20interested%20in%20a%20Similan%20Islands%20day%20trip." 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    class="flex items-center justify-center w-14 h-14 md:w-[60px] md:h-[60px] bg-[#25D366] text-white rounded-full shadow-[0_4px_16px_rgba(0,0,0,0.25)] hover:scale-105 hover:bg-[#20ba5a] transition-all duration-300 ease-out"
+    aria-label="Chat on WhatsApp"
+  >
+    <svg class="w-7 h-7 md:w-8 md:h-8" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.454 5.709 1.455h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+</div>

@@ -1,0 +1,1006 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const vesselName = "Thailand Master";
+const tagline = "Luxurious Cruises to the Best of Thailand & Myanmar (Mergui Archipelago)";
+
+const slideshow = [
+  { img: '/images/liveaboard/thailand-master/thailand-master-thailand-liveaboard.webp', text: 'The Thailand Master, officially known as Cheng I Sao, cruising the Andaman Sea.' },
+  { img: '/images/liveaboard/thailand-master/thailand-master-double-cabin.webp', text: 'Luxurious Double Cabin with private en-suite bathroom and air conditioning.' },
+  { img: '/images/liveaboard/thailand-master/thailand-master-twin-cabin.webp', text: 'Comfortable Twin Cabin configuration with private bathroom and climate control.' },
+  { img: '/images/liveaboard/thailand-master/thaialnd-master-twin-double-cabin.webp', text: 'Flexible Twin/Double Cabin setup optimized for guest comfort.' },
+  { img: '/images/liveaboard/thailand-master/thailand-master-quad-cabin.webp', text: 'Spacious Quadruple Cabin, perfect for groups and families.' },
+  { img: '/images/liveaboard/thailand-master/thailand-master-saloon.webp', text: 'Air-conditioned main lounge featuring comfortable sofas and entertainment systems.' },
+  { img: '/images/liveaboard/thailand-master/thailand-master-indoor-dining-area.webp', text: 'Indoor saloon area where fresh Thai and international fusion buffet is served.' },
+  { img: '/images/liveaboard/thailand-master/the-phinisi-dining-area.webp', text: 'Beautifully designed indoor dining space.' },
+  { img: '/images/liveaboard/thailand-master/thailand-master-main-deck.webp', text: 'Spacious main deck with covered areas to enjoy the refreshing tropical sea breeze.' },
+  { img: '/images/liveaboard/thailand-master/thailand-master-dive-deck.webp', text: 'Functional and highly organized dive deck for seamless gear preparation.' },
+  { img: '/images/liveaboard/thailand-master/thailand-master-sun-deck.webp', text: 'Massive open solarium deck with loungers for sunbathing and relaxing between dives.' },
+  { img: '/images/liveaboard/thailand-master/thailand-master-similan-islands-liveaboard.webp', text: 'Thailand Master anchored in the pristine crystal waters of the Similan Islands.' }
+];
+
+const technicalSpecs = [
+  { label: 'Year Built / Refit', value: '2007 / 2018' },
+  { label: 'Max Capacity', value: '18 Guests / 7 Cabins' }, 
+  { label: 'Itineraries', value: '4, 6, 7 & 10 Nights' },
+  { label: 'Destinations', value: 'Thailand & Myanmar' }
+];
+
+const cabins = [
+  {
+    name: 'Double/Twin Cabin',
+    price: '1,580$',
+    location: 'Lower Deck – 2 Cabins',
+    details: 'Double or Twin – Private Bathroom – Hot Shower – Air Con & Fan',
+    trip: '5 Days / 4 Nights – 14 Dives'
+  },
+  {
+    name: 'Twin Cabin',
+    price: '1,580$',
+    location: 'Lower Deck – 3 Cabins',
+    details: 'Twin Bed – Private Bathroom – Hot Shower – Air Con & Fan',
+    trip: '5 Days / 4 Nights – 14 Dives'
+  },
+  {
+    name: 'Quad Cabin',
+    price: '1,180$',
+    location: 'Lower Deck – 2 Cabins',
+    details: 'Twin Bed – Private Bathroom – Hot Shower – Air Con & Fan',
+    trip: '5 Days / 4 Nights – 14 Dives'
+  }
+];
+
+const includedItems = [
+  'Transfer Phuket / Khao Lak Hotel to the Vessel and return',
+  'Accommodation in selected private or shared luxury cabin',
+  'All meals on board (Breakfast, Lunch, Dinner buffet style)',
+  'Fresh water, tea, coffee, snacks, and soft drinks',
+  'Towels and warm drinks after every dive',
+  'Full dive guiding services with small groups',
+  'Scuba cylinders, weights, and weight belt'
+];
+
+const notIncludedItems = [
+  { text: 'Diving Accident Insurance', highlight: 'Compulsory' },
+  { text: 'Alcoholic beverages and espresso coffees', highlight: '' },
+  { text: 'Marine Park Fees & Port Taxes', highlight: 'Cash on board' },
+  { text: 'Mergui Archipelago Visa & Entry Fees (Myanmar trips)', highlight: 'Required' },
+  { text: 'Rental diving equipment & Dive computer', highlight: 'Available on request' },
+  { text: 'Crew and Guide Gratuities / Tips', highlight: 'Optional' }
+];
+
+const schedule = [
+  { dates: "18 Oct - 26 Oct 26", itinerary: "9D/8N Best of Thailand", route: "Chalong / Tablamu", type: "Best of Thailand", isSoldOut: false },
+  { dates: "27 Oct - 04 Nov 26", itinerary: "9D/8N Best of Thailand", route: "Tablamu / Chalong", type: "Best of Thailand", isSoldOut: false },
+  { dates: "05 Nov - 15 Nov 26", itinerary: "11D/10N Best of Thailand", route: "SOLD OUT", type: "Best of Thailand", isSoldOut: true },
+  { dates: "16 Nov - 26 Nov 26", itinerary: "11D/10N Best of Thailand", route: "Tablamu / Chalong", type: "Best of Thailand", isSoldOut: false },
+  { dates: "27 Nov - 03 Dec 26", itinerary: "7D/6N Similan & Surin", route: "Chalong / Tablamu", type: "Similan & Surin", isSoldOut: false },
+  { dates: "04 Dec - 12 Dec 26", itinerary: "9D/8N Best of Thailand", route: "Tablamu / Chalong", type: "Best of Thailand", isSoldOut: false },
+  { dates: "13 Dec - 21 Dec 26", itinerary: "9D/8N Best of Thailand", route: "SOLD OUT", type: "Best of Thailand", isSoldOut: true },
+  { dates: "22 Dec - 30 Dec 26", itinerary: "9D/8N Best of Thailand", route: "Chalong / Tablamu", type: "Best of Thailand", isSoldOut: false },
+  { dates: "30 Dec 26 - 05 Jan 27", itinerary: "7D/6N Similan & Surin", route: "Tablamu / Tablamu", type: "Similan & Surin", isSoldOut: false },
+  { dates: "06 Jan - 20 Jan 27", itinerary: "Charter", route: "SOLD OUT", type: "Charter", isSoldOut: true },
+  { dates: "21 Jan - 28 Jan 27", itinerary: "8D/7N Mergui Archipelago", route: "Ranong / Ranong", type: "Mergui Archipelago", isSoldOut: false },
+  { dates: "29 Jan - 05 Feb 27", itinerary: "8D/7N Mergui Archipelago", route: "Ranong / Ranong", type: "Mergui Archipelago", isSoldOut: false },
+  { dates: "14 Feb - 24 Feb 27", itinerary: "11D/10N Mergui Archipelago", route: "Ranong / Ranong", type: "Mergui Archipelago", isSoldOut: false },
+  { dates: "25 Feb - 04 Mar 27", itinerary: "8D/7N Mergui Archipelago", route: "SOLD OUT", type: "Mergui Archipelago", isSoldOut: true },
+  { dates: "05 Mar - 15 Mar 27", itinerary: "11D/10N Mergui Archipelago", route: "SOLD OUT", type: "Mergui Archipelago", isSoldOut: true },
+  { dates: "16 Mar - 23 Mar 27", itinerary: "8D/7N Mergui Archipelago", route: "Ranong / Ranong", type: "Mergui Archipelago", isSoldOut: false },
+  { dates: "24 Mar - 31 Mar 27", itinerary: "8D/7N Mergui Archipelago", route: "Ranong / Ranong", type: "Mergui Archipelago", isSoldOut: false },
+  { dates: "02 Apr - 12 Apr 27", itinerary: "11D/10N Mergui Archipelago", route: "SOLD OUT", type: "Mergui Archipelago", isSoldOut: true },
+  { dates: "13 Apr - 23 Apr 27", itinerary: "11D/10N Best of Thailand", route: "Chalong / Tablamu", type: "Best of Thailand", isSoldOut: false },
+  { dates: "24 Apr - 30 Apr 27", itinerary: "7D/6N Similan & Surin", route: "SOLD OUT", type: "Similan & Surin", isSoldOut: true },
+  { dates: "30 Apr - 08 May 27", itinerary: "9D/8N Best of Thailand", route: "Chalong / Tablamu", type: "Best of Thailand", isSoldOut: false }
+];
+---
+
+<Layout title={`${vesselName} Liveaboard | Luna Diving Phuket`}>
+  <main class="pcom-wrapper">
+    
+    <section class="pcom-hero">
+      <span class="pcom-subtitle">M/Y {vesselName}</span>
+      <h1 class="pcom-title">{vesselName}</h1>
+      <div class="pcom-divider"></div>
+      <p class="pcom-tagline">{tagline}</p>
+    </section>
+
+    <section class="pcom-specs-container">
+      <div class="pcom-specs-grid">
+        {technicalSpecs.map((spec) => (
+          <div class="spec-item">
+            <span class="spec-label">{spec.label}</span>
+            <span class="spec-value">{spec.value}</span>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="pcom-gallery-section">
+      <div class="gallery-slider-outer">
+        <div id="slider" class="gallery-slider-inner no-scrollbar">
+          {slideshow.map((slide, index) => (
+            <div class="gallery-slide">
+              <img 
+                src={slide.img} 
+                alt={`${vesselName} - ${slide.text}`} 
+                loading={index === 0 ? "eager" : "lazy"}
+                decoding={index === 0 ? "sync" : "async"}
+              />
+              <div class="gallery-caption">
+                <span class="caption-count">Vessel Tour {index + 1} / {slideshow.length}</span>
+                <p class="caption-text">{slide.text}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <button id="prevBtn" class="nav-button prev" aria-label="Previous">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5"></path></svg>
+        </button>
+        <button id="nextBtn" class="nav-button next" aria-label="Next">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"></path></svg>
+        </button>
+      </div>
+    </section>
+
+    <section class="pcom-pricing-section">
+      <div class="pricing-header">
+        <h2 class="content-heading">Cabin Options & Rates</h2>
+        <div class="heading-line"></div>
+      </div>
+      
+      <div class="pcom-cabins-list">
+        {cabins.map((cabin) => (
+          <div class="cabin-rate-card">
+            <div class="cabin-main-info">
+              <h3 class="cabin-name">{cabin.name}</h3>
+              <span class="cabin-location">{cabin.location}</span>
+              <p class="cabin-details">{cabin.details}</p>
+              <span class="cabin-trip-tag">{cabin.trip}</span>
+            </div>
+            <div class="cabin-price-zone">
+              <span class="price-amount">{cabin.price}</span>
+              <span class="price-label">Per Person</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="pcom-details-grid-section">
+      <div class="details-split-container">
+        <div class="details-column included-box">
+          <h3 class="details-col-title">
+            <svg class="title-icon icon-inc" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            Included In The Price
+          </h3>
+          <ul class="details-list">
+            {includedItems.map((item) => (
+              <li class="details-item">
+                <svg class="item-dot dot-inc" fill="currentColor" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3"/></svg>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="details-column excluded-box">
+          <h3 class="details-col-title">
+            <svg class="title-icon icon-exc" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            Not Included / Extra Fees
+          </h3>
+          <ul class="details-list">
+            {notIncludedItems.map((item) => (
+              <li class="details-item exc-item">
+                <svg class="item-dot dot-exc" fill="currentColor" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3"/></svg>
+                <div class="exc-text-wrapper">
+                  <span class="exc-main-text">{item.text}</span>
+                  {item.highlight && <span class="exc-highlight">{item.highlight}</span>}
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="pcom-schedule-section">
+      <div class="pricing-header">
+        <h2 class="content-heading">Cruise Schedule & Availability</h2>
+        <div class="heading-line"></div>
+      </div>
+
+      <div class="table-responsive-container">
+        <table class="schedule-table">
+          <thead>
+            <tr>
+              <th>Departure Dates</th>
+              <th>Itinerary</th>
+              <th>Start / Finish Port</th>
+              <th class="table-action-header">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {schedule.map((row) => (
+              <tr class={row.isSoldOut ? "row-sold-out" : ""}>
+                <td class="td-dates">{row.dates}</td>
+                <td class="td-itinerary">
+                  <span class="itinerary-text">{row.itinerary}</span>
+                  <span class={`type-badge badge-${row.type.toLowerCase().replace(/&/g, 'and').replace(/\s+/g, '-')}`}>
+                    {row.type}
+                  </span>
+                </td>
+                <td class="td-route">
+                  {row.isSoldOut ? <span class="sold-out-text">SOLD OUT</span> : row.route}
+                </td>
+                <td class="td-action">
+                  {row.isSoldOut ? (
+                    <span class="table-sold-btn">Sold Out</span>
+                  ) : (
+                    <a href={`/contact?vessel=${vesselName}&date=${encodeURIComponent(row.dates)}`} class="table-book-btn">
+                      Book
+                    </a>
+                  )}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="pcom-content-grid">
+      <div class="content-main">
+        <h2 class="content-heading">Vessel Profile</h2>
+        <div class="heading-line"></div>
+        <p class="paragraph">
+          The <strong>Thailand Master</strong>, officially known as <strong>“Cheng I Sao”</strong>, is a premium liveaboard vessel engineered to offer top-tier dive cruises across the best destinations in Thailand and Myanmar. Originally built in Indonesia in 2007, she has successfully worked throughout Thailand, Indonesia, the Andaman Islands, and the Maldives. In 2018, she returned to Thailand fully equipped to offer unforgettable diving adventures across 4 different itineraries ranging from 4, 6, 7, and 10 nights.
+        </p>
+        <p class="paragraph">
+          Onboard, you will find 7 luxurious cabins designed to comfortably accommodate up to 18 passengers. The layouts include two double cabins, three twin cabins, and two quadruple cabins—all fitted with private en-suite bathrooms, hot showers, individually regulated air conditioning, and a fan. 
+        </p>
+        <p class="paragraph">
+          The common areas feature a beautiful air-conditioned main lounge complete with an indoor bar, plush sofas, a television, stereo system, and a dedicated charging station for photography and video gear. Outside, guests can relax in pristine shaded social sections or lay down on the spacious solarium areas to enjoy the sea breeze. Meals are served buffet-style, presenting a high-quality fusion of authentic Thai recipes and international international favorites.
+        </p>
+      </div>
+
+      <div class="content-sidebar">
+        <div class="booking-sticky-box">
+          <h3 class="sidebar-heading">Ready to Dive?</h3>
+          <p class="sidebar-text">Plan your next scuba expedition aboard the Thailand Master. Places fill up quickly during peak Andaman season.</p>
+          <a href="/contact" class="pcom-btn-primary">
+            Inquire This Liveaboard
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <a 
+    href="https://wa.me/66918233120?text=Hi%20Luna%20Diving!%20I'm%20interested%20in%20booking%20the%20Thailand%20Master%20liveaboard." 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    class="pcom-whatsapp-float"
+    aria-label="Chat on WhatsApp"
+  >
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.454 5.709 1.455h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+</Layout>
+
+<script>
+  const slider = document.getElementById('slider') as HTMLDivElement | null;
+  const prevBtn = document.getElementById('prevBtn') as HTMLButtonElement | null;
+  const nextBtn = document.getElementById('nextBtn') as HTMLButtonElement | null;
+
+  if (slider && prevBtn && nextBtn) {
+    nextBtn.addEventListener('click', (): void => {
+      const slideWidth = slider.clientWidth;
+      if (slider.scrollLeft + slideWidth >= slider.scrollWidth - 5) {
+        slider.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        slider.scrollBy({ left: slideWidth, behavior: 'smooth' });
+      }
+    });
+
+    prevBtn.addEventListener('click', (): void => {
+      const slideWidth = slider.clientWidth;
+      if (slider.scrollLeft <= 0) {
+        slider.scrollTo({ left: slider.scrollWidth, behavior: 'smooth' });
+      } else {
+        slider.scrollBy({ left: -slideWidth, behavior: 'smooth' });
+      }
+    });
+  }
+</script>
+
+<style>
+  :root {
+    --pcom-font: "Next", "Arial Narrow", Arial, sans-serif;
+    --pcom-color-canvas: #fff;
+    --pcom-color-primary: #010205;
+    --pcom-color-surface: #f1f1f4;
+    --pcom-color-accent: #008EA7;
+    --pcom-color-danger: #b31010;
+    --pcom-color-text-muted: #4f5059;
+    
+    --pcom-space-md: clamp(16px, 1.25vw + 12px, 36px);
+    --pcom-space-lg: clamp(32px, 2.75vw + 23px, 76px);
+  }
+
+  .pcom-wrapper {
+    background-color: var(--pcom-color-canvas);
+    min-height: 100vh;
+    font-family: var(--pcom-font);
+    color: var(--pcom-color-primary);
+    width: 100%;
+    box-sizing: border-box;
+    padding-top: clamp(100px, 10vw, 140px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Hero */
+  .pcom-hero {
+    width: 100%;
+    max-width: 820px;
+    padding: 0 var(--pcom-space-md);
+    text-align: center;
+    margin-bottom: var(--pcom-space-md);
+  }
+
+  .pcom-subtitle {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--pcom-color-accent);
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  .pcom-title {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    margin: 0 0 16px 0;
+    line-height: 1.1;
+  }
+
+  .pcom-divider {
+    width: 60px;
+    height: 2px;
+    background-color: var(--pcom-color-primary);
+    margin: 0 auto 16px auto;
+  }
+
+  .pcom-tagline {
+    font-size: clamp(11px, 1.5vw, 13px);
+    color: var(--pcom-color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-weight: 600;
+  }
+
+  /* Specs */
+  .pcom-specs-container {
+    width: 100%;
+    background-color: #fafafa;
+    border-top: 1px solid var(--pcom-color-surface);
+    border-bottom: 1px solid var(--pcom-color-surface);
+    padding: 24px 0;
+    margin-bottom: var(--pcom-space-lg);
+  }
+
+  .pcom-specs-grid {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 0 var(--pcom-space-md);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  @media (min-width: 768px) {
+    .pcom-specs-grid {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+    .spec-item:not(:first-child) {
+      border-left: 1px solid #e5e7eb;
+      padding-left: 20px;
+    }
+  }
+
+  .spec-item {
+    text-align: center;
+  }
+
+  .spec-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--pcom-color-text-muted);
+    font-weight: 700;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .spec-value {
+    font-size: clamp(15px, 2vw, 18px);
+    font-weight: 700;
+  }
+
+  /* Gallery */
+  .pcom-gallery-section {
+    width: 100%;
+    max-width: 820px;
+    padding: 0 var(--pcom-space-md);
+    margin-bottom: var(--pcom-space-lg);
+    box-sizing: border-box;
+    position: relative;
+  }
+
+  .gallery-slider-outer {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .gallery-slider-inner {
+    width: 100%;
+    display: flex;
+    overflow-x: auto;
+    snap-type: x mandatory;
+    scroll-behavior: smooth;
+    border-radius: 8px;
+    background-color: var(--pcom-color-primary);
+    height: 240px !important;
+  }
+
+  @media (min-width: 768px) {
+    .gallery-slider-inner {
+      height: 400px !important;
+    }
+  }
+
+  .gallery-slide {
+    width: 100% !important;
+    flex-shrink: 0;
+    height: 100% !important;
+    position: relative;
+    snap-align: start;
+  }
+
+  .gallery-slide img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+  }
+
+  .gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(1, 2, 5, 0.85));
+    padding: 40px 20px 20px 20px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  .caption-count {
+    font-size: 9px;
+    font-weight: 700;
+    color: var(--pcom-color-accent);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 4px;
+  }
+
+  .caption-text {
+    font-size: 12px;
+    font-weight: 400;
+    margin: 0;
+    opacity: 0.9;
+    line-clamp: 2;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .nav-button {
+    display: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    color: var(--pcom-color-primary);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s, opacity 0.2s;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 10;
+    opacity: 0;
+  }
+
+  @media (min-width: 768px) {
+    .nav-button { display: flex; }
+    .gallery-slider-outer:hover .nav-button { opacity: 1; }
+  }
+
+  .nav-button.prev { left: 16px; }
+  .nav-button.next { right: 16px; }
+
+  /* Pricing List */
+  .pcom-pricing-section {
+    width: 100%;
+    max-width: 820px;
+    padding: 0 var(--pcom-space-md);
+    margin-bottom: var(--pcom-space-lg);
+    box-sizing: border-box;
+  }
+
+  .pricing-header {
+    text-align: left;
+    margin-bottom: 24px;
+  }
+
+  .pcom-cabins-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .cabin-rate-card {
+    background-color: #fafafa;
+    border: 1px solid var(--pcom-color-surface);
+    border-radius: 6px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    transition: border-color 0.2s, background-color 0.2s;
+  }
+
+  .cabin-rate-card:hover {
+    border-color: var(--pcom-color-primary);
+    background-color: #ffffff;
+  }
+
+  @media (min-width: 640px) {
+    .cabin-rate-card {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  .cabin-main-info {
+    text-align: left;
+    flex: 1;
+  }
+
+  .cabin-name {
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0 0 4px 0;
+    letter-spacing: -0.01em;
+  }
+
+  .cabin-location {
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--pcom-color-accent);
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  .cabin-details {
+    font-size: 13px;
+    color: var(--pcom-color-text-muted);
+    margin: 0 0 12px 0;
+    line-height: 1.5;
+  }
+
+  .cabin-trip-tag {
+    display: inline-block;
+    background-color: var(--pcom-color-surface);
+    color: var(--pcom-color-primary);
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .cabin-price-zone {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 140px;
+  }
+
+  @media (min-width: 640px) {
+    .cabin-price-zone {
+      text-align: right;
+      border-left: 1px solid var(--pcom-color-surface);
+      padding-left: 20px;
+    }
+  }
+
+  .price-amount {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--pcom-color-primary);
+    line-height: 1;
+  }
+
+  .price-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    color: var(--pcom-color-text-muted);
+    font-weight: 600;
+    margin-top: 4px;
+    letter-spacing: 0.5px;
+  }
+
+  /* Inclusions & Fees */
+  .pcom-details-grid-section {
+    width: 100%;
+    max-width: 820px;
+    padding: 0 var(--pcom-space-md);
+    margin-bottom: var(--pcom-space-lg);
+    box-sizing: border-box;
+  }
+
+  .details-split-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  @media (min-width: 768px) {
+    .details-split-container {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .details-column {
+    background-color: #fafafa;
+    border: 1px solid var(--pcom-color-surface);
+    border-radius: 6px;
+    padding: 32px 24px;
+    text-align: left;
+  }
+
+  .details-col-title {
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0 0 24px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .title-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+
+  .icon-inc { color: var(--pcom-color-accent); }
+  .icon-exc { color: var(--pcom-color-danger); }
+
+  .details-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .details-item {
+    display: flex;
+    align-items: flex-start;
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: var(--pcom-color-primary);
+  }
+
+  .item-dot {
+    width: 6px;
+    height: 6px;
+    margin-right: 12px;
+    margin-top: 7px;
+    flex-shrink: 0;
+  }
+
+  .dot-inc { color: var(--pcom-color-accent); }
+  .dot-exc { color: var(--pcom-color-danger); }
+
+  .exc-item { width: 100%; }
+
+  .exc-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  @media (min-width: 400px) {
+    .exc-text-wrapper {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+    }
+  }
+
+  .exc-main-text { font-weight: 500; }
+
+  .exc-highlight {
+    font-size: 11px;
+    font-weight: 700;
+    background-color: var(--pcom-color-surface);
+    color: var(--pcom-color-primary);
+    padding: 2px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-block;
+    margin-top: 4px;
+    width: fit-content;
+  }
+
+  @media (min-width: 400px) {
+    .exc-highlight {
+      margin-top: 0;
+      flex-shrink: 0;
+    }
+  }
+
+  /* Schedule Table */
+  .pcom-schedule-section {
+    width: 100%;
+    max-width: 820px;
+    padding: 0 var(--pcom-space-md);
+    margin-bottom: var(--pcom-space-lg);
+    box-sizing: border-box;
+  }
+
+  .table-responsive-container {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid var(--pcom-color-surface);
+    border-radius: 6px;
+    background-color: #fafafa;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 13.5px;
+  }
+
+  .schedule-table th {
+    background-color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 16px 20px;
+    color: var(--pcom-color-text-muted);
+    border-bottom: 1px solid var(--pcom-color-surface);
+  }
+
+  .schedule-table td {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--pcom-color-surface);
+    vertical-align: middle;
+    white-space: nowrap;
+  }
+
+  .schedule-table tr:last-child td { border-bottom: none; }
+  .schedule-table tr:hover td { background-color: #ffffff; }
+
+  .td-dates { font-weight: 700; color: var(--pcom-color-primary); }
+  
+  .td-itinerary {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .itinerary-text { font-weight: 500; }
+
+  .type-badge {
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    display: inline-block;
+  }
+
+  .badge-best-of-thailand { background-color: rgba(0, 142, 167, 0.1); color: var(--pcom-color-accent); }
+  .badge-similan-and-surin { background-color: rgba(0, 142, 167, 0.1); color: var(--pcom-color-accent); }
+  .badge-charter { background-color: rgba(1, 2, 5, 0.08); color: var(--pcom-color-primary); }
+  .badge-mergui-archipelago { background-color: rgba(179, 16, 16, 0.1); color: var(--pcom-color-danger); }
+
+  .td-route { color: var(--pcom-color-text-muted); font-weight: 400; }
+  .table-action-header { text-align: right; }
+  .td-action { text-align: right; }
+
+  .table-book-btn {
+    display: inline-block;
+    background-color: var(--pcom-color-primary);
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 6px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.15s ease;
+  }
+
+  .table-book-btn:hover { background-color: var(--pcom-color-accent); }
+
+  /* Sold out specific states */
+  .row-sold-out td { opacity: 0.6; }
+  .sold-out-text { color: var(--pcom-color-danger); font-weight: 700; font-size: 11px; letter-spacing: 0.5px; }
+  
+  .table-sold-btn {
+    display: inline-block;
+    background-color: var(--pcom-color-surface);
+    color: var(--pcom-color-text-muted);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 6px 16px;
+    border-radius: 4px;
+    cursor: not-allowed;
+  }
+
+  /* Content Structure */
+  .pcom-content-grid {
+    width: 100%;
+    max-width: 820px;
+    padding: 0 var(--pcom-space-md) var(--pcom-space-lg) var(--pcom-space-md);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    box-sizing: border-box;
+  }
+
+  .content-main { text-align: left; }
+
+  .content-heading {
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0 0 6px 0;
+    letter-spacing: -0.01em;
+  }
+
+  .heading-line {
+    width: 40px;
+    height: 2px;
+    background-color: var(--pcom-color-accent);
+    margin-bottom: 20px;
+  }
+
+  .paragraph {
+    font-size: 14.5px;
+    line-height: 1.65;
+    color: var(--pcom-color-primary);
+    margin: 0 0 20px 0;
+  }
+
+  .content-sidebar { text-align: left; }
+
+  .booking-sticky-box {
+    background-color: #fafafa;
+    border: 1px solid var(--pcom-color-surface);
+    border-radius: 6px;
+    padding: 24px;
+  }
+
+  .sidebar-heading {
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0 0 8px 0;
+  }
+
+  .sidebar-text {
+    font-size: 13px;
+    color: var(--pcom-color-text-muted);
+    line-height: 1.5;
+    margin: 0 0 20px 0;
+  }
+
+  .booking-sticky-box .pcom-btn-primary {
+    display: block;
+    background-color: var(--pcom-color-primary);
+    color: #ffffff;
+    text-align: center;
+    padding: 12px 20px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.15s ease;
+  }
+
+  .booking-sticky-box .pcom-btn-primary:hover {
+    background-color: var(--pcom-color-accent);
+  }
+
+  @media (min-width: 768px) {
+    .pcom-content-grid { grid-template-columns: 1fr 260px; }
+    .booking-sticky-box { position: sticky; top: 160px; }
+  }
+
+  /* WhatsApp Float Style */
+  .pcom-whatsapp-float {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(1, 2, 5, 0.2);
+    z-index: 999999;
+    transition: transform 0.3s ease-out, background-color 0.3s ease;
+    text-decoration: none;
+  }
+
+  .pcom-whatsapp-float:hover {
+    transform: scale(1.05);
+    background-color: #128C7E;
+  }
+
+  .pcom-whatsapp-float svg {
+    width: 32px;
+    height: 32px;
+  }
+</style>

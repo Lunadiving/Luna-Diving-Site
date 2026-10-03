@@ -1,0 +1,109 @@
+---
+// src/pages/tours/index.astro
+
+import '../../styles/global.css';
+import Layout from '../../layouts/Layout.astro';
+
+const tours = [
+  {
+    slug: "phi-phi-islands",
+    name: "Phi Phi Islands",
+    image: "/images/tours/phi-phi.webp",
+    description: "Famous for its dramatic cliffs and crystal-clear waters, the Phi Phi Islands are a must-see. Swim, snorkel, or just relax on the stunning beaches.",
+  },
+  {
+    slug: "james-bond-island",
+    name: "James Bond Island",
+    image: "/images/tours/james-bond.webp",
+    description: "Step into the world of James Bond in Phang Nga Bay, where you'll discover the iconic James Bond Island (Koh Tapu).",
+  },
+  {
+    slug: "koh-kradan-island",
+    name: "Koh Kradan Island",
+    image: "/images/tours/koh-kradan.webp",
+    description: "Escape to Koh Kradan, a serene island with soft white sands and vibrant coral reefs. Explore the untouched beauty of this tropical paradise.",
+  },
+  {
+    slug: "koh-rok-island",
+    name: "Koh Rok Island",
+    image: "/images/tours/koh-rok.webp",
+    description: "Koh Rok is a hidden gem, perfect for those who love snorkeling and diving. Explore its turquoise waters, vibrant coral reefs, and the rich marine life.",
+  },
+  {
+    slug: "koh-haa-island",
+    name: "Koh Haa Island",
+    image: "/images/tours/koh-haa.webp",
+    description: "Known for its stunning lagoons and rich marine biodiversity, Koh Haa is a paradise for snorkelers and divers.",
+  },
+  {
+    slug: "krabi-4-islands",
+    name: "Krabi 4 Islands",
+    image: "/images/tours/krabi-4.webp",
+    description: "Visit the famous Krabi 4 Islands tour, which includes Phra Nang Cave Beach, Chicken Island, Poda Island, and Tup Island.",
+  },
+  {
+    slug: "similan-islands",
+    name: "Similan Islands",
+    image: "/images/tours/similan.webp",
+    description: "Recognized as one of the top diving spots in the world, the Similan Islands offer incredible underwater scenery and an abundance of marine life.",
+  },
+  {
+    slug: "surin-islands",
+    name: "Surin Islands",
+    image: "/images/tours/surin.webp",
+    description: "The Surin Islands are a part of a marine national park and are known for their untouched nature and vibrant coral reefs.",
+  }
+];
+---
+
+<Layout title="Day Tours from Phuket | Island Hopping | Luna Diving">
+  
+  <div class="block w-full pt-24 md:pt-28">
+    
+    <header class="max-w-5xl mx-auto pt-16 px-6 text-center font-sans">
+      <h1 class="text-3xl md:text-4xl font-bold tracking-tight text-[#1A1A1A] mb-6">
+        Tour from Phuket
+      </h1>
+      <p class="text-lg text-gray-600 mb-12 max-w-2xl mx-auto">
+        Discover Thailand's most iconic islands with our exclusive tours from Phuket. Book your adventure with Luna Diving today!
+      </p>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 pb-16 font-sans">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12">
+        {tours.map((tour) => (
+          <article class="group relative flex flex-col bg-white border border-gray-200 rounded-[24px] shadow-sm transition-all duration-300 hover:shadow-md overflow-hidden">
+            
+            <div class="w-full aspect-video bg-[#f8f8fa] overflow-hidden">              
+              <img 
+                src={tour.image} 
+                alt={tour.name} 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
+            </div>
+
+            <div class="p-6 flex flex-col flex-grow">
+              <h3 class="text-xl font-bold text-[#1A1A1A] mb-3">
+                {tour.name}
+              </h3>
+              
+              <p class="text-sm text-[#706F6F] mb-6 flex-grow leading-relaxed">
+                {tour.description}
+              </p>
+
+              <a 
+                href={`https://wa.me/66918233120?text=Hi%20Luna%20Diving!%20I%20am%20interested%20in%20the%20${tour.slug}%20tour.`} 
+                target="_blank"
+                class="flex items-center justify-center bg-[#008EA7] text-white text-sm font-medium py-3 w-full rounded-full hover:bg-[#1A1A1A] transition-colors duration-300"
+              >
+                WHATSAPP
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </main>
+
+  </div>
+</Layout>

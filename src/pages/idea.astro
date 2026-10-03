@@ -1,0 +1,829 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const mainCategories = [
+  {
+    name: 'Scuba Diving Phuket',
+    description: 'Daily diving to Phi Phi, Racha Yai, Racha Noi & Shark Point.',
+    image: '/images/hero/day-trip-phuket.webp',
+    link: '/day-trip-phuket',
+    altText: 'Scuba diving sea turtle near Phuket coral reef',
+  },
+  {
+    name: 'Similan Liveaboards',
+    description: 'Multi-day safaris to Similan, Surin & Richelieu Rock.',
+    image: '/images/hero/thailand-liveaboards.webp',
+    link: '/thailand-liveaboards',
+    altText: 'Similan liveaboard diving boat in Thailand',
+  },
+  {
+    name: 'PADI Courses',
+    description: 'Learn to dive in Phuket with professional instructors.',
+    image: '/images/hero/padi-scuba-diving-courses.webp',
+    link: '/padi-scuba-diving-courses',
+    altText: 'Scuba diving instructor teaching students',
+  },
+  {
+    name: 'Private Yacht Charters',
+    description: 'Explore Thailand’s islands by private yacht.',
+    image: '/images/hero/private-dive-boat-charters-phuket.webp',
+    link: '/thailand-yachts',
+    altText: 'Luxury private yacht charter in Phuket',
+  },
+];
+
+const featuredLiveaboards = [
+  {
+    name: 'Deep Andaman Queen',
+    specs: '👥 25 guests  📏 30m  ⚡ 12 knots',
+    route: 'Similan / Surin / Richelieu Rock',
+    price: 'From 18,900 THB / person',
+    image: '/images/hero/thailand-liveaboards.webp',
+    link: '/liveaboards/deep-andaman-queen',
+    altText: 'Deep Andaman Queen liveaboard boat',
+  },
+  {
+    name: 'Pawara',
+    specs: '👥 16 guests  📏 27m  ⚡ 10 knots',
+    route: 'Similan / Surin',
+    price: 'From 16,500 THB / person',
+    image: '/images/hero/liveaboard-itinerary-thailand.webp',
+    link: '/liveaboards/pawara',
+    altText: 'Pawara liveaboard yacht',
+  },
+  {
+    name: 'Sawasdee Fasai',
+    specs: '👥 16 guests  📏 25m  ⚡ 10 knots',
+    route: 'Similan / Surin',
+    price: 'From 15,900 THB / person',
+    image: '/images/hero/dive-sites.webp',
+    link: '/liveaboards/sawasdee-fasai',
+    altText: 'Sawasdee Fasai liveaboard vessel',
+  },
+  {
+    name: 'The Junk',
+    specs: '👥 12 guests  📏 24m  ⚡ 8 knots',
+    route: 'Similan / Surin',
+    price: 'From 14,900 THB / person',
+    image: '/images/hero/private-dive-boat-charters-phuket.webp',
+    link: '/liveaboards/the-junk',
+    altText: 'The Junk sailing yacht liveaboard',
+  },
+];
+---
+
+<Layout title="Luna Diving | Premium Thailand Liveaboards & Scuba Adventures">
+  <main class="main-wrapper" id="theme-wrapper">
+
+    <!-- HERO SECTION -->
+    <section class="hero-container" aria-labelledby="hero-title">
+      <img
+        src="/images/hero/hero-poster.webp"
+        alt="Scuba diving and liveaboards in Thailand Andaman sea"
+        width="1200"
+        height="650"
+        fetchpriority="high"
+        decoding="async"
+        class="hero-poster"
+      />
+      <div class="video-overlay"></div>
+
+      <div class="hero-content">
+        <h1 id="hero-title" class="hero-title animated-element fade-in-second">
+          Scuba Diving in Phuket & Thailand Liveaboards
+        </h1>
+
+        <p class="hero-subtitle animated-element fade-in-third">
+          Discover Phuket scuba diving, Similan liveaboards, PADI courses and private boat adventures across the Andaman Sea.
+        </p>
+
+        <!-- Icon Navigation Quick Links -->
+        <div class="hero-icons-grid animated-element fade-in-fourth">
+          <a href="/thailand-liveaboards" class="hero-icon-item">
+            <div class="icon-circle">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 16h20M5 16l2-7h10l2 7M4 20h16"/></svg>
+            </div>
+            <span>Liveaboards</span>
+          </a>
+          <a href="/thailand-yachts" class="hero-icon-item">
+            <div class="icon-circle">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 16l3-7h12l3 7M2 20h20M12 9V3"/></svg>
+            </div>
+            <span>Yacht Charter</span>
+          </a>
+          <a href="/padi-scuba-diving-courses" class="hero-icon-item">
+            <div class="icon-circle">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/></svg>
+            </div>
+            <span>PADI Courses</span>
+          </a>
+          <a href="/day-trip-phuket" class="hero-icon-item">
+            <div class="icon-circle">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1zM4 22v-7"/></svg>
+            </div>
+            <span>Day Trips</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHOOSE YOUR ADVENTURE -->
+    <section class="adventure-section" aria-labelledby="adventure-title">
+      <div class="section-header-centered">
+        <h2 id="adventure-title">Choose your adventure</h2>
+      </div>
+
+      <div class="card-grid">
+        {
+          mainCategories.map((cat) => (
+            <article class="adventure-card">
+              <div class="card-image-container">
+                <img src={cat.image} alt={cat.altText} width="600" height="400" loading="lazy" decoding="async" />
+              </div>
+              <div class="card-body">
+                <h3>{cat.name}</h3>
+                <p>{cat.description}</p>
+                <a href={cat.link} class="card-btn">
+                  <span>Explore {cat.name.split(' ')[0]}</span>
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <!-- TOP DIVE SITES BANNER -->
+    <section class="top-sites-banner" aria-labelledby="sites-title">
+      <img src="/images/hero/dive-sites.webp" alt="Top dive sites in Thailand" width="1600" height="600" loading="lazy" decoding="async" class="sites-bg" />
+      <div class="sites-overlay"></div>
+      <div class="sites-content">
+        <h2 id="sites-title">Top Dive Sites in Thailand</h2>
+        <p>From the iconic Similan Islands to the best spots around Phuket. Explore our most popular dive destinations.</p>
+        <a href="/dive-sites-thailand" class="sites-btn">Explore Dive Sites</a>
+      </div>
+    </section>
+
+    <!-- FEATURED LIVEABOARDS -->
+    <section class="featured-liveaboards" aria-labelledby="featured-title">
+      <div class="section-header-flex">
+        <h2 id="featured-title">Featured Liveaboards</h2>
+        <a href="/thailand-liveaboards" class="view-all-link">View All Liveaboards &rarr;</a>
+      </div>
+
+      <div class="liveaboard-grid">
+        {
+          featuredLiveaboards.map((boat) => (
+            <div class="liveaboard-item-card">
+              <div class="boat-img-wrap">
+                <img src={boat.image} alt={boat.altText} width="500" height="350" loading="lazy" decoding="async" />
+              </div>
+              <div class="boat-info">
+                <h3>{boat.name}</h3>
+                <p class="boat-specs">{boat.specs}</p>
+                <p class="boat-route">{boat.route}</p>
+                <div class="boat-footer">
+                  <span class="boat-price">{boat.price}</span>
+                  <a href={boat.link} class="availability-btn">Check Availability</a>
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="testimonials-section" aria-labelledby="testimonials-title">
+      <div class="testimonials-header">
+        <h2 id="testimonials-title">What our divers say</h2>
+        <p class="testimonials-subtitle">Real experiences from our guests.</p>
+        <div class="google-rating-badge">
+          <span class="stars">★★★★★</span>
+          <span class="rating-score">4.9/5 on Google</span>
+        </div>
+      </div>
+      
+      <div class="testimonial-card-container">
+        <button class="carousel-arrow prev" aria-label="Previous testimonial">&#10094;</button>
+        <div class="testimonial-content-box">
+          <p class="testimonial-quote">"An unforgettable experience! The crew was amazing, the dive sites were incredible and everything was perfectly organized."</p>
+          <span class="testimonial-author">— Sarah M. • United Kingdom</span>
+        </div>
+        <button class="carousel-arrow next" aria-label="Next testimonial">&#10095;</button>
+      </div>
+    </section>
+
+    <!-- BOTTOM CTA BANNER -->
+    <section class="bottom-cta-banner" aria-labelledby="cta-title">
+      <div class="bottom-cta-inner">
+        <div class="cta-text">
+          <h2 id="cta-title">Ready for your next dive adventure?</h2>
+          <p>Get in touch with our team and let's plan your perfect trip.</p>
+        </div>
+        <div class="cta-buttons">
+          <a href="/contact" class="btn-primary-green">Check Availability</a>
+          <a href="https://wa.me/66918233120?text=Hi%20Luna%20Diving!" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-outline">
+            <svg class="whatsapp-icon-sm" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.454 5.709 1.455h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp Us
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a
+      href="https://wa.me/66918233120?text=Hi%20Luna%20Diving!%20I'm%20planning%20a%20diving%20trip%20to%20Thailand."
+      target="_blank"
+      rel="noopener noreferrer"
+      class="luna-whatsapp-floating"
+      aria-label="Chat with Luna Diving on WhatsApp"
+    >
+      <svg class="whatsapp-icon-svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.454 5.709 1.455h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+    </a>
+  </main>
+</Layout>
+
+<style>
+  .main-wrapper {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: #ffffff;
+    color: #111111;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* HERO */
+  .hero-container {
+    position: relative;
+    display: flex;
+    min-height: 90vh;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    text-align: center;
+    background: #0b131f;
+  }
+
+  .hero-poster {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  .video-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(180deg, rgba(5,15,30,0.5) 0%, rgba(5,15,30,0.75) 100%);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1100px;
+    padding: 4rem 1.5rem;
+  }
+
+  .hero-title {
+    margin: 0 0 1rem;
+    color: #ffffff;
+    font-size: clamp(2rem, 4.5vw, 3.5rem);
+    font-weight: 800;
+    line-height: 1.2;
+  }
+
+  .hero-subtitle {
+    max-width: 750px;
+    margin: 0 auto 2.5rem;
+    color: #e2e8f0;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    line-height: 1.6;
+  }
+
+  .hero-icons-grid {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+  }
+
+  .hero-icon-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    text-decoration: none;
+    color: #ffffff;
+    transition: transform 0.2s ease;
+  }
+
+  .hero-icon-item:hover {
+    transform: translateY(-4px);
+  }
+
+  .icon-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+  }
+
+  .hero-icon-item span {
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  /* CHOOSE YOUR ADVENTURE */
+  .adventure-section {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 5rem 2rem 3rem;
+  }
+
+  .section-header-centered {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .section-header-centered h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #111;
+  }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+
+  .adventure-card {
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    border: 1px solid #eaeaea;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.3s ease;
+  }
+
+  .adventure-card:hover {
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+  }
+
+  .card-image-container {
+    width: 100%;
+    aspect-ratio: 16 / 11;
+    overflow: hidden;
+  }
+
+  .card-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  .adventure-card:hover .card-image-container img {
+    transform: scale(1.05);
+  }
+
+  .card-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+  }
+
+  .card-body h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem;
+    color: #1a1a1a;
+  }
+
+  .card-body p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.5;
+    margin: 0 0 1.2rem;
+  }
+
+  .card-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #0c3562;
+    text-decoration: none;
+  }
+
+  .card-btn:hover {
+    text-decoration: underline;
+  }
+
+  /* TOP DIVE SITES BANNER */
+  .top-sites-banner {
+    position: relative;
+    max-width: 1300px;
+    margin: 2rem auto 4rem;
+    border-radius: 16px;
+    overflow: hidden;
+    min-height: 320px;
+    display: flex;
+    align-items: center;
+    padding: 3rem 4rem;
+  }
+
+  .sites-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .sites-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 100%);
+  }
+
+  .sites-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    color: #ffffff;
+  }
+
+  .sites-content h2 {
+    font-size: 2.2rem;
+    margin: 0 0 0.8rem;
+    font-weight: 700;
+  }
+
+  .sites-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    margin: 0 0 1.5rem;
+  }
+
+  .sites-btn {
+    display: inline-block;
+    background: #ffffff;
+    color: #000;
+    padding: 0.8rem 2rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    border-radius: 6px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background 0.2s;
+  }
+
+  .sites-btn:hover {
+    background: #f1f5f9;
+  }
+
+  /* FEATURED LIVEABOARDS */
+  .featured-liveaboards {
+    max-width: 1300px;
+    margin: 0 auto 5rem;
+    padding: 0 2rem;
+  }
+
+  .section-header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+
+  .section-header-flex h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #111;
+  }
+
+  .view-all-link {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #0c3562;
+    text-decoration: none;
+  }
+
+  .view-all-link:hover {
+    text-decoration: underline;
+  }
+
+  .liveaboard-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+
+  .liveaboard-item-card {
+    background: #fff;
+    border: 1px solid #eaeaea;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .boat-img-wrap {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+  }
+
+  .boat-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .boat-info {
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+  }
+
+  .boat-info h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin: 0 0 0.3rem;
+  }
+
+  .boat-specs {
+    font-size: 0.8rem;
+    color: #555;
+    margin: 0 0 0.3rem;
+  }
+
+  .boat-route {
+    font-size: 0.85rem;
+    color: #0c3562;
+    font-weight: 600;
+    margin: 0 0 1rem;
+  }
+
+  .boat-footer {
+    border-top: 1px solid #f0f0f0;
+    padding-top: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .boat-price {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #333;
+  }
+
+  .availability-btn {
+    display: block;
+    text-align: center;
+    background: #00b074;
+    color: #fff;
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .availability-btn:hover {
+    background: #009662;
+  }
+
+  /* TESTIMONIALS */
+  .testimonials-section {
+    max-width: 1000px;
+    margin: 0 auto 5rem;
+    padding: 0 2rem;
+    text-align: center;
+  }
+
+  .testimonials-header h2 {
+    font-size: 2rem;
+    margin: 0 0 0.3rem;
+    font-weight: 700;
+  }
+
+  .testimonials-subtitle {
+    color: #666;
+    margin: 0 0 1rem;
+  }
+
+  .google-rating-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+  }
+
+  .stars {
+    color: #f59e0b;
+    letter-spacing: 2px;
+  }
+
+  .testimonial-card-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 2.5rem;
+  }
+
+  .testimonial-content-box {
+    max-width: 700px;
+  }
+
+  .testimonial-quote {
+    font-size: 1.15rem;
+    font-style: italic;
+    color: #1e293b;
+    line-height: 1.6;
+    margin: 0 0 1rem;
+  }
+
+  .testimonial-author {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #64748b;
+  }
+
+  .carousel-arrow {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    color: #333;
+    transition: background 0.2s;
+  }
+
+  .carousel-arrow:hover {
+    background: #e2e8f0;
+  }
+
+  /* BOTTOM CTA BANNER */
+  .bottom-cta-banner {
+    background: #0c1829;
+    color: #ffffff;
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+
+  .bottom-cta-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .cta-text h2 {
+    font-size: 2.2rem;
+    margin: 0 0 0.5rem;
+    font-weight: 700;
+  }
+
+  .cta-text p {
+    color: #94a3b8;
+    font-size: 1.05rem;
+    margin: 0;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .btn-primary-green {
+    background: #00b074;
+    color: #ffffff;
+    padding: 0.9rem 2rem;
+    border-radius: 6px;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+  }
+
+  .btn-primary-green:hover {
+    background: #009662;
+  }
+
+  .btn-whatsapp-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    border: 2px solid rgba(255,255,255,0.3);
+    color: #ffffff;
+    padding: 0.8rem 2rem;
+    border-radius: 6px;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: border-color 0.2s;
+  }
+
+  .btn-whatsapp-outline:hover {
+    border-color: #ffffff;
+  }
+
+  .whatsapp-icon-sm {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* FLOATING WHATSAPP */
+  .luna-whatsapp-floating {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 999;
+    display: flex;
+    width: 60px;
+    height: 60px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #25d366;
+    color: #ffffff;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  }
+
+  .whatsapp-icon-svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 1100px) {
+    .card-grid, .liveaboard-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .card-grid, .liveaboard-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .top-sites-banner {
+      padding: 2rem;
+      min-height: auto;
+    }
+
+    .testimonial-card-container {
+      padding: 1.5rem;
+    }
+
+    .carousel-arrow {
+      display: none;
+    }
+  }
+</style>

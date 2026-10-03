@@ -1,0 +1,199 @@
+---
+// src/components/Header.astro
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/thailand-liveaboards', label: 'Liveaboard', subItems: [{ href: '/thailand-liveaboards/deep-andaman-queen', label: 'Deep Andaman Queen' }, { href: '/thailand-liveaboards/pawara', label: 'Pawara' }, { href: '/thailand-liveaboards/sawasdee-fasai', label: 'Sawasdee Fasai' }, { href: '/thailand-liveaboards/the-junk', label: 'The Junk' }, { href: '/thailand-liveaboards/thailand-master', label: 'Thailand Master' }] },
+  { href: '/padi-scuba-diving-courses', label: 'Courses', subItems: [{ href: '/padi-scuba-diving-courses/padi-discover-scuba-diving', label: 'Discover' }, { href: '/padi-scuba-diving-courses/padi-open-water-diver', label: 'Open Water' }, { href: '/padi-scuba-diving-courses/padi-advanced-open-water-diver', label: 'Advanced' }, { href: '/padi-scuba-diving-courses/padi-rescue-diver', label: 'Rescue' }] },
+  { href: '/day-trip-phuket', label: 'Day Trips' },
+  { href: '/liveaboard-itinerary-thailand', label: 'Itinerary' },
+  { href: '/dive-sites-thailand', label: 'Dive Sites' },
+];
+---
+
+<header class="pcom-header">
+  <div class="header-container">
+    <a href="/" class="header-logo"><img src="/images/hero/logo-luna.webp" alt="Luna Diving" class="logo-image" /></a>
+    <button id="menuToggle" class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mainNav"><span></span><span></span><span></span></button>
+
+    <nav id="mainNav" class="nav-menu" aria-label="Primary navigation">
+      <ul class="nav-list">
+        {navLinks.map((link) => (
+          <li class="nav-item">
+            <div class="nav-item-row">
+              <a href={link.href} class="nav-link">{link.label}</a>
+              {link.subItems && (
+                <button type="button" class="nav-arrow" aria-label={`Toggle ${link.label} submenu`} aria-expanded="false">
+                  <span aria-hidden="true">▼</span>
+                </button>
+              )}
+            </div>
+            {link.subItems && (
+              <ul class="dropdown">
+                {link.subItems.map((sub) => <li><a href={sub.href} class="sub-link">{sub.label}</a></li>)}
+              </ul>
+            )}
+          </li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById('menuToggle');
+  const nav = document.getElementById('mainNav');
+
+  const closeMenu = () => {
+    nav?.classList.remove('is-visible');
+    document.body.classList.remove('menu-open');
+    toggle?.setAttribute('aria-expanded', 'false');
+  };
+
+  toggle?.addEventListener('click', () => {
+    const isOpen = !nav?.classList.contains('is-visible');
+    nav?.classList.toggle('is-visible', isOpen);
+    document.body.classList.toggle('menu-open', isOpen);
+    toggle.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  document.querySelectorAll('.nav-link').forEach((link) => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth <= 768) {
+        closeMenu();
+      }
+    });
+  });
+
+  document.querySelectorAll('.nav-arrow').forEach((arrow) => {
+    arrow.addEventListener('click', (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+
+      const item = arrow.closest('.nav-item');
+      const isOpen = item?.classList.toggle('dropdown-open');
+      arrow.setAttribute('aria-expanded', String(isOpen));
+
+      if (window.innerWidth <= 768) {
+        item?.querySelector('.dropdown')?.classList.toggle('is-open', isOpen);
+      }
+    });
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+      closeMenu();
+      document.querySelectorAll('.nav-item').forEach((item) => {
+        item.classList.remove('dropdown-open');
+        item.querySelector('.dropdown')?.classList.remove('is-open');
+      });
+    }
+  });
+</script>
+
+<style>
+  .pcom-header { position: fixed; top: 0; width: 100%; z-index: 9999; background: #fff; border-bottom: 1px solid #eee; }
+  .header-container { max-width: 1200px; margin: 0 auto; padding: 20px 24px; display: flex; justify-content: space-between; align-items: center; position: relative; }
+  .logo-image { width: 140px; }
+  .menu-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0; }
+  .menu-toggle span { display: block; width: 25px; height: 2px; background: #000; margin: 5px 0; }
+
+  .nav-list { list-style: none; padding: 0; margin: 0; display: flex; gap: 24px; }
+  .nav-item { position: relative; display: flex; flex-direction: column; align-items: center; }
+  .nav-item-row { display: flex; align-items: center; justify-content: center; gap: 6px; }
+  .nav-link { font-size: 13px; font-weight: 600; text-transform: uppercase; color: #010205; text-decoration: none; display: flex; align-items: center; }
+  .nav-arrow { font-size: 8px; cursor: pointer; padding: 4px 0 4px 4px; background: none; border: none; color: #010205; display: flex; align-items: center; }
+
+  @media (min-width: 769px) {
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 50%;
+      transform: translateX(-50%);
+      background: #fff;
+      border: 1px solid #eee;
+      min-width: 220px;
+      padding: 10px 0;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+      list-style: none;
+      margin: 0;
+    }
+
+    .nav-item:hover .dropdown,
+    .nav-item.dropdown-open .dropdown {
+      display: block;
+    }
+
+    .sub-link {
+      display: block;
+      padding: 8px 20px;
+      font-size: 11px;
+      text-transform: uppercase;
+      color: #333;
+      text-decoration: none;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .menu-toggle { display: block; }
+
+    .nav-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background: #fff;
+      padding: 20px 0;
+      border-top: 1px solid #eee;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    .nav-menu.is-visible { display: block; }
+
+    .nav-list {
+      flex-direction: column;
+      gap: 16px;
+      align-items: center;
+      width: 100%;
+    }
+
+    .nav-item {
+      width: 100%;
+      align-items: center;
+    }
+
+    .nav-item-row {
+      justify-content: center;
+      width: 100%;
+    }
+
+    .nav-link {
+      justify-content: center;
+    }
+
+    .dropdown {
+      display: none;
+      width: 100%;
+      margin-top: 8px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .dropdown.is-open,
+    .nav-item.dropdown-open .dropdown {
+      display: block;
+    }
+
+    .sub-link {
+      display: block;
+      padding: 8px 0;
+      font-size: 11px;
+      text-transform: uppercase;
+      color: #333;
+      text-decoration: none;
+      text-align: center;
+    }
+  }
+</style>

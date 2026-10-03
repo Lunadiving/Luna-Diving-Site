@@ -1,0 +1,101 @@
+---
+// src/pages/tours/phi-phi-islands-tour-from-phuket.astro
+
+import '../../styles/global.css';
+import Layout from '../../layouts/Layout.astro';
+
+const tour = {
+  title: "Phi Phi Island Day Trip – A Breathtaking Adventure",
+  priceAdult: "3,900",
+  priceChild: "2,450",
+  highlights: [
+    { title: "Maya Bay", desc: "Step into a postcard-perfect beach made famous by The Beach movie." },
+    { title: "Pileh Lagoon", desc: "Swim in crystal-clear emerald waters, surrounded by towering limestone cliffs." },
+    { title: "Viking Cave", desc: "Capture stunning photos of this historic cave known for its ancient paintings." },
+    { title: "Monkey Beach", desc: "Observe playful macaques from the boat." },
+    { title: "Phi Phi Don Viewpoint", desc: "Hike up for a breathtaking panoramic view or explore the village." },
+    { title: "Snorkeling Adventure", desc: "Dive into the vibrant underwater world of Phi Phi, teeming with marine life." },
+    { title: "Bamboo Island", desc: "Enjoy a delicious lunch on the beach and relax in paradise." }
+  ]
+};
+---
+
+<Layout title="Phi Phi Island Day Trip | Luna Diving">
+  <div class="pt-24 md:pt-28 max-w-4xl mx-auto px-6 pb-16 font-sans">
+    
+    <header class="mb-12">
+      <h1 class="text-3xl md:text-4xl font-bold text-[#1A1A1A] mb-6">{tour.title}</h1>
+      
+      <div class="bg-white border border-gray-200 p-8 rounded-[24px]">
+        <h2 class="text-xl font-bold mb-4">Start Your Day in Paradise</h2>
+        <p class="text-[#706F6F] mb-4">Your journey begins early, ensuring a full day of adventure! We’ll pick you up from your hotel:</p>
+        <ul class="space-y-2 mb-6">
+          <li class="flex justify-between border-b border-gray-100 pb-2"><strong>Khao Lak:</strong> <span>4:00 A.M.</span></li>
+          <li class="flex justify-between border-b border-gray-100 pb-2"><strong>Phuket:</strong> <span>5:00 A.M.</span></li>
+        </ul>
+        <p class="text-[#706F6F]">Arrive at Royal Phuket Marina Pier, where a light breakfast awaits. As the sun rises, we set off on a speedboat to the stunning Phi Phi Islands.</p>
+      </div>
+    </header>
+
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-8">Discover the Wonders of Phi Phi</h2>
+      <div class="grid gap-6">
+        {tour.highlights.map((item) => (
+          <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
+            <h3 class="font-bold text-[#008EA7] mb-2">{item.title}</h3>
+            <p class="text-sm text-[#706F6F]">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="bg-[#1A1A1A] text-white p-8 rounded-[24px] mb-12">
+      <h2 class="text-2xl font-bold mb-8 text-center">Price Per Person</h2>
+      <div class="grid md:grid-cols-2 gap-8 text-center">
+        <div>
+          <div class="text-3xl font-bold mb-1">฿{tour.priceAdult}</div>
+          <div class="text-sm uppercase tracking-wider opacity-80">Adult Price</div>
+        </div>
+        <div>
+          <div class="text-3xl font-bold mb-1">฿{tour.priceChild}</div>
+          <div class="text-sm uppercase tracking-wider opacity-80">Children (4 to 12 years)</div>
+        </div>
+      </div>
+      <a 
+        href="https://wa.me/66918233120?text=Hi%20Luna%20Diving!%20I%20would%20like%20to%20book%20the%20Phi%20Phi%20Island%20Day%20Trip." 
+        target="_blank"
+        class="block mt-8 text-center bg-[#008EA7] text-white py-4 rounded-full font-bold hover:bg-[#007a90] transition-colors"
+      >
+        BOOK VIA WHATSAPP
+      </a>
+    </section>
+
+    <section class="bg-white p-8 rounded-[24px] border border-gray-200">
+      <h2 class="text-xl font-bold mb-4">What’s Included & Your Journey Back</h2>
+      <p class="text-[#706F6F] mb-6">Around 3:00 – 3:15 PM, we return to Royal Phuket Marina, where your transfer awaits to take you back to your hotel—bringing with you unforgettable memories!</p>
+      
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <h4 class="font-bold mb-3">Tour Includes:</h4>
+          <ul class="text-sm text-[#706F6F] space-y-2">
+            <li>✓ Hotel transfers (Phuket & Khao Lak)</li>
+            <li>✓ Light breakfast & lunch</li>
+            <li>✓ National park entrance fees</li>
+            <li>✓ Professional tour guide</li>
+            <li>✓ Snorkeling gear</li>
+            <li>✓ Water, soft drinks, snacks & fresh fruit</li>
+            <li>✓ Full insurance</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold mb-3">Not Included:</h4>
+          <ul class="text-sm text-[#706F6F] space-y-2">
+            <li>✗ Beach towel</li>
+            <li>✗ Tips</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</Layout>

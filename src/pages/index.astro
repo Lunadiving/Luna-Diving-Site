@@ -1,0 +1,1142 @@
+---
+
+import Layout from '../layouts/Layout.astro';
+
+
+
+const mainCategories = [
+
+{
+
+name: 'Liveaboard',
+
+seoTitle: 'Liveaboard Cruises',
+
+description: 'Multi-day diving safaris to the Similan Islands and Richelieu Rock.',
+
+image: '/images/hero/thailand-liveaboards.webp',
+
+link: '/thailand-liveaboards',
+
+altText: 'Premium liveaboard diving boat navigating the Andaman Sea in Thailand',
+
+},
+
+{
+
+name: 'Yacht',
+
+seoTitle: 'Yacht Charter',
+
+description: 'Private luxury catamaran and yacht rentals for custom cruise itineraries.',
+
+image: '/images/hero/private-dive-boat-charters-phuket.webp',
+
+link: '/thailand-yachts',
+
+altText: 'Luxury private yacht charter anchored near a tropical island as Phuket',
+
+},
+
+{
+
+name: 'Courses',
+
+seoTitle: 'Scuba Diving Courses',
+
+description: 'PADI certifications from Open Water to professional divemaster levels.',
+
+image: '/images/hero/padi-scuba-diving-courses.webp',
+
+link: '/padi-scuba-diving-courses',
+
+altText: 'Scuba diving instructor teaching students open water skills in clear water',
+
+},
+
+{
+
+name: 'Day Trip',
+
+seoTitle: 'Daily Dive Trips',
+
+description: 'Daily diving excursions to local reefs, Phi Phi Islands, and Racha Islands.',
+
+image: '/images/hero/day-trip-phuket.webp',
+
+link: '/day-trip-phuket',
+
+altText: 'Boat carrying scuba divers to local day trip dive sites',
+
+},
+
+{
+
+name: 'Itinerary',
+
+seoTitle: 'Cruise Itineraries',
+
+description: 'Detailed schedules and dynamic routing maps for our upcoming dive seasons.',
+
+image: '/images/hero/liveaboard-itinerary-thailand.webp',
+
+link: '/liveaboard-itinerary-thailand',
+
+altText: 'Top view map overlay showing sailing routes across the Andaman Sea islands',
+
+},
+
+{
+
+name: 'Dive Sites',
+
+seoTitle: 'Andaman Dive Sites',
+
+description: 'Explore deep-sea marine life profiles of Richelieu Rock and national parks.',
+
+image: '/images/hero/dive-sites.webp',
+
+link: '/dive-sites-thailand',
+
+altText: 'Vibrant coral reef teeming with colorful marine life at Richelieu Rock Thailand',
+
+},
+
+];
+
+---
+
+
+
+<Layout title="Luna Diving | Premium Thailand Liveaboards & Scuba Adventures">
+
+<main class="main-wrapper" id="theme-wrapper">
+
+
+
+<section class="hero-container" aria-labelledby="hero-title">
+
+<!-- LCP image: visible immediately -->
+
+<img
+
+src="/images/hero/hero-poster.webp"
+
+alt=""
+
+width="1200"
+
+height="650"
+
+fetchpriority="high"
+
+decoding="async"
+
+class="hero-poster"
+
+/>
+
+
+
+<div class="video-overlay"></div>
+
+
+
+<div class="hero-content">
+
+<h1 id="hero-title" class="hero-title animated-element fade-in-second">
+
+Thailand Liveaboard Cruises & Phuket Scuba Diving
+
+</h1>
+
+
+
+<p class="hero-subtitle animated-element fade-in-third">
+
+Explore the best of the Andaman Sea. Premium liveaboard safaris,
+
+private boat charters, and PADI courses to the Similan Islands and Richelieu Rock.
+
+</p>
+
+
+
+<a href="#dark-fleet-section" class="hero-cta-button animated-element fade-in-fourth">
+
+Book Your Dive Safari
+
+</a>
+
+</div>
+
+</section>
+
+
+
+<section class="adventure-starts max-w-4xl mx-auto text-center px-6" aria-labelledby="intro-title">
+
+<h2 id="intro-title">Premium Scuba Diving & Liveaboard Safaris in Thailand</h2>
+
+
+
+<p class="seo-intro-text">
+
+Welcome to Luna Diving, your premier gateway to exploring the underwater wonders
+
+of the Andaman Sea. Based in Phuket and Khao Lak, we organize liveaboard cruises,
+
+private yacht charters, and daily diving excursions.
+
+</p>
+
+
+
+<p class="seo-intro-text">
+
+Dive the Similan Islands, discover Richelieu Rock, or complete your next PADI scuba
+
+course with professional instructors. Every adventure is tailored for safety, comfort,
+
+and unforgettable memories.
+
+</p>
+
+</section>
+
+
+
+<section class="liveaboard-fleet" id="dark-fleet-section" aria-label="Explore Luna Diving experiences">
+
+<div class="card-grid">
+
+{
+
+mainCategories.map((category) => (
+
+<article class="liveaboard-card">
+
+<div class="card-image-wrapper">
+
+<img
+
+src={category.image}
+
+alt={category.altText}
+
+class="card-image"
+
+width="1200"
+
+height="650"
+
+loading="lazy"
+
+decoding="async"
+
+/>
+
+<div class="card-gradient"></div>
+
+</div>
+
+
+
+<div class="card-content">
+
+<span class="card-name-cursive">{category.name}</span>
+
+
+
+<div class="card-text-bottom">
+
+<h3 class="card-name-bold">{category.seoTitle}</h3>
+
+
+
+<p class="card-description">{category.description}</p>
+
+
+
+<a href={category.link} class="card-cta">
+
+<span>View Details</span>
+
+<svg class="luna-arrow" viewBox="0 0 24 24" aria-hidden="true">
+
+<path
+
+d="M5 12h14M12 5l7 7-7 7"
+
+stroke="currentColor"
+
+stroke-width="2"
+
+fill="none"
+
+stroke-linecap="round"
+
+stroke-linejoin="round"
+
+/>
+
+</svg>
+
+</a>
+
+</div>
+
+</div>
+
+</article>
+
+))
+
+}
+
+</div>
+
+
+
+<section class="last-minute-banner" aria-labelledby="last-minute-title">
+
+<img
+
+src="/images/hero/last-minute.webp"
+
+alt="Liveaboard diving boat in Thailand"
+
+width="1600"
+
+height="700"
+
+loading="lazy"
+
+decoding="async"
+
+class="banner-image"
+
+/>
+
+
+
+<div class="banner-overlay"></div>
+
+
+
+<div class="banner-content">
+
+<span class="banner-tag">Limited Availability</span>
+
+
+
+<h2 id="last-minute-title">Last Minute Deals & Liveaboard Offers</h2>
+
+
+
+<p>
+
+Grab exclusive empty-cabin discounts and last-second seasonal promotions
+
+for upcoming trips.
+
+</p>
+
+
+
+<a href="/last-minute" class="banner-btn">Check Live Deals</a>
+
+</div>
+
+</section>
+
+</section>
+
+
+
+<a
+
+href="https://wa.me/66918233120?text=Hi%20Luna%20Diving!%20I'm%20planning%20a%20diving%20trip%20to%20Thailand%20and%20would%20like%20more%20information."
+
+target="_blank"
+
+rel="noopener noreferrer"
+
+class="luna-whatsapp-floating"
+
+aria-label="Chat with Luna Diving on WhatsApp"
+
+>
+
+<svg class="whatsapp-icon-svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+
+<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.454 5.709 1.455h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+
+</svg>
+
+</a>
+
+</main>
+
+</Layout>
+
+
+
+<style>
+
+.main-wrapper {
+
+margin: 0;
+
+padding: 0;
+
+min-height: 100vh;
+
+background-color: #ffffff;
+
+color: #000000;
+
+font-family: 'Inter', sans-serif;
+
+}
+
+
+
+.hero-container {
+
+position: relative;
+
+display: flex;
+
+min-height: 100svh;
+
+width: 100%;
+
+align-items: center;
+
+justify-content: center;
+
+overflow: hidden;
+
+text-align: center;
+
+background: #111111;
+
+}
+
+
+
+.hero-poster {
+
+position: absolute;
+
+inset: 0;
+
+width: 100%;
+
+height: 100%;
+
+object-fit: cover;
+
+z-index: 0;
+
+}
+
+
+
+.video-overlay {
+
+position: absolute;
+
+inset: 0;
+
+z-index: 2;
+
+background: rgba(0, 0, 0, 0.35);
+
+}
+
+
+
+.hero-content {
+
+position: relative;
+
+z-index: 3;
+
+max-width: 1000px;
+
+padding: 0 1.5rem;
+
+}
+
+
+
+.hero-title {
+
+margin: 0 0 1.5rem;
+
+color: #ffffff;
+
+font-size: clamp(2rem, 5vw, 3.8rem);
+
+font-weight: 900;
+
+line-height: 1.2;
+
+letter-spacing: 2px;
+
+text-transform: uppercase;
+
+text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+
+}
+
+
+
+.hero-subtitle {
+
+max-width: 800px;
+
+margin: 0 auto 3.5rem;
+
+color: #f3f3f3;
+
+font-size: clamp(0.95rem, 2vw, 1.25rem);
+
+line-height: 1.6;
+
+letter-spacing: 1px;
+
+text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+
+}
+
+
+
+.hero-cta-button {
+
+display: inline-block;
+
+border: 1px solid #ffffff;
+
+background: #ffffff;
+
+padding: 1.2rem 3rem;
+
+color: #000000;
+
+font-size: 0.85rem;
+
+font-weight: 700;
+
+letter-spacing: 2px;
+
+text-decoration: none;
+
+text-transform: uppercase;
+
+transition: 0.25s ease;
+
+}
+
+
+
+.hero-cta-button:hover {
+
+background: transparent;
+
+color: #ffffff;
+
+}
+
+
+
+.adventure-starts {
+
+max-width: 950px;
+
+margin: 0 auto;
+
+padding: 7rem 2rem 4rem;
+
+text-align: center;
+
+}
+
+
+
+.adventure-starts h2 {
+
+margin: 0 0 1.5rem;
+
+font-size: clamp(1.8rem, 4vw, 2.8rem);
+
+font-weight: 500;
+
+}
+
+
+
+.seo-intro-text {
+
+margin: 0 auto 1rem;
+
+color: #555555;
+
+line-height: 1.75;
+
+}
+
+
+
+.liveaboard-fleet {
+
+max-width: 1400px;
+
+margin: 0 auto;
+
+padding: 0 4rem 8rem;
+
+}
+
+
+
+.card-grid {
+
+display: grid;
+
+grid-template-columns: repeat(3, 1fr);
+
+gap: 1.5rem;
+
+margin-bottom: 2rem;
+
+content-visibility: auto;
+
+contain-intrinsic-size: 900px;
+
+}
+
+
+
+.liveaboard-card {
+
+position: relative;
+
+display: flex;
+
+aspect-ratio: 1.1 / 1;
+
+flex-direction: column;
+
+overflow: hidden;
+
+border-radius: 20px;
+
+background: #121212;
+
+box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+}
+
+
+
+.card-image-wrapper {
+
+position: absolute;
+
+inset: 0;
+
+z-index: 1;
+
+}
+
+
+
+.card-image {
+
+width: 100%;
+
+height: 100%;
+
+object-fit: cover;
+
+transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+
+}
+
+
+
+.liveaboard-card:hover .card-image {
+
+transform: scale(1.04);
+
+}
+
+
+
+.card-gradient {
+
+position: absolute;
+
+inset: 0;
+
+background: linear-gradient(
+
+180deg,
+
+rgba(0, 0, 0, 0.4) 0%,
+
+rgba(0, 0, 0, 0) 40%,
+
+rgba(0, 0, 0, 0.85) 90%
+
+);
+
+}
+
+
+
+.card-content {
+
+position: relative;
+
+z-index: 2;
+
+display: flex;
+
+height: 100%;
+
+flex-direction: column;
+
+justify-content: space-between;
+
+padding: 2.2rem;
+
+color: #ffffff;
+
+}
+
+
+
+.card-name-cursive {
+
+color: rgba(255, 255, 255, 0.85);
+
+font-family: 'Playfair Display', serif;
+
+font-size: 1.8rem;
+
+font-style: italic;
+
+}
+
+
+
+.card-name-bold {
+
+margin: 0 0 0.4rem;
+
+font-size: 1.4rem;
+
+}
+
+
+
+.card-description {
+
+margin: 0 0 1.5rem;
+
+color: #dddddd;
+
+font-size: 0.9rem;
+
+line-height: 1.5;
+
+}
+
+
+
+.card-cta {
+
+display: inline-flex;
+
+align-items: center;
+
+gap: 0.5rem;
+
+color: #ffffff;
+
+font-size: 0.9rem;
+
+font-weight: 600;
+
+text-decoration: none;
+
+}
+
+
+
+.luna-arrow {
+
+width: 16px;
+
+height: 16px;
+
+transition: transform 0.3s ease;
+
+}
+
+
+
+.card-cta:hover .luna-arrow {
+
+transform: translateX(5px);
+
+}
+
+
+
+.last-minute-banner {
+
+position: relative;
+
+display: flex;
+
+min-height: 360px;
+
+align-items: center;
+
+overflow: hidden;
+
+border: 1px solid #1c1c1e;
+
+border-radius: 20px;
+
+background: #0c0c0e;
+
+padding: 4rem;
+
+content-visibility: auto;
+
+contain-intrinsic-size: 500px;
+
+}
+
+
+
+.banner-image,
+
+.banner-overlay {
+
+position: absolute;
+
+inset: 0;
+
+width: 100%;
+
+height: 100%;
+
+}
+
+
+
+.banner-image {
+
+object-fit: cover;
+
+}
+
+
+
+.banner-overlay {
+
+background: linear-gradient(
+
+90deg,
+
+rgba(0, 0, 0, 0.9) 35%,
+
+rgba(0, 0, 0, 0.1) 100%
+
+);
+
+}
+
+
+
+.banner-content {
+
+position: relative;
+
+z-index: 1;
+
+max-width: 600px;
+
+color: #ffffff;
+
+}
+
+
+
+.banner-tag {
+
+display: block;
+
+margin-bottom: 0.5rem;
+
+color: #ff453a;
+
+font-size: 0.75rem;
+
+font-weight: 700;
+
+letter-spacing: 2px;
+
+text-transform: uppercase;
+
+}
+
+
+
+.banner-content h2 {
+
+margin: 0 0 0.8rem;
+
+font-size: 2rem;
+
+}
+
+
+
+.banner-content p {
+
+margin: 0 0 2rem;
+
+color: #dddddd;
+
+line-height: 1.5;
+
+}
+
+
+
+.banner-btn {
+
+display: inline-block;
+
+border-radius: 6px;
+
+background: #ffffff;
+
+padding: 0.9rem 2.5rem;
+
+color: #000000;
+
+font-size: 0.85rem;
+
+font-weight: 700;
+
+letter-spacing: 1px;
+
+text-decoration: none;
+
+text-transform: uppercase;
+
+}
+
+
+
+.luna-whatsapp-floating {
+
+position: fixed;
+
+right: 24px;
+
+bottom: 24px;
+
+z-index: 999;
+
+display: flex;
+
+width: 60px;
+
+height: 60px;
+
+align-items: center;
+
+justify-content: center;
+
+border-radius: 50%;
+
+background: #25d366;
+
+color: #ffffff;
+
+box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+
+}
+
+
+
+.whatsapp-icon-svg {
+
+width: 32px;
+
+height: 32px;
+
+}
+
+
+
+.animated-element {
+
+opacity: 0;
+
+transform: translateY(20px);
+
+animation: lunaFadeIn 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+
+}
+
+
+
+.fade-in-second {
+
+animation-delay: 500ms;
+
+}
+
+
+
+.fade-in-third {
+
+animation-delay: 800ms;
+
+}
+
+
+
+.fade-in-fourth {
+
+animation-delay: 1100ms;
+
+}
+
+
+
+@keyframes lunaFadeIn {
+
+to {
+
+opacity: 1;
+
+transform: translateY(0);
+
+}
+
+}
+
+
+
+@media (max-width: 1100px) {
+
+.card-grid {
+
+grid-template-columns: repeat(2, 1fr);
+
+}
+
+}
+
+
+
+@media (max-width: 700px) {
+
+.liveaboard-fleet {
+
+padding: 0 1.5rem 4rem;
+
+}
+
+
+
+.card-grid {
+
+grid-template-columns: 1fr;
+
+}
+
+
+
+.last-minute-banner {
+
+min-height: 420px;
+
+padding: 2.5rem;
+
+}
+
+
+
+.banner-overlay {
+
+background: rgba(0, 0, 0, 0.7);
+
+}
+
+}
+
+
+
+@media (max-width: 480px) {
+
+.luna-whatsapp-floating {
+
+right: 16px;
+
+bottom: 16px;
+
+width: 52px;
+
+height: 52px;
+
+}
+
+
+
+.whatsapp-icon-svg {
+
+width: 26px;
+
+height: 26px;
+
+}
+
+}
+
+
+
+@media (prefers-reduced-motion: reduce) {
+
+*,
+
+*::before,
+
+*::after {
+
+scroll-behavior: auto !important;
+
+animation-duration: 0.01ms !important;
+
+animation-iteration-count: 1 !important;
+
+transition-duration: 0.01ms !important;
+
+}
+
+}
+
+</style> 
+

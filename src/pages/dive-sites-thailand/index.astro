@@ -1,0 +1,360 @@
+---
+// Clean slate for Andaman Sea Dive Sites Page
+import Layout from '../../layouts/Layout.astro'; // Nota: usa '../../' se sei dentro una cartella, o '../' se è un file singolo
+
+const diveSites = [
+  {
+    title: "Similan Islands",
+    emoji: "🏝️🐋",
+    region: "Northern Andaman",
+    level: "All Levels / Intermediate",
+    description: "A group of picturesque islands off the coast of Thailand, offering exceptional diving experiences with their crystal-clear waters, vibrant coral reefs, and incredible underwater boulder landscapes.",
+    features: ["Manta rays & whale sharks", "Crystal-clear visibility", "Unique granite boulder topography", "Diverse tropical reef fish"]
+  },
+  {
+    title: "Surin Islands",
+    emoji: "🏝️🐢",
+    region: "Northern Andaman",
+    level: "All Levels",
+    description: "Located near the Myanmar border, the Surin Islands are known for their unspoiled natural beauty and rich marine biodiversity away from the typical tourist crowds.",
+    features: ["Colorful coral gardens", "Frequent sea turtle encounters", "Various species of rays & sharks", "Pristine, untouched ecosystems"]
+  },
+  {
+    title: "Richelieu Rock",
+    emoji: "🪸🦈",
+    region: "Northern Andaman",
+    level: "Intermediate / Advanced",
+    description: "Consistently ranked as one of the best dive sites in Thailand and the world, this horseshoe-shaped pinnacle is a bustling marine metropolis teeming with life.",
+    features: ["Famous whale shark magnet", "Large schools of barracudas", "Rare macro life & seahorses", "Vibrant purple soft coral formations"]
+  },
+  {
+    title: "Hin Daeng & Hin Muang",
+    emoji: "🌊🎨",
+    region: "Southern Andaman",
+    level: "Advanced",
+    description: "These two world-class submerged pinnacles are renowned for their steep vertical drops, dramatic topography, and vibrant red and purple carpets of soft corals.",
+    features: ["Thailand's deepest vertical wall", "Frequent manta ray sightings", "Whale shark encounters", "Lush soft coral gardens"]
+  },
+  {
+    title: "Burma Banks",
+    emoji: "🌊🦑",
+    region: "Offshore Myanmar",
+    level: "Advanced / Experienced",
+    description: "Situated in the open sea off the coast of Myanmar, the Burma Banks offer a truly remote, thrilling diving experience with pristine waters and thrilling pelagic action.",
+    features: ["Remote offshore exploration", "Abundant shark encounters", "Pelagic species & oceanic rays", "Untouched coral formations"]
+  },
+  {
+    title: "Phi Phi Islands",
+    emoji: "🏝️🐠",
+    region: "Southern Andaman",
+    level: "All Levels",
+    description: "Offering an array of dramatic dive sites with dramatic limestone cliffs plunging into the sea, Phi Phi is famous for its vibrant reefs and rich, accessible marine ecosystems.",
+    features: ["Dramatic underwater caves & swim-throughs", "Abundant blacktip reef sharks", "Dense schools of yellow snapper", "Colorful macro reef life"]
+  },
+  {
+    title: "Racha Yai & Racha Noi",
+    emoji: "🌊🦈",
+    region: "South of Phuket",
+    level: "All Levels to Advanced",
+    description: "A versatile diving destination with stunningly clear waters. Racha Yai features gentle sloping reefs and artificial wrecks, while Racha Noi offers exciting drift dives and oceanic encounters.",
+    features: ["Excellent year-round visibility", "Exciting drift dives at Racha Noi", "Artificial reefs and sunken wrecks", "Chance for manta rays & barracudas"]
+  },
+  {
+    title: "Shark Point",
+    emoji: "🦈🐟",
+    region: "Phuket Marine Park",
+    level: "Intermediate",
+    description: "A legendary dive site near Phuket consisting of three pinnacles, famous for its vibrant coral gardens and frequent sightings of docile leopard sharks resting on the sandy seabed.",
+    features: ["Resting leopard (zebra) sharks", "Lush pink and purple soft corals", "Seahorses and ghost pipefish", "Teeming with schooling reef fish"]
+  },
+  {
+    title: "King Cruiser Wreck",
+    emoji: "🚢🐡",
+    region: "Phuket Marine Park",
+    level: "Advanced",
+    description: "This sunken car ferry, now a thriving artificial reef, provides an atmospheric wreck diving experience. It acts as an underwater oasis, attracting huge marine life densities.",
+    features: ["85-meter passenger ferry wreck", "Dense schools of trevally & barracudas", "Scorpionfish, lionfish & moray eels", "Exciting structural exploration"]
+  },
+  {
+    title: "Anemone Reef",
+    emoji: "🌊🪸",
+    region: "Phuket Marine Park",
+    level: "Intermediate",
+    description: "Named for the dense, shimmering carpet of sea anemones covering its limestone pinnacle, this site boasts a rich, highly concentrated ecosystem of marine and macro life.",
+    features: ["Blanket of living sea anemones", "Abundant clownfish & anemonefish", "Rich macro life & nudibranchs", "Dynamic reef fish ecosystem"]
+  }
+];
+---
+
+<Layout title="Andaman Sea Dive Sites | Best Scuba Diving in Thailand">
+  <main class="divesites-page">
+    
+    <section class="hero-section">
+      <div class="container">
+        <span class="subtitle">UNDERWATER EXPLORATION</span>
+        <h1>Andaman Sea Dive Sites</h1>
+        <p class="hero-text">
+          Bordered by the coasts of Thailand and Myanmar, the Andaman Sea is renowned for its rich marine biodiversity and stunning underwater landscapes. Explore world-class coral reefs, thrilling drop-offs, and legendary pinnacles teeming with life.
+        </p>
+      </div>
+    </section>
+
+    <section class="sites-section">
+      <div class="container">
+        <div class="sites-grid">
+          {diveSites.map(site => (
+            <div class="site-card">
+              <div class="card-header">
+                <div class="header-top">
+                  <span class="site-region">{site.region}</span>
+                  <span class="site-emoji" role="img" aria-label={site.title}>{site.emoji}</span>
+                </div>
+                <h2 class="site-title">{site.title}</h2>
+                <div class="site-meta">
+                  <span class="meta-item">🤿 Level: <strong>{site.level}</strong></span>
+                </div>
+              </div>
+              
+              <div class="card-body">
+                <p class="site-desc">{site.description}</p>
+                <div class="features-wrapper">
+                  <span class="features-label">Site Highlights:</span>
+                  <ul class="features-list">
+                    {site.features.map(feature => (
+                      <li>✨ {feature}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+              
+              <div class="card-footer">
+                <a href="/contact" class="btn-primary">Dive This Site</a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-box">
+          <h2>Ready to explore the Andaman Sea?</h2>
+          <p>Whether you are looking for day trips to Shark Point or a liveaboard adventure to the Similan Islands and Richelieu Rock, we have the perfect diving itinerary for you.</p>
+          <a href="/contact" class="btn-secondary">Plan Your Dive Trip</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</Layout>
+
+<style>
+  .divesites-page {
+    padding-top: clamp(120px, 10vw, 160px);
+    background-color: #fbfbfc;
+    color: #010205;
+    font-family: Arial, sans-serif;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .hero-section {
+    text-align: center;
+    padding-bottom: 60px;
+  }
+
+  .subtitle {
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: #008EA7;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  h1 {
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin: 0 0 20px 0;
+    line-height: 1.15;
+  }
+
+  .hero-text {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #50555c;
+  }
+
+  .sites-section {
+    padding: 40px 0 80px 0;
+  }
+
+  .sites-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 32px;
+  }
+
+  .site-card {
+    background: #ffffff;
+    border: 1px solid #eef0f3;
+    border-radius: 12px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .site-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(1, 2, 5, 0.04);
+  }
+
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+
+  .site-region {
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #71777f;
+    letter-spacing: 1px;
+  }
+
+  .site-emoji {
+    font-size: 20px;
+  }
+
+  .site-title {
+    font-size: 22px;
+    margin: 0 0 16px 0;
+    font-weight: 700;
+  }
+
+  .site-meta {
+    padding-bottom: 16px;
+    border-bottom: 1px dashed #eef0f3;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #50555c;
+  }
+
+  .site-meta strong {
+    color: #008EA7;
+  }
+
+  .site-desc {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #40444b;
+    margin-bottom: 24px;
+  }
+
+  .features-wrapper {
+    margin-bottom: 32px;
+  }
+
+  .features-label {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #010205;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+  }
+
+  .features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 14px;
+    color: #50555c;
+  }
+
+  .btn-primary {
+    display: block;
+    text-align: center;
+    background-color: #010205;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 14px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+  }
+
+  .btn-primary:hover {
+    background-color: #008EA7;
+  }
+
+  .cta-section {
+    padding-bottom: 80px;
+  }
+
+  .cta-box {
+    background-color: #010205;
+    color: #ffffff;
+    padding: 60px 40px;
+    border-radius: 16px;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .cta-box h2 {
+    font-size: 28px;
+    margin-top: 0;
+  }
+
+  .cta-box p {
+    color: #a0a5ad;
+    max-width: 500px;
+    margin: 16px auto 32px auto;
+    line-height: 1.6;
+  }
+
+  .btn-secondary {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #010205;
+    text-decoration: none;
+    padding: 14px 32px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 700;
+    transition: background-color 0.2s ease;
+  }
+
+  .btn-secondary:hover {
+    background-color: #008EA7;
+    color: #ffffff;
+  }
+
+  @media (max-width: 768px) {
+    .sites-grid {
+      grid-template-columns: 1fr;
+    }
+    .cta-box {
+      padding: 40px 20px;
+    }
+  }
+</style>

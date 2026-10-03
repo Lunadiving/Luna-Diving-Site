@@ -1,0 +1,220 @@
+---
+// src/components/Footer.astro
+
+const quickLinks = [
+  { href: '/thailand-liveaboards', label: 'Liveaboards' },
+  { href: '/padi-scuba-diving-courses', label: 'PADI Courses' },
+  { href: '/day-trip-phuket', label: 'Day Trips' },
+  { href: '/liveaboard-itinerary-thailand', label: 'Itineraries' },
+  { href: '/dive-sites-thailand', label: 'Dive Sites' },
+];
+
+const contactInfo = {
+  address: "27/15 Soi Pattana moo 4 Rawai, Phuket",
+  email: "info@luna-diving-thailand.com",
+  whatsapp: "+66 91 823 3120" 
+};
+---
+
+<footer class="pcom-footer">
+  <div class="footer-container">
+    <div class="footer-grid">
+      
+      <div class="footer-col brand-col">
+        <a href="/">
+          <img src="/images/hero/logo-luna.webp" alt="Luna Diving Thailand" class="footer-logo" />
+        </a>
+        <p class="footer-desc">
+          Your premier scuba diving center in Phuket. We offer top-tier PADI courses, unforgettable liveaboards, and daily dive trips in the Andaman Sea.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="col-title">Explore</h4>
+        <ul class="footer-links">
+          {quickLinks.map(link => (
+            <li><a href={link.href}>{link.label}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="col-title">Contact Us</h4>
+        <ul class="footer-contact">
+          <li>📍 {contactInfo.address}</li>
+          <li>✉️ <a href={`mailto:luna-diving-thailand.com`}>{contactInfo.email}</a></li>
+          <li>📱 <a href={`https://wa.me/+66918233120`} target="_blank" rel="noopener noreferrer">WhatsApp Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+  <h4 class="col-title">Follow Us</h4>
+  <div class="social-links">
+    <a href="https://web.facebook.com/luna.d.thailand" target="_blank" rel="noopener" aria-label="Facebook">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+    </a>
+    <a href="https://www.instagram.com/lunadivingthailand/" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.073 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.073-4.948-.197-4.354-2.618-6.78-6.979-6.98-1.281-.058-1.689-.072-4.948-.072zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.791-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.209-1.791 4-4 4zm6.406-11.845c0 .796-.646 1.441-1.441 1.441-.795 0-1.441-.645-1.441-1.441 0-.795.646-1.441 1.441-1.441.795 0 1.441.646 1.441 1.441z"/></svg>
+    </a>
+    <a href="https://www.youtube.com/@Luna-diving-thailand" target="_blank" rel="noopener" aria-label="YouTube">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.377.505 9.377.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+    </a>
+  </div>
+</div>
+
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; {new Date().getFullYear()} Luna Diving Thailand. All rights reserved.</p>
+      <div class="legal-links">
+        <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/terms-and-conditions">Terms & Conditions</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .pcom-footer {
+    background-color: #010205; /* Sfondo scuro in linea con il testo dell'header */
+    color: #a0a5ad; /* Testo grigio chiaro per non affaticare la vista */
+    font-family: sans-serif;
+    padding: 60px 0 20px 0;
+    margin-top: auto; /* Utile se usi un layout flex sul body per tenere il footer in basso */
+  }
+  
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 40px;
+    margin-bottom: 20px;
+  }
+
+  .brand-col {
+    max-width: 320px;
+  }
+
+  .footer-logo {
+    width: 140px;
+    margin-bottom: 20px;
+    /* NOTA: Usa questo filtro se il tuo logo originale è nero e vuoi renderlo bianco sul fondo scuro. 
+       Se hai già un logo bianco (es: logo-luna-white.webp), puoi rimuovere la riga sotto. */
+    filter: brightness(0) invert(1); 
+  }
+
+  .footer-desc {
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .col-title {
+    color: #ffffff;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin: 0 0 20px 0;
+  }
+
+  .footer-links, .footer-contact {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .footer-links a, .footer-contact a {
+    color: #a0a5ad;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s ease;
+  }
+
+  .footer-links a:hover, .footer-contact a:hover {
+    color: #ffffff;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 12px;
+  }
+
+  .social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+  }
+
+  .social-links a:hover {
+    background-color: #008EA7; /* Il tuo colore d'accento */
+  }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 13px;
+  }
+
+  .footer-bottom p {
+    margin: 0;
+  }
+
+  .legal-links {
+    display: flex;
+    gap: 24px;
+  }
+
+  .legal-links a {
+    color: #a0a5ad;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  
+  .legal-links a:hover {
+    color: #ffffff;
+  }
+
+  /* Responsive Mobile */
+  @media (max-width: 768px) {
+    .footer-grid {
+      grid-template-columns: 1fr; /* Le colonne si impilano su mobile */
+      gap: 40px;
+    }
+    
+    .brand-col {
+      max-width: 100%;
+    }
+
+    .footer-bottom {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .legal-links {
+      justify-content: center;
+    }
+  }
+</style>
