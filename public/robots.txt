@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://luna-diving-thailand.com/sitemap-index.xml

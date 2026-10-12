@@ -1,11 +1,15 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
-
 import tailwindcss from '@tailwindcss/vite';
+import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://astro.luna-diving-thailand.com',
+  site: 'https://luna-diving-thailand.com',
+  build: {
+    format: 'directory'
+  },
+  integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()]
   }

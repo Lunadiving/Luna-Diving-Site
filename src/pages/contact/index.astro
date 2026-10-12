@@ -66,7 +66,7 @@ import Layout from '../../layouts/Layout.astro';
               </div>
               <div>
                 <strong>Location</strong>
-                <span>Royal Phuket Marina & Phuket, Thailand</span>
+                <span>27/15 soi Pattana, Rawai, Phuket</span>
               </div>
             </li>
           </ul>
@@ -87,7 +87,7 @@ import Layout from '../../layouts/Layout.astro';
             Fill out the form below and our team will get back to you within 24 hours.
           </p>
 
-          <form class="inquiry-form" onsubmit="event.preventDefault(); alert('Thank you! Your message has been sent successfully.');">
+          <form id="contact-form" class="inquiry-form">
             <div class="form-group">
               <label for="name">Full Name</label>
               <input type="text" id="name" name="name" required placeholder="Your Name" />
@@ -101,11 +101,11 @@ import Layout from '../../layouts/Layout.astro';
             <div class="form-group">
               <label for="service">Interested Service</label>
               <select id="service" name="service">
-                <option value="liveaboard">Similan Liveaboard Cruises</option>
-                <option value="yacht">Private Yacht Charter</option>
-                <option value="courses">PADI Scuba Diving Courses</option>
-                <option value="daytrip">Daily Dive Trips</option>
-                <option value="other">General Inquiry</option>
+                <option value="Similan Liveaboard Cruises">Similan Liveaboard Cruises</option>
+                <option value="Private Yacht Charter">Private Yacht Charter</option>
+                <option value="PADI Scuba Diving Courses">PADI Scuba Diving Courses</option>
+                <option value="Daily Dive Trips">Daily Dive Trips</option>
+                <option value="General Inquiry">General Inquiry</option>
               </select>
             </div>
 
@@ -114,7 +114,8 @@ import Layout from '../../layouts/Layout.astro';
               <textarea id="message" name="message" rows="5" required placeholder="Tell us about your dates, number of guests, or specific questions..."></textarea>
             </div>
 
-            <button type="submit" class="submit-btn">Send Message</button>
+            <button type="submit" id="submit-btn" class="submit-btn">Send Message</button>
+            <p id="form-status" style="margin-top: 1rem; display: none; font-size: 0.9rem; font-weight: 600;"></p>
           </form>
         </div>
 
@@ -136,6 +137,52 @@ import Layout from '../../layouts/Layout.astro';
 
   </main>
 </Layout>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const statusText = document.getElementById('form-status');
+  const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
+
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (submitBtn) submitBtn.disabled = true;
+      if (statusText) {
+        statusText.style.display = 'block';
+        statusText.style.color = '#333';
+        statusText.textContent = 'Sending message...';
+      }
+
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch('/send-email.php', {
+          method: 'POST',
+          body: formData,
+        });
+
+        const result = await response.json();
+
+        if (response.ok && result.status === 'success') {
+          if (statusText) {
+            statusText.style.color = '#00b074';
+            statusText.textContent = 'Thank you! Your message has been sent successfully.';
+          }
+          form.reset();
+        } else {
+          throw new Error(result.message || 'Error sending message');
+        }
+      } catch (error) {
+        if (statusText) {
+          statusText.style.color = '#ef4444';
+          statusText.textContent = 'Failed to send message. Please try again or contact us via WhatsApp.';
+        }
+      } finally {
+        if (submitBtn) submitBtn.disabled = false;
+      }
+    });
+  }
+</script>
 
 <style>
   .main-wrapper {
