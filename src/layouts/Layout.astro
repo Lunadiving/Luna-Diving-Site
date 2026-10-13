@@ -1,7 +1,7 @@
 ---
 // src/layouts/Layout.astro
 import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro'; // 1. IMPORTA IL FOOTER QUI
+import Footer from '../components/Footer.astro'; // <-- IMPORT AGGIUNTO
 
 interface Props {
   title?: string;
@@ -15,16 +15,20 @@ const { title = "Luna Diving | Premium Thailand Liveaboards" } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
   <body>
+    <!-- L'Header viene inserito qui e rimarrà fisso in alto su tutte le pagine -->
     <Header />
 
+    <!-- Contenuto dinamico delle singole pagine (Pawara, Thailand Master, ecc.) -->
     <slot />
 
-    <Footer />
+    <!-- Il Footer viene inserito qui in fondo a tutte le pagine -->
+    <Footer /> <!-- <-- TAG AGGIUNTO -->
   </body>
 </html>
 
@@ -33,10 +37,9 @@ const { title = "Luna Diving | Premium Thailand Liveaboards" } = Astro.props;
   body {
     margin: 0;
     width: 100%;
-    /* 3. PICCOLO UPGRADE CSS: */
-    min-height: 100vh; /* Cambiato da height: 100% a min-height per gestire correttamente le pagine lunghe */
+    min-height: 100vh; /* Cambiato da height: 100% a min-height: 100vh per gestire lo scroll corretto */
     display: flex;
-    flex-direction: column; /* Spinge automaticamente il footer in fondo allo schermo se la pagina ha poco testo */
+    flex-direction: column;
   }
 
   /* Blocca lo scroll della pagina di sfondo quando il menu mobile è aperto */

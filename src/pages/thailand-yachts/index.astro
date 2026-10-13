@@ -6,30 +6,30 @@ import Layout from '../../layouts/Layout.astro';
 
 const fleet = [
   {
-    slug: "yacht-one",
-    name: "Luxury Princess 50",
-    image: "/images/yacht/princess-50-yacht.webp",
-    altText: "Luxury Princess 50 motor yacht cruising in the tropical waters of Thailand", 
+    slug: "galeon-500-fly",
+    name: "Galeon 500 Fly",
+    image: "/images/yacht/galeon-500-fly/galeon-500-luxury-yacht-cruising-open-water.webp",
+    altText: "Luxury motor yacht cruising in the tropical waters of Thailand", 
     tags: ["Private Charter", "Luxury", "Full Service"],
     specs: [
       { val: "10-Guest", desc: "Maximum Capacity, Day Trips" },
-      { val: "15 Meters", desc: "Overall Length (LOA)" },
-      { val: "22 Knots", desc: "Cruising Speed" }
+      { val: "16 Meters", desc: "Overall Length (LOA)" },
+      { val: "20 Knots", desc: "Cruising Speed" }
     ],
     legal: "Includes captain, crew, and fuel for standard routes. Perfect for private celebrations and island hopping."
   },
   {
-    slug: "yacht-two",
-    name: "Sunseeker Predator",
-    image: "/images/yacht/sunseeker-yacht.webp",
-    altText: "Sunseeker Predator high-performance yacht in Phuket",
+    slug: "jawsss",
+    name: "Jawss",
+    image: "/images/yacht/jawsss/luxury-motor-yacht-jawsss-phuket.webp",
+    altText: "Activa 5800 confortable yacht in Phuket",
     tags: ["High Performance", "Sporty", "Speedy"],
     specs: [
-      { val: "8-Guest", desc: "Maximum Capacity, Sleek Design" },
+      { val: "12-Guest", desc: "Maximum Capacity, Sleek Design" },
       { val: "18 Meters", desc: "Overall Length (LOA)" },
-      { val: "28 Knots", desc: "Cruising Speed" }
+      { val: "12 Knots", desc: "Cruising Speed" }
     ],
-    legal: "High-end sound system and water toys included. Ideal for fast transfers to Phi Phi and Racha Islands."
+    legal: "A flybridge cruiser built for the Andaman Sea, and for the way a day on it ought to unfold."
   }
 ];
 ---
@@ -47,10 +47,15 @@ const fleet = [
     <main class="max-w-5xl mx-auto px-6 pb-16 font-sans">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-12">
         {fleet.map((boat) => (
-          <article class="group relative flex flex-col justify-between bg-white border border-gray-200 p-6 rounded-[24px] shadow-sm transition-all duration-300 hover:shadow-md">
+          <article class="group flex flex-col justify-between bg-white border border-gray-200 p-6 rounded-[24px] shadow-sm transition-all duration-300 hover:shadow-md">
             
             <div>
-              <div class="w-full aspect-video bg-[#f8f8fa] overflow-hidden relative rounded-xl mb-6">              
+              <!-- LINK SULLA FOTO -->
+              <a 
+                href={`/thailand-yachts/${boat.slug}`} 
+                class="block w-full aspect-video bg-[#f8f8fa] overflow-hidden rounded-xl mb-6"
+                aria-label={`Explore ${boat.name} in detail`}
+              >              
                 <img 
                   src={boat.image} 
                   alt={boat.altText || boat.name} 
@@ -58,12 +63,17 @@ const fleet = [
                   loading="lazy"
                   decoding="async"
                 />
-                <a href={`/thailand-yacht/${boat.slug}`} class="absolute inset-0 z-10" aria-label={`Explore ${boat.name} in detail`}></a>
-              </div>
+              </a>
 
               <div class="space-y-3">
-                <h3 class="text-xl font-bold tracking-tight text-[#1A1A1A] transition-colors group-hover:text-[#008EA7]">
-                  {boat.name}
+                <!-- LINK SUL NOME DELLA BARCA -->
+                <h3 class="text-xl font-bold tracking-tight text-[#1A1A1A]">
+                  <a 
+                    href={`/thailand-yachts/${boat.slug}`} 
+                    class="transition-colors hover:text-[#008EA7] group-hover:text-[#008EA7]"
+                  >
+                    {boat.name}
+                  </a>
                 </h3>
                 
                 <div class="flex flex-wrap gap-2">
@@ -95,9 +105,9 @@ const fleet = [
               </div>
             </div>
 
-            <div class="mt-auto pt-2 z-20">
+            <div class="mt-auto pt-2">
               <a 
-                href={`/thailand-yacht/${boat.slug}`} 
+                href={`/thailand-yachts/${boat.slug}`} 
                 class="flex items-center justify-center bg-[#1A1A1A] text-white text-xs font-medium py-3 w-full rounded-full hover:bg-[#008EA7] transition-colors duration-300 text-center"
               >
                 Explore in Detail

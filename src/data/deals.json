@@ -1,0 +1,54 @@
+[
+  {
+    "id": 1,
+    "title": "Similan & Surin Islands - 6 Nights",
+    "vessel": "The Junk",
+    "vesselUrl": "/liveaboards/the-junk",
+    "dates": "14–20 Oct 2026",
+    "route": "Explore the Similan & Surin Islands 6-night itinerary",
+    "cabinType": "Classic Quad share",
+    "price": "$1,169",
+    "originalPrice": "$1,670",
+    "spotsLeft": "Limited",
+    "badge": "30% OFF"
+  },
+  {
+    "id": 2,
+    "title": "Similan & Surin Islands - 6 Nights",
+    "vessel": "The Junk",
+    "vesselUrl": "/liveaboards/the-junk",
+    "dates": "20–26 Oct 2026",
+    "route": "Explore the Similan & Surin Islands 6-night itinerary",
+    "cabinType": "Classic Quad share",
+    "price": "$1,169",
+    "originalPrice": "$1,670",
+    "spotsLeft": "Limited",
+    "badge": "30% OFF"
+  },
+  {
+    "id": 3,
+    "title": "Similan & Surin Islands - 4 Nights",
+    "vessel": "The Junk",
+    "vesselUrl": "/liveaboards/the-junk",
+    "dates": "27–31 Oct 2026",
+    "route": "Explore the Similan & Surin Islands 4-night itinerary",
+    "cabinType": "Classic Quad share",
+    "price": "$892",
+    "originalPrice": "$1,115",
+    "spotsLeft": "Limited",
+    "badge": "20% OFF"
+  },
+  {
+    "id": 4,
+    "title": "Similan & Surin Islands - 6 Nights",
+    "vessel": "The Junk",
+    "vesselUrl": "/liveaboards/the-junk",
+    "dates": "31 Oct – 6 Nov 2026",
+    "route": "Explore the Similan & Surin Islands 6-night itinerary",
+    "cabinType": "Classic Quad share",
+    "price": "$1,336",
+    "originalPrice": "$1,670",
+    "spotsLeft": "Limited",
+    "badge": "20% OFF"
+  }
+]

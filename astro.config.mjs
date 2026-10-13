@@ -9,7 +9,12 @@ export default defineConfig({
   build: {
     format: 'directory'
   },
-  integrations: [sitemap()],
+  integrations: [
+    sitemap({
+      // Impostiamo il nome base direttamente a 'sitemap' così genererà sitemap.xml
+      filenameBase: 'sitemap',
+    })
+  ],
   vite: {
     plugins: [tailwindcss()]
   }
