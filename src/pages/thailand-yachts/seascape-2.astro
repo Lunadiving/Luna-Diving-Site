@@ -1,0 +1,1020 @@
+---
+// src/pages/thailand-yachts/seascape-2.astro
+import Layout from '../../layouts/Layout.astro';
+
+const vesselName = "Seascape 2";
+const tagline = "A nineteen metre flybridge, refitted in 2022, berthed twenty minutes from open water.";
+
+const slideshow = [
+  { 
+    img: '/images/yacht/seascape-2/seascape-2-motor-yacht-stern-profile.webp', 
+    text: 'Stern view of the Seascape 2 luxury motor yacht moored in a marina with teak swim platform' 
+  },
+  { 
+    img: '/images/yacht/seascape-2/seascape-2-classic-cruising-sea.webp', 
+    text: 'Profile view of the Seascape 2 yacht cruising smoothly across open tropical waters' 
+  },
+  { 
+    img: '/images/yacht/seascape-2/seascape-2-flybridge-sunpad-helm.webp', 
+    text: 'Spacious flybridge sunpad lounge and upper helm station overlooking the marina aboard the Seascape 2' 
+  },
+  { 
+    img: '/images/yacht/seascape-2/seascape-2-helm-station-dashboard.webp', 
+    text: 'Modern helm station and dashboard instrumentation aboard the Seascape 2 yacht' 
+  },
+  { 
+    img: '/images/yacht/seascape-2/seascape-2-main-salon-dining-area.webp', 
+    text: 'Spacious main deck salon and dining area with comfortable seating and warm wooden finishes' 
+  },
+  { 
+    img: '/images/yacht/seascape-2/seascape-2-interior-lounge-salon.webp', 
+    text: 'Interior view of the luxurious main salon lounge and entertainment area on the Seascape 2' 
+  },
+  { 
+    img: '/images/yacht/seascape-2/seascape-2-aerial-bow-sunpad-relax.webp', 
+    text: 'Aerial drone view of a guest relaxing on the expansive bow sunpad of the Seascape 2 yacht' 
+  },
+  { 
+    img: '/images/yacht/seascape-2/seascape-2-master-cabin-interior.webp', 
+    text: 'Elegant master cabin suite featuring a large double bed, decorative pillows, and large hull windows' 
+  },
+  { 
+    img: '/images/yacht/seascape-2/seascape-2-guest-cabin-interior.webp', 
+    text: 'Cozy and well-appointed guest cabin with comfortable double bed, warm wooden cabinetry, and porthole windows aboard the Seascape 2' 
+  },
+  { 
+    img: '/images/yacht/seascape-2/seascape-2-fully-equipped-galley-kitchen.webp', 
+    text: 'Fully equipped yacht galley kitchen with modern appliances and polished wooden cabinetry' 
+  },
+  { 
+    img: '/images/yacht/seascape-2/seascape-2-aft-deck-dining-luxury.webp', 
+    text: 'Exquisite dining setup with gourmet dishes and tropical views on the aft deck of the Seascape 2 yacht' 
+  },
+  { 
+    img: '/images/yacht/seascape-2/seascape-2-sunset-swim-platform-relax.webp', 
+    text: 'Guest relaxing with a glass of wine on the hydraulic swim platform of the Seascape 2 during sunset' 
+  }
+];
+
+const technicalSpecs = [
+  { label: 'Builder', value: 'Sunseeker' },
+  { label: 'Type', value: 'Motor yacht, flybridge' },
+  { label: 'Built / Refitted', value: '2009 / 2022' },
+  { label: 'Length Overall', value: '19.61 m' },
+  { label: 'Beam', value: '5.00 m' },
+  { label: 'Engines', value: '2 x Caterpillar 900 hp' },
+  { label: 'Cruising Speed', value: '17 knots' },
+  { label: 'Maximum Speed', value: '25 knots' },
+  { label: 'Cabins', value: '3 (All Ensuite)' },
+  { label: 'Berths', value: '6' },
+  { label: 'Day Charter', value: '20 Guests' },
+  { label: 'Overnight', value: '6 Guests' },
+  { label: 'Crew', value: '3' },
+  { label: 'Fuel Capacity', value: '2,950 L' },
+  { label: 'Water Capacity', value: '700 L' },
+  { label: 'Home Port', value: 'Royal Phuket Marina' }
+];
+
+const dayCharterRates = [
+  { destination: 'Naka Yai (4 hours)', lowTHB: '94,000 ฿', highTHB: '104,000 ฿' },
+  { destination: 'Khai and Naka', lowTHB: '125,000 ฿', highTHB: '136,000 ฿' },
+  { destination: 'Phang Nga Bay', lowTHB: '136,000 ฿', highTHB: '146,000 ฿' },
+  { destination: 'Koh Maiton and Khai Island', lowTHB: '136,000 ฿', highTHB: '146,000 ฿' },
+  { destination: 'Koh Hong, Krabi', lowTHB: '146,000 ฿', highTHB: '157,000 ฿' },
+  { destination: 'Phi Phi', lowTHB: '146,000 ฿', highTHB: '157,000 ฿' },
+  { destination: 'Racha Islands', lowTHB: '146,000 ฿', highTHB: '157,000 ฿' }
+];
+
+const overnightRates = [
+  { duration: '2 days / 1 night', lowTHB: '283,000 ฿', lowUSD: 'USD 8,600', highTHB: '304,000 ฿', highUSD: 'USD 9,200' },
+  { duration: '3 days / 2 nights', lowTHB: '409,000 ฿', lowUSD: 'USD 12,400', highTHB: '440,000 ฿', highUSD: 'USD 13,300' },
+  { duration: '4 days / 3 nights', lowTHB: '535,000 ฿', lowUSD: 'USD 16,200', highTHB: '577,000 ฿', highUSD: 'USD 17,500' },
+  { duration: '5 days / 4 nights', lowTHB: '661,000 ฿', lowUSD: 'USD 20,000', highTHB: '713,000 ฿', highUSD: 'USD 21,600' },
+  { duration: '6 days / 5 nights', lowTHB: '787,000 ฿', lowUSD: 'USD 23,800', highTHB: '850,000 ฿', highUSD: 'USD 25,800' },
+  { duration: '7 days / 6 nights', lowTHB: '913,000 ฿', lowUSD: 'USD 27,700', highTHB: '986,000 ฿', highUSD: 'USD 29,900' }
+];
+
+const includedItems = [
+  'Full use of the yacht',
+  'Captain, deckhand and hostess',
+  'Lunch on day charters',
+  'Breakfast, lunch and dinner on overnight charters',
+  'Fruits and snacks',
+  'Soft drinks and ice',
+  '24 beers (Singha, Leo, Chang)',
+  'One bottle of wine',
+  'Stand up paddleboard and kayak',
+  'Tender',
+  'Kayak rental at Phang Nga Bay',
+  'Snorkelling equipment',
+  'Towels',
+  'Air conditioning and Wi-Fi',
+  'Indoor and outdoor sound system',
+  'BBQ grill',
+  'Travel insurance',
+  'Return transfers from a Phuket hotel or Phuket airport'
+];
+
+const notIncludedItems = [
+  { text: 'Alcoholic beverages beyond the wine and beer included', highlight: 'Extra' },
+  { text: 'National park fees, where applicable', highlight: 'Direct payment' },
+  { text: 'Crew gratuities, at the guests’ discretion', highlight: 'Discretionary' }
+];
+
+const cruisingDestinations = [
+  "Naka Yai",
+  "Khai Islands",
+  "Koh Maiton",
+  "Racha Islands",
+  "Phang Nga Bay (National Park)",
+  "Koh Hong, Krabi (National Park)",
+  "Phi Phi Islands"
+];
+
+const waterToys = [
+  "Tender",
+  "Stand up paddleboard (SUP)",
+  "Kayak",
+  "Snorkelling equipment",
+  "Kayak rental at Phang Nga Bay"
+];
+---
+
+<Layout title={`Seascape 2 Motor Yacht Charter Phuket | Luna Diving`}>
+  <main class="pcom-wrapper">
+    
+    <section class="pcom-hero">
+      <span class="pcom-subtitle">Luxury Flybridge Motor Yacht</span>
+      <h1 class="pcom-title">{vesselName}</h1>
+      <div class="pcom-divider"></div>
+      <p class="pcom-tagline">{tagline}</p>
+    </section>
+
+    <section class="pcom-specs-container">
+      <div class="pcom-specs-grid">
+        {technicalSpecs.map((spec) => (
+          <div class="spec-item">
+            <span class="spec-label">{spec.label}</span>
+            <span class="spec-value">{spec.value}</span>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="pcom-gallery-section">
+      <div class="gallery-slider-outer">
+        <div id="slider" class="gallery-slider-inner no-scrollbar">
+          {slideshow.map((slide, index) => (
+            <div class="gallery-slide">
+              <img 
+                src={slide.img} 
+                alt={slide.text} 
+                width="1200"
+                height="675"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="gallery-caption">
+                <span class="caption-count">Vessel Tour {index + 1} / {slideshow.length}</span>
+                <p class="caption-text">{slide.text}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <button id="prevBtn" class="nav-button prev" aria-label="Previous">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5"></path></svg>
+        </button>
+        <button id="nextBtn" class="nav-button next" aria-label="Next">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"></path></svg>
+        </button>
+      </div>
+    </section>
+
+    <section class="pcom-content-grid">
+      <div class="content-main">
+        <h2 class="content-heading">A nineteen metre flybridge, refitted in 2022, berthed twenty minutes from open water.</h2>
+        <div class="heading-line"></div>
+        <p class="paragraph">
+          Three ensuite cabins, a crew of three, and the whole of the Andaman Sea inside a day’s run. Seascape 2 carries twenty guests on a Phang Nga day charter and sleeps six on passage.
+        </p>
+
+        <h3 class="sub-heading">Seascape 2</h3>
+        <p class="paragraph">
+          Seascape 2 is a Sunseeker flybridge of 19.61 metres, launched in 2009 and refitted in 2022. She is a three cabin boat with the galley set on the lower deck, which is the arrangement that matters most at this size: it leaves the whole of the main deck to the saloon and its wraparound glazing, and it keeps service out of sight of the guests.
+        </p>
+        <p class="paragraph">
+          Below, the master sits amidships, a VIP cabin takes the bow, and a twin cabin lies to starboard opposite the galley. All three have their own ensuite. The twin ensuite doubles as the day head, so guests on deck never pass through a cabin.
+        </p>
+        <p class="paragraph">
+          The crew quarters aft under the transom bulkhead are fully self contained and air conditioned, with their own shower and head.
+        </p>
+
+        <h3 class="sub-heading">Twin Caterpillars, 1,800 horsepower</h3>
+        <p class="paragraph">
+          Two Caterpillar engines of 900 horsepower each give a settled seventeen knot cruise and twenty five knots when the sea allows, on 2,950 litres of fuel. On the Andaman that margin decides whether Phi Phi is a comfortable day out or a long one.
+        </p>
+
+        <h3 class="sub-heading">The flybridge</h3>
+        <p class="paragraph">
+          Wide, gently sloping stairs lead up from the aft cockpit to a flybridge sheltered by a bimini top. The upper helm repeats the lower station instrument for instrument, so the boat can be run from either. A sunpad sits beside the helm and the lounge seats the whole party topside. A second sunpad is on the foredeck when this one fills.
+        </p>
+
+        <h3 class="sub-heading">The aft cockpit</h3>
+        <p class="paragraph">
+          The cockpit table is where a charter day actually happens. Lunch is served at anchor, the swim platform is one step down, and the islands sit close enough to read. All meals are cooked on board and served here or on the flybridge. The grill comes out for evening charters at anchor.
+        </p>
+
+        <h3 class="sub-heading">The saloon</h3>
+        <p class="paragraph">
+          The saloon runs the full width of the main deck with large windows either side, so it holds natural light from morning through to sunset. Pale leather, contemporary joinery, and a dining table aft with the cockpit doors open behind it. With the galley on the lower deck the main deck stays one uninterrupted space for entertaining.
+        </p>
+
+        <h3 class="sub-heading">The master cabin</h3>
+        <p class="paragraph">
+          The master sits amidships on the lower deck, on the widest part of the beam, with hull windows to both sides and its own ensuite. Amidships is the quietest berth on board and the one that moves least at anchor.
+        </p>
+
+        <h3 class="sub-heading">Guest cabins</h3>
+        <p class="paragraph">
+          A VIP cabin takes the bow with a double berth and its own ensuite. A twin cabin lies to starboard opposite the galley, with two single berths and an ensuite that also serves as the day head. Three cabins and six berths for six guests overnight, and twenty guests on a day charter.
+        </p>
+
+        <h3 class="sub-heading">Water Toys & Amenities</h3>
+        <ul class="toy-list">
+          {waterToys.map(toy => <li>{toy}</li>)}
+        </ul>
+      </div>
+
+      <div class="content-sidebar">
+        <div class="booking-sticky-box">
+          <h3 class="sidebar-heading">Inquire for Seascape 2</h3>
+          <p class="sidebar-text">Charter this magnificent 19m Sunseeker flybridge yacht out of Royal Phuket Marina.</p>
+          <a href="https://wa.me/66918233120?text=Hi%20Luna%20Diving!%20I'm%20interested%20in%20chartering%20Seascape%202." target="_blank" rel="noopener noreferrer" class="pcom-btn-primary">
+            Inquire via WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Day Charter Pricing Section -->
+    <section class="pcom-schedule-section">
+      <div class="pricing-header">
+        <h2 class="content-heading">Day Charters</h2>
+        <p class="paragraph" style="margin-bottom: 8px;">Sunseeker flybridge · 19.61 m · Three ensuite cabins · Crew of three</p>
+        <div class="heading-line"></div>
+      </div>
+
+      <div class="table-responsive-container">
+        <table class="schedule-table">
+          <thead>
+            <tr>
+              <th>Destination</th>
+              <th>Low Season (THB)</th>
+              <th>High Season (THB)</th>
+              <th class="table-action-header">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {dayCharterRates.map((row) => (
+              <tr>
+                <td class="td-dates">{row.destination}</td>
+                <td class="td-itinerary"><strong>{row.lowTHB}</strong></td>
+                <td class="td-itinerary"><strong>{row.highTHB}</strong></td>
+                <td class="td-action">
+                  <a href={`https://wa.me/66918233120?text=Hi%20Luna%20Diving!%20I'm%20interested%20in%20booking%20Seascape%202%20for%20${encodeURIComponent(row.destination)}.`} target="_blank" rel="noopener noreferrer" class="table-book-btn">
+                    Book
+                  </a>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="table-note-text" style="margin-top: 12px; font-size: 12px; color: #4f5059; line-height: 1.5;">
+        * Above 10 guests, per additional guest: 2,000 THB supplement.<br/>
+        * Low season runs May to November, high season December to April. Maximum 20 guests on a day charter.<br/>
+        * Day charter rates include the crew, lunch on board, soft drinks and return transfers from a Phuket hotel or the airport.
+      </p>
+    </section>
+
+    <!-- Overnight Charter Pricing Section -->
+    <section class="pcom-schedule-section">
+      <div class="pricing-header">
+        <h2 class="content-heading">Overnight Charters</h2>
+        <p class="paragraph" style="margin-bottom: 8px;">Sunseeker flybridge · 19.61 m · Three ensuite cabins · Crew of three</p>
+        <div class="heading-line"></div>
+      </div>
+
+      <div class="table-responsive-container">
+        <table class="schedule-table">
+          <thead>
+            <tr>
+              <th>Duration</th>
+              <th>Low Season (THB / USD)</th>
+              <th>High Season (THB / USD)</th>
+              <th class="table-action-header">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {overnightRates.map((row) => (
+              <tr>
+                <td class="td-dates">{row.duration}</td>
+                <td class="td-itinerary">
+                  <div><strong>{row.lowTHB}</strong></div>
+                  <div class="price-sub-usd">{row.lowUSD}</div>
+                </td>
+                <td class="td-itinerary">
+                  <div><strong>{row.highTHB}</strong></div>
+                  <div class="price-sub-usd">{row.highUSD}</div>
+                </td>
+                <td class="td-action">
+                  <a href={`https://wa.me/66918233120?text=Hi%20Luna%20Diving!%20I'm%20interested%20in%20an%20overnight%20charter%20on%20Seascape%202%20(${encodeURIComponent(row.duration)}).`} target="_blank" rel="noopener noreferrer" class="table-book-btn">
+                    Book
+                  </a>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="table-note-text" style="margin-top: 12px; font-size: 12px; color: #4f5059; line-height: 1.5;">
+        * Overnight rates include all meals on board. Six guests in 3 ensuite cabins, each with its own bathroom.<br/>
+        * US dollar figures are indicative, converted at 33 baht to the dollar.
+      </p>
+    </section>
+
+    <!-- What the rate covers (Inclusions & Exclusions) -->
+    <section class="pcom-details-grid-section">
+      <div class="details-split-container">
+        <div class="details-column included-box">
+          <h3 class="details-col-title">
+            <svg class="title-icon icon-inc" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            Included in the Charter Fee
+          </h3>
+          <ul class="details-list">
+            {includedItems.map((item) => (
+              <li class="details-item">
+                <svg class="item-dot dot-inc" fill="currentColor" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3"/></svg>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="details-column excluded-box">
+          <h3 class="details-col-title">
+            <svg class="title-icon icon-exc" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            Not Included
+          </h3>
+          <ul class="details-list">
+            {notIncludedItems.map((item) => (
+              <li class="details-item exc-item">
+                <svg class="item-dot dot-exc" fill="currentColor" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3"/></svg>
+                <div class="exc-text-wrapper">
+                  <span class="exc-main-text">{item.text}</span>
+                  {item.highlight && <span class="exc-highlight">{item.highlight}</span>}
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cruising Destinations List Section -->
+    <section class="pcom-schedule-section">
+      <div class="pricing-header">
+        <h2 class="content-heading">Cruising Grounds</h2>
+        <p class="paragraph" style="margin-bottom: 12px;">Day charters and overnight passages through the Andaman Sea, tailored to guests.</p>
+        <div class="heading-line"></div>
+      </div>
+
+      <div class="table-responsive-container">
+        <table class="schedule-table">
+          <thead>
+            <tr>
+              <th>Destination / Anchorage</th>
+              <th>Type</th>
+            </tr>
+          </thead>
+          <tbody>
+            {cruisingDestinations.map((dest) => (
+              <tr>
+                <td class="td-dates">{dest}</td>
+                <td class="td-itinerary"><span class="itinerary-text">Available for Charter</span></td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <a 
+      href="https://wa.me/66918233120?text=Hi%20Luna%20Diving!%20I'm%20interested%20in%20booking%20the%20Seascape%202%20Yacht." 
+      target="_blank" 
+      rel="noopener noreferrer" 
+      class="pcom-whatsapp-float"
+      aria-label="Chat on WhatsApp"
+    >
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.454 5.709 1.455h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+    </a>
+
+  </main>
+</Layout>
+
+<script>
+  const slider = document.getElementById('slider');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+
+  if (slider && prevBtn && nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      const slideWidth = slider.clientWidth;
+      if (slider.scrollLeft + slideWidth >= slider.scrollWidth - 5) {
+        slider.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        slider.scrollBy({ left: slideWidth, behavior: 'smooth' });
+      }
+    });
+
+    prevBtn.addEventListener('click', () => {
+      const slideWidth = slider.clientWidth;
+      if (slider.scrollLeft <= 0) {
+        slider.scrollTo({ left: slider.scrollWidth, behavior: 'smooth' });
+      } else {
+        slider.scrollBy({ left: -slideWidth, behavior: 'smooth' });
+      }
+    });
+  }
+</script>
+
+<style>
+  :root {
+    --pcom-font: "Next", "Arial Narrow", Arial, sans-serif;
+    --pcom-color-canvas: #fff;
+    --pcom-color-primary: #010205;
+    --pcom-color-surface: #f1f1f4;
+    --pcom-color-accent: #008EA7;
+    --pcom-color-danger: #b31010;
+    --pcom-color-text-muted: #4f5059;
+    
+    --pcom-space-md: clamp(16px, 1.25vw + 12px, 36px);
+    --pcom-space-lg: clamp(32px, 2.75vw + 23px, 76px);
+  }
+
+  .pcom-wrapper {
+    background-color: var(--pcom-color-canvas);
+    min-height: 100vh;
+    font-family: var(--pcom-font);
+    color: var(--pcom-color-primary);
+    width: 100%;
+    box-sizing: border-box;
+    padding-top: clamp(100px, 10vw, 140px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .pcom-hero {
+    width: 100%;
+    max-width: 820px;
+    padding: 0 var(--pcom-space-md);
+    text-align: center;
+    margin-bottom: var(--pcom-space-md);
+  }
+
+  .pcom-subtitle {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--pcom-color-accent);
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  .pcom-title {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    margin: 0 0 16px 0;
+    line-height: 1.1;
+  }
+
+  .pcom-divider {
+    width: 60px;
+    height: 2px;
+    background-color: var(--pcom-color-primary);
+    margin: 0 auto 16px auto;
+  }
+
+  .pcom-tagline {
+    font-size: clamp(11px, 1.5vw, 13px);
+    color: var(--pcom-color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-weight: 600;
+  }
+
+  .pcom-specs-container {
+    width: 100%;
+    background-color: #fafafa;
+    border-top: 1px solid var(--pcom-color-surface);
+    border-bottom: 1px solid var(--pcom-color-surface);
+    padding: 24px 0;
+    margin-bottom: var(--pcom-space-lg);
+  }
+
+  .pcom-specs-grid {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 0 var(--pcom-space-md);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  @media (min-width: 768px) {
+    .pcom-specs-grid {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+  }
+
+  .spec-item {
+    text-align: center;
+  }
+
+  .spec-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--pcom-color-text-muted);
+    font-weight: 700;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .spec-value {
+    font-size: clamp(14px, 1.8vw, 16px);
+    font-weight: 700;
+  }
+
+  .pcom-gallery-section {
+    width: 100%;
+    max-width: 820px;
+    padding: 0 var(--pcom-space-md);
+    margin-bottom: var(--pcom-space-lg);
+    box-sizing: border-box;
+    position: relative;
+  }
+
+  .gallery-slider-outer {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .gallery-slider-inner {
+    width: 100%;
+    display: flex;
+    overflow-x: auto;
+    snap-type: x mandatory;
+    scroll-behavior: smooth;
+    border-radius: 8px;
+    background-color: var(--pcom-color-primary);
+  }
+
+  .gallery-slide {
+    width: 100%;
+    flex-shrink: 0;
+    position: relative;
+    snap-align: start;
+    aspect-ratio: 16 / 9;
+  }
+
+  .gallery-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  .gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(1, 2, 5, 0.85));
+    padding: 40px 20px 20px 20px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  .caption-count {
+    font-size: 9px;
+    font-weight: 700;
+    color: var(--pcom-color-accent);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 4px;
+  }
+
+  .caption-text {
+    font-size: 12px;
+    font-weight: 400;
+    margin: 0;
+    opacity: 0.9;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .nav-button {
+    display: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    color: var(--pcom-color-primary);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s, opacity 0.2s;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 10;
+    opacity: 0;
+  }
+
+  @media (min-width: 768px) {
+    .nav-button { display: flex; }
+    .gallery-slider-outer:hover .nav-button { opacity: 1; }
+  }
+
+  .nav-button.prev { left: 16px; }
+  .nav-button.next { right: 16px; }
+
+  .pcom-details-grid-section {
+    width: 100%;
+    max-width: 820px;
+    padding: 0 var(--pcom-space-md);
+    margin-bottom: var(--pcom-space-lg);
+    box-sizing: border-box;
+  }
+
+  .details-split-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  @media (min-width: 768px) {
+    .details-split-container {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .details-column {
+    background-color: #fafafa;
+    border: 1px solid var(--pcom-color-surface);
+    border-radius: 6px;
+    padding: 32px 24px;
+    text-align: left;
+  }
+
+  .details-col-title {
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0 0 24px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .title-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+
+  .icon-inc { color: var(--pcom-color-accent); }
+  .icon-exc { color: var(--pcom-color-danger); }
+
+  .details-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .details-item {
+    display: flex;
+    align-items: flex-start;
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: var(--pcom-color-primary);
+  }
+
+  .item-dot {
+    width: 6px;
+    height: 6px;
+    margin-right: 12px;
+    margin-top: 7px;
+    flex-shrink: 0;
+  }
+
+  .dot-inc { color: var(--pcom-color-accent); }
+  .dot-exc { color: var(--pcom-color-danger); }
+
+  .exc-item { width: 100%; }
+
+  .exc-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  @media (min-width: 400px) {
+    .exc-text-wrapper {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+    }
+  }
+
+  .exc-main-text { font-weight: 500; }
+
+  .exc-highlight {
+    font-size: 11px;
+    font-weight: 700;
+    background-color: var(--pcom-color-surface);
+    color: var(--pcom-color-primary);
+    padding: 2px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-block;
+    margin-top: 4px;
+    width: fit-content;
+  }
+
+  @media (min-width: 400px) {
+    .exc-highlight {
+      margin-top: 0;
+      flex-shrink: 0;
+    }
+  }
+
+  .pcom-schedule-section {
+    width: 100%;
+    max-width: 820px;
+    padding: 0 var(--pcom-space-md);
+    margin-bottom: var(--pcom-space-lg);
+    box-sizing: border-box;
+  }
+
+  .pricing-header {
+    text-align: left;
+    margin-bottom: 24px;
+  }
+
+  .content-heading {
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0 0 8px 0;
+    letter-spacing: -0.01em;
+  }
+
+  .heading-line {
+    width: 40px;
+    height: 2px;
+    background-color: var(--pcom-color-accent);
+    margin-bottom: 16px;
+  }
+
+  .table-responsive-container {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid var(--pcom-color-surface);
+    border-radius: 6px;
+    background-color: #fafafa;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 13.5px;
+  }
+
+  .schedule-table th {
+    background-color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 16px 20px;
+    color: var(--pcom-color-text-muted);
+    border-bottom: 1px solid var(--pcom-color-surface);
+  }
+
+  .schedule-table td {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--pcom-color-surface);
+    vertical-align: middle;
+    white-space: nowrap;
+  }
+
+  .schedule-table tr:last-child td { border-bottom: none; }
+  .schedule-table tr:hover td { background-color: #ffffff; }
+
+  .td-dates { font-weight: 700; color: var(--pcom-color-primary); }
+  
+  .td-itinerary {
+    font-weight: 500;
+  }
+
+  .price-sub-usd {
+    font-size: 11px;
+    color: var(--pcom-color-text-muted);
+    font-weight: 600;
+    margin-top: 2px;
+  }
+
+  .itinerary-text { color: var(--pcom-color-text-muted); }
+  .table-action-header { text-align: right; }
+  .td-action { text-align: right; }
+
+  .table-book-btn {
+    display: inline-block;
+    background-color: var(--pcom-color-primary);
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    transition: background-color 0.2s;
+  }
+
+  .table-book-btn:hover {
+    background-color: var(--pcom-color-accent);
+  }
+
+  .pcom-content-grid {
+    width: 100%;
+    max-width: 820px;
+    padding: 0 var(--pcom-space-md) var(--pcom-space-lg) var(--pcom-space-md);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    box-sizing: border-box;
+  }
+
+  @media (min-width: 768px) {
+    .pcom-content-grid {
+      grid-template-columns: 1.6fr 1fr;
+    }
+  }
+
+  .content-main { text-align: left; }
+
+  .paragraph {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--pcom-color-text-muted);
+    margin-bottom: 20px;
+  }
+
+  .paragraph strong {
+    color: var(--pcom-color-primary);
+  }
+
+  .sub-heading {
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 28px 0 12px 0;
+    color: var(--pcom-color-primary);
+  }
+
+  .toy-list {
+    list-style: disc;
+    padding-left: 20px;
+    margin-bottom: 24px;
+    color: var(--pcom-color-text-muted);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .content-sidebar {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .booking-sticky-box {
+    background-color: #fafafa;
+    border: 1px solid var(--pcom-color-surface);
+    border-radius: 6px;
+    padding: 24px;
+    text-align: left;
+    position: sticky;
+    top: 120px;
+  }
+
+  .sidebar-heading {
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0 0 8px 0;
+  }
+
+  .sidebar-text {
+    font-size: 12.5px;
+    color: var(--pcom-color-text-muted);
+    line-height: 1.5;
+    margin: 0 0 20px 0;
+  }
+
+  .pcom-btn-primary {
+    display: block;
+    width: 100%;
+    background-color: var(--pcom-color-primary);
+    color: #fff;
+    text-align: center;
+    padding: 12px 16px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: background-color 0.2s;
+    box-sizing: border-box;
+  }
+
+  .pcom-btn-primary:hover {
+    background-color: var(--pcom-color-accent);
+  }
+
+  .pcom-whatsapp-float {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 56px;
+    height: 56px;
+    background-color: #25d366;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    transition: transform 0.2s, background-color 0.2s;
+  }
+
+  .pcom-whatsapp-float:hover {
+    transform: scale(1.08);
+    background-color: #22bf5b;
+  }
+
+  .pcom-whatsapp-float svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>

@@ -1,0 +1,1168 @@
+---
+// src/pages/thailand-yachts/maha-bhetra.astro
+import Layout from '../../layouts/Layout.astro';
+
+const vesselName = "Maha Bhetra";
+const tagline = "90ft Ed Tuttle Designed Classic Motor Yacht for Andaman Voyages";
+
+const slideshow = [
+  { 
+    img: '/images/yacht/maha-bhetra/maha-bhetra-luxury-yacht-phang-nga-bay-side-view.webp', 
+    text: 'Side profile view of classic wooden motor yacht Maha Bhetra anchored against limestone cliffs in Phang Nga Bay.' 
+  },
+  { 
+    img: '/images/yacht/maha-bhetra/maha-bhetra-classic-yacht-foredeck-sunbed.webp', 
+    text: 'Teak foredeck of classic yacht Maha Bhetra featuring a wooden sunbed and brass searchlight facing limestone karsts.' 
+  },
+  { 
+    img: '/images/yacht/maha-bhetra/maha-bhetra-yacht-foredeck-view-phang-nga.webp', 
+    text: 'Wide teak deck of luxury yacht Maha Bhetra with daybed looking out at Phang Nga Bay islands.' 
+  },
+  { 
+    img: '/images/yacht/maha-bhetra/maha-bhetra-yacht-upper-deck-dining-room.webp', 
+    text: 'Upper deck dining area with round wooden table and panoramic views aboard yacht Maha Bhetra.' 
+  },
+  { 
+    img: '/images/yacht/maha-bhetra/maha-bhetra-yacht-master-cabin-king-bed.webp', 
+    text: 'Spacious wooden master cabin suite with king bed and shuttered windows on luxury yacht Maha Bhetra.' 
+  },
+  { 
+    img: '/images/yacht/maha-bhetra/maha-bhetra-yacht-twin-guest-cabin.webp', 
+    text: 'Guest cabin accommodation with twin beds and teak shuttered windows on yacht Maha Bhetra.' 
+  },
+  { 
+    img: '/images/yacht/maha-bhetra/maha-bhetra-yacht-en-suite-bathroom.webp', 
+    text: 'En-suite bathroom with polished teak wood vanity and brass fixtures in Maha Bhetra cabin.' 
+  },
+  { 
+    img: '/images/yacht/maha-bhetra/maha-bhetra-yacht-upper-deck-bar-helm.webp', 
+    text: 'Upper deck bar area and helm station looking out over turquoise waters aboard Maha Bhetra.' 
+  },
+  { 
+    img: '/images/yacht/maha-bhetra/maha-bhetra-yacht-stern-view-thai-flag.webp', 
+    text: 'Stern view of motor yacht Maha Bhetra with Thai flag flying and crew member on deck.' 
+  },
+  { 
+    img: '/images/yacht/maha-bhetra/maha-bhetra-yacht-foredeck-searchlight.webp', 
+    text: 'Vintage brass searchlight mounted on the teak bow deck of classic yacht Maha Bhetra.' 
+  },
+  { 
+    img: '/images/yacht/maha-bhetra/maha-bhetra-yacht-night-lounge-dining.webp', 
+    text: 'Nighttime ambiance in the upper deck lounge and dining saloon aboard luxury yacht Maha Bhetra.' 
+  },
+  { 
+    img: '/images/yacht/maha-bhetra/maha-bhetra-yacht-sunset-side-deck.webp', 
+    text: 'Sunset view over the Andaman Sea from the side walkway of motor yacht Maha Bhetra.' 
+  }
+];
+
+const technicalSpecs = [
+  { label: 'Design', value: 'Ed Tuttle (Aman Resorts Architect)' },
+  { label: 'Build', value: 'Thailand, Timber Hull' },
+  { label: 'Length Overall', value: '27.4 m / 90 ft' },
+  { label: 'Beam / Draft', value: '5.70 m / 2.50 m' },
+  { label: 'Cruising Speed', value: '8 Knots' },
+  { label: 'Capacity', value: '12 Day / 6 Overnight' },
+  { label: 'Cabins', value: '3 Identical Double Suites (20 sqm)' },
+  { label: 'Crew', value: '5 (Experienced Decades Onboard)' },
+  { label: 'Interiors', value: 'Jim Thompson Silks & 18th C. Antiques' },
+  { label: 'Cruising Grounds', value: 'Andaman Sea & Mergui' },
+  { label: 'Home Port', value: 'Phuket Yacht Haven Marina' }
+];
+
+const dayCharterRates = [
+  {
+    name: 'Day Charter (Up to 12 Guests)',
+    allYearTHB: '202,000 ฿',
+    allYearUSD: 'USD 6,100',
+    peakTHB: '231,000 ฿',
+    peakUSD: 'USD 7,000',
+    details: 'Kai & Naka Islands, Phang Nga Bay, Koh Maiton & Koh Kai, or Koh Hong (Krabi). Full day.'
+  }
+];
+
+const overnightRates = [
+  { duration: '2 days / 1 night', allYearTHB: '228,000 ฿', allYearUSD: '6,900', peakTHB: '267,000 ฿', peakUSD: '8,100', similanTHB: '—', similanUSD: '—' },
+  { duration: '3 days / 2 nights', allYearTHB: '454,000 ฿', allYearUSD: '13,750', peakTHB: '530,500 ฿', peakUSD: '16,100', similanTHB: '—', similanUSD: '—' },
+  { duration: '4 days / 3 nights', allYearTHB: '680,000 ฿', allYearUSD: '20,600', peakTHB: '777,000 ฿', peakUSD: '23,550', similanTHB: '830,000 ฿', similanUSD: '25,150' },
+  { duration: '5 days / 4 nights', allYearTHB: '908,000 ฿', allYearUSD: '27,500', peakTHB: '1,035,000 ฿', peakUSD: '31,350', similanTHB: '1,087,000 ฿', similanUSD: '32,950' },
+  { duration: '6 days / 5 nights', allYearTHB: '1,135,000 ฿', allYearUSD: '34,400', peakTHB: '1,320,000 ฿', peakUSD: '40,000', similanTHB: '1,365,000 ฿', similanUSD: '41,350' },
+  { duration: '7 days / 6 nights', allYearTHB: '1,260,000 ฿', allYearUSD: '38,200', peakTHB: '1,460,000 ฿', peakUSD: '44,250', similanTHB: '1,512,000 ฿', similanUSD: '45,800' }
+];
+
+const includedItems = [
+  'Yacht with crew of five',
+  'Full board on overnight charter',
+  'Snacks, fruit, water, tea, coffee',
+  'Soft drinks and local beer',
+  'One bottle of French rosé per day',
+  'Return airport or hotel transfers',
+  'Kayak, paddleboard, snorkelling gear & fishing rods',
+  'National park fees, except the Similans',
+  'Cleaning, yacht insurance & local VAT'
+];
+
+const notIncludedItems = [
+  { text: 'Wine, champagne and spirits', highlight: 'Available on request' },
+  { text: 'Similan national park fees', highlight: 'As applicable' },
+  { text: 'Activities or services on request', highlight: 'Supplement' },
+  { text: 'Crew gratuities', highlight: 'Discretionary' }
+];
+
+const schedule = [
+  { dates: "Daily Departure", itinerary: "Day Charter (12 Guests Max)", route: "Yacht Haven / Phang Nga Bay / Koh Yao", type: "Day Trip" },
+  { dates: "Custom Dates", itinerary: "Andaman Islands Overnight (6 Guests)", route: "Phang Nga / Krabi / Phi Phi / Racha", type: "Overnight" },
+  { dates: "November to April", itinerary: "Mergui Archipelago & Similans", route: "Similans / Surin / Mergui", type: "Expedition" }
+];
+
+const cruisingDistances = [
+  { destination: "Koh Yao Noi", distance: "Approx. 16 nm", time: "2 hours" },
+  { destination: "Phang Nga Bay", distance: "Approx. 20 nm", time: "2 h 30 min" },
+  { destination: "Koh Hong, Krabi", distance: "Approx. 30 nm", time: "3 h 45 min" },
+  { destination: "Koh Phi Phi", distance: "Approx. 40 nm", time: "5 hours" },
+  { destination: "Racha Islands", distance: "Approx. 44 nm", time: "5 h 30 min" },
+  { destination: "Similan Islands", distance: "Approx. 56 nm", time: "7 hours" },
+  { destination: "Surin Islands", distance: "Approx. 88 nm", time: "11 hours" },
+  { destination: "Koh Lipe & Butangs", distance: "Approx. 152 nm", time: "19 hours" }
+];
+
+const waterToys = [
+  "Tender with outboard motor",
+  "2 Sea Kayaks",
+  "Stand-up paddleboard (SUP)",
+  "Snorkelling equipment for all guests",
+  "Fishing rods & tackle",
+  "Beach games & lounge setup"
+];
+---
+
+<Layout title={`Luxury Motor Yacht ${vesselName} Charter | Luna Diving Phuket`}>
+  <main class="pcom-wrapper">
+    
+    <section class="pcom-hero">
+      <span class="pcom-subtitle">Classic 90ft Motor Yacht</span>
+      <h1 class="pcom-title">{vesselName}</h1>
+      <div class="pcom-divider"></div>
+      <p class="pcom-tagline">{tagline}</p>
+    </section>
+
+    <section class="pcom-specs-container">
+      <div class="pcom-specs-grid">
+        {technicalSpecs.map((spec) => (
+          <div class="spec-item">
+            <span class="spec-label">{spec.label}</span>
+            <span class="spec-value">{spec.value}</span>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="pcom-gallery-section">
+      <div class="gallery-slider-outer">
+        <div id="slider" class="gallery-slider-inner no-scrollbar">
+          {slideshow.map((slide, index) => (
+            <div class="gallery-slide">
+              <img 
+                src={slide.img} 
+                alt={slide.text} 
+                width="1200"
+                height="675"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="gallery-caption">
+                <span class="caption-count">Vessel Tour {index + 1} / {slideshow.length}</span>
+                <p class="caption-text">{slide.text}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <button id="prevBtn" class="nav-button prev" aria-label="Previous">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5"></path></svg>
+        </button>
+        <button id="nextBtn" class="nav-button next" aria-label="Next">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"></path></svg>
+        </button>
+      </div>
+    </section>
+
+    <section class="pcom-content-grid">
+      <div class="content-main">
+        <h2 class="content-heading">The architect who drew Amanpuri drew one yacht. Then he kept her.</h2>
+        <div class="heading-line"></div>
+        <p class="paragraph">
+          <strong>Ed Tuttle</strong> designed the iconic Aman resorts. He also designed <strong>Maha Bhetra</strong>, and he owned her until his death in 2020.
+        </p>
+        <p class="paragraph">
+          Ninety feet of Thai boatbuilding: a timber hull, three double cabins below, and an open-plan teak saloon that runs the full width of the top deck. Eight knots is her cruising speed, and that is the point of her. She was drawn for long, unhurried passages into the Andaman rather than fast hops between the same four beaches.
+        </p>
+        <p class="paragraph">
+          Thirty years in one family has left its mark on her. The Jim Thompson silks were specified by Tuttle himself, the eighteenth-century Southeast Asian antiques in the saloon are the originals, and the crew has been aboard for decades. She is not a reproduction of a classic yacht. She is one.
+        </p>
+
+        <h3 class="sub-heading">A wooden hull, built to wander</h3>
+        <p class="paragraph">
+          Maha Bhetra was built in Thailand to a design that borrows from the country's own working boats: a long, narrow timber hull with a fine entry, a deep forefoot and a shallow draft of two and a half metres. She carries her accommodation low and her living space high, which is the reverse of most modern charter yachts and the reason she feels like a house rather than a boat.
+        </p>
+
+        <h3 class="sub-heading">The Architect: Ed Tuttle (1945 – 2020)</h3>
+        <p class="paragraph">
+          Edward Burnham Tuttle Jr. was an American architect and interior designer whose work reset the standard for luxury hospitality. Educated at the University of Washington and shaped by Wright and Mies, he founded Design Realization in Paris in 1977 and spent four decades building the visual language of the Aman group: Amanpuri in Phuket, Amanjena in Morocco, and a long list of hotels that made restraint feel like luxury.
+        </p>
+        <p class="paragraph">
+          Maha Bhetra is the only yacht he designed. She carries the same thinking as the resorts: local craft and local materials handled with a very light touch, spaces that open to the weather, and almost no ornament that is not structural. The louvred cabinetry, the proportions of the saloon, and the way the deckhead steps down over the dining table are all his. He commissioned an exclusive Jim Thompson fabric for her cushions that remains aboard today.
+        </p>
+
+        <h3 class="sub-heading">The Top Deck & Saloon</h3>
+        <p class="paragraph">
+          The top deck is one open room. Teak underfoot, teak overhead, and louvred panels that slide back so the saloon and the aft deck become a single seamless space. A round dining table sits at the centre, while the wrapping banquette at the after end takes all six guests at once. The bow carries a teak daybed wide enough for four, under shade that lasts all day.
+        </p>
+
+        <h3 class="sub-heading">Three Cabins, All the Same</h3>
+        <p class="paragraph">
+          There is no master and no compromise cabin. Below are three identical double cabins of twenty square metres each, every one with a separate shower and WC, a vanity, and wardrobes built into a dressing area. Nobody gets the small room. Day charter carries twelve guests; overnight charter sleeps six.
+        </p>
+
+        <h3 class="sub-heading">Dining & Life Aboard</h3>
+        <p class="paragraph">
+          The galley works from the market that morning. Authentic Thai food is what the crew cooks best and what most guests ask for twice, but the kitchen is equally happy with a continental breakfast or a seafood barbecue on the beach.
+        </p>
+
+        <h3 class="sub-heading">Water Toys & Exploration</h3>
+        <p class="paragraph">
+          Because Maha Bhetra draws two and a half metres, she anchors close in. The tender runs the last hundred metres to beaches that day boats never reach, and the kayaks go further into mangroves and hongs.
+        </p>
+        <ul class="toy-list">
+          {waterToys.map(toy => <li>{toy}</li>)}
+        </ul>
+      </div>
+
+      <div class="content-sidebar">
+        <div class="booking-sticky-box">
+          <h3 class="sidebar-heading">Ready to Charter?</h3>
+          <p class="sidebar-text">Inquire about availability for the classic 90ft motor yacht Maha Bhetra departing from Phuket Yacht Haven Marina.</p>
+          <a href="https://wa.me/66918233120?text=Hi%20Luna%20Diving!%20I'm%20interested%20in%20booking%20Maha%20Bhetra." target="_blank" rel="noopener noreferrer" class="pcom-btn-primary">
+            Inquire via WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Day Charter Pricing Section -->
+    <section class="pcom-pricing-section">
+      <div class="pricing-header">
+        <h2 class="content-heading">Day Charter Rates</h2>
+        <p class="paragraph" style="margin-bottom: 8px;">One day, up to twelve guests (Per Charter, Thai Baht & US Dollar)</p>
+        <div class="heading-line"></div>
+      </div>
+      
+      <div class="pcom-cabins-list">
+        {dayCharterRates.map((rate) => (
+          <div class="cabin-rate-card">
+            <div class="cabin-main-info">
+              <h3 class="cabin-name">{rate.name}</h3>
+              <span class="cabin-location">Itineraries: Kai & Naka, Phang Nga Bay, Koh Maiton, Koh Hong</span>
+              <p class="cabin-details">{rate.details}</p>
+              <span class="cabin-trip-tag">Day Trip</span>
+            </div>
+            <div class="cabin-price-zone" style="text-align: right;">
+              <div style="margin-bottom: 8px;">
+                <span style="font-size: 10px; text-transform: uppercase; color: #4f5059; display: block;">All Year</span>
+                <span class="price-amount" style="font-size: 16px;">{rate.allYearTHB}</span>
+                <span class="price-label">{rate.allYearUSD}</span>
+              </div>
+              <div style="border-top: 1px solid #f1f1f4; padding-top: 6px;">
+                <span style="font-size: 10px; text-transform: uppercase; color: #4f5059; display: block;">Peak Season (20 Dec - 10 Jan)</span>
+                <span class="price-amount" style="font-size: 16px;">{rate.peakTHB}</span>
+                <span class="price-label">{rate.peakUSD}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Overnight Charter Rates Table -->
+    <section class="pcom-schedule-section">
+      <div class="pricing-header">
+        <h2 class="content-heading">Overnight Charter Rates</h2>
+        <p class="paragraph" style="margin-bottom: 8px;">Up to six guests (Per Charter, Thai Baht & US Dollar)</p>
+        <div class="heading-line"></div>
+      </div>
+
+      <div class="table-responsive-container">
+        <table class="schedule-table">
+          <thead>
+            <tr>
+              <th>Duration</th>
+              <th>All Year</th>
+              <th>Peak Season (20 Dec - 10 Jan)</th>
+              <th>Similan Islands (4+ Days)</th>
+              <th class="table-action-header">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {overnightRates.map((row) => (
+              <tr>
+                <td class="td-dates">{row.duration}</td>
+                <td class="td-itinerary">
+                  <div><strong>{row.allYearTHB}</strong></div>
+                  <div class="price-sub-usd">{row.allYearUSD}</div>
+                </td>
+                <td class="td-itinerary">
+                  <div><strong>{row.peakTHB}</strong></div>
+                  <div class="price-sub-usd">{row.peakUSD}</div>
+                </td>
+                <td class="td-itinerary">
+                  <div><strong>{row.similanTHB}</strong></div>
+                  <div class="price-sub-usd">{row.similanUSD}</div>
+                </td>
+                <td class="td-action">
+                  <a href={`https://wa.me/66918233120?text=Hi%20Luna%20Diving!%20I'm%20interested%20in%20booking%20Maha%20Bhetra%20(${encodeURIComponent(row.duration)}).`} target="_blank" rel="noopener noreferrer" class="table-book-btn">
+                    Book
+                  </a>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="table-note-text" style="margin-top: 12px; font-size: 12px; color: #4f5059; line-height: 1.5;">
+        * Rates are set in Thai Baht, include local VAT, and are per charter, not per person.<br/>
+        * Peak season is 20 December to 10 January.<br/>
+        * The Similan Islands can be reached on charters of four days or more, at the rate in the third column; Similan national park fees are not included.<br/>
+        * US dollar figures are shown for guidance only, converted at THB 33 to USD 1.
+      </p>
+    </section>
+
+    <section class="pcom-details-grid-section">
+      <div class="details-split-container">
+        <div class="details-column included-box">
+          <h3 class="details-col-title">
+            <svg class="title-icon icon-inc" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            What's Included
+          </h3>
+          <ul class="details-list">
+            {includedItems.map((item) => (
+              <li class="details-item">
+                <svg class="item-dot dot-inc" fill="currentColor" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3"/></svg>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="details-column excluded-box">
+          <h3 class="details-col-title">
+            <svg class="title-icon icon-exc" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            Not Included & Conditions
+          </h3>
+          <ul class="details-list">
+            {notIncludedItems.map((item) => (
+              <li class="details-item exc-item">
+                <svg class="item-dot dot-exc" fill="currentColor" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3"/></svg>
+                <div class="exc-text-wrapper">
+                  <span class="exc-main-text">{item.text}</span>
+                  {item.highlight && <span class="exc-highlight">{item.highlight}</span>}
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="pcom-schedule-section">
+      <div class="pricing-header">
+        <h2 class="content-heading">Cruising Grounds & Passage Times</h2>
+        <p class="paragraph" style="margin-bottom: 12px;">Approximate passage times at 8 knots from Phuket Yacht Haven Marina (Indicative dependent on sea state and tide).</p>
+        <div class="heading-line"></div>
+      </div>
+
+      <div class="table-responsive-container">
+        <table class="schedule-table">
+          <thead>
+            <tr>
+              <th>Destination</th>
+              <th>Distance</th>
+              <th>Cruising Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            {cruisingDistances.map((row) => (
+              <tr>
+                <td class="td-dates">{row.destination}</td>
+                <td class="td-itinerary"><span class="itinerary-text">{row.distance}</span></td>
+                <td class="td-route">{row.time}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="pcom-schedule-section">
+      <div class="pricing-header">
+        <h2 class="content-heading">Charter Availability & Conditions</h2>
+        <div class="heading-line"></div>
+      </div>
+
+      <div class="table-responsive-container">
+        <table class="schedule-table">
+          <thead>
+            <tr>
+              <th>Schedule</th>
+              <th>Package</th>
+              <th>Route / Destination</th>
+              <th class="table-action-header">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {schedule.map((row) => (
+              <tr>
+                <td class="td-dates">{row.dates}</td>
+                <td class="td-itinerary">
+                  <span class="itinerary-text">{row.itinerary}</span>
+                  <span class="type-badge badge-similan">
+                    {row.type}
+                  </span>
+                </td>
+                <td class="td-route">{row.route}</td>
+                <td class="td-action">
+                  <a href={`https://wa.me/66918233120?text=Hi%20Luna%20Diving!%20I'm%20interested%20in%20booking%20the%20Maha%20Bhetra%20Yacht.`} target="_blank" rel="noopener noreferrer" class="table-book-btn">
+                    Book
+                  </a>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <a 
+      href="https://wa.me/66918233120?text=Hi%20Luna%20Diving!%20I'm%20interested%20in%20booking%20the%20Maha%20Bhetra%20Yacht." 
+      target="_blank" 
+      rel="noopener noreferrer" 
+      class="pcom-whatsapp-float"
+      aria-label="Chat on WhatsApp"
+    >
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.454 5.709 1.455h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+    </a>
+
+  </main>
+</Layout>
+
+<script>
+  const slider = document.getElementById('slider');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+
+  if (slider && prevBtn && nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      const slideWidth = slider.clientWidth;
+      if (slider.scrollLeft + slideWidth >= slider.scrollWidth - 5) {
+        slider.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        slider.scrollBy({ left: slideWidth, behavior: 'smooth' });
+      }
+    });
+
+    prevBtn.addEventListener('click', () => {
+      const slideWidth = slider.clientWidth;
+      if (slider.scrollLeft <= 0) {
+        slider.scrollTo({ left: slider.scrollWidth, behavior: 'smooth' });
+      } else {
+        slider.scrollBy({ left: -slideWidth, behavior: 'smooth' });
+      }
+    });
+  }
+</script>
+
+<style>
+  :root {
+    --pcom-font: "Next", "Arial Narrow", Arial, sans-serif;
+    --pcom-color-canvas: #fff;
+    --pcom-color-primary: #010205;
+    --pcom-color-surface: #f1f1f4;
+    --pcom-color-accent: #008EA7;
+    --pcom-color-danger: #b31010;
+    --pcom-color-text-muted: #4f5059;
+    
+    --pcom-space-md: clamp(16px, 1.25vw + 12px, 36px);
+    --pcom-space-lg: clamp(32px, 2.75vw + 23px, 76px);
+  }
+
+  .pcom-wrapper {
+    background-color: var(--pcom-color-canvas);
+    min-height: 100vh;
+    font-family: var(--pcom-font);
+    color: var(--pcom-color-primary);
+    width: 100%;
+    box-sizing: border-box;
+    padding-top: clamp(100px, 10vw, 140px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Hero */
+  .pcom-hero {
+    width: 100%;
+    max-width: 820px;
+    padding: 0 var(--pcom-space-md);
+    text-align: center;
+    margin-bottom: var(--pcom-space-md);
+  }
+
+  .pcom-subtitle {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--pcom-color-accent);
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  .pcom-title {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    margin: 0 0 16px 0;
+    line-height: 1.1;
+  }
+
+  .pcom-divider {
+    width: 60px;
+    height: 2px;
+    background-color: var(--pcom-color-primary);
+    margin: 0 auto 16px auto;
+  }
+
+  .pcom-tagline {
+    font-size: clamp(11px, 1.5vw, 13px);
+    color: var(--pcom-color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-weight: 600;
+  }
+
+  /* Specs */
+  .pcom-specs-container {
+    width: 100%;
+    background-color: #fafafa;
+    border-top: 1px solid var(--pcom-color-surface);
+    border-bottom: 1px solid var(--pcom-color-surface);
+    padding: 24px 0;
+    margin-bottom: var(--pcom-space-lg);
+  }
+
+  .pcom-specs-grid {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 0 var(--pcom-space-md);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  @media (min-width: 768px) {
+    .pcom-specs-grid {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+  }
+
+  .spec-item {
+    text-align: center;
+  }
+
+  .spec-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--pcom-color-text-muted);
+    font-weight: 700;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .spec-value {
+    font-size: clamp(14px, 1.8vw, 16px);
+    font-weight: 700;
+  }
+
+  /* Gallery Container */
+  .pcom-gallery-section {
+    width: 100%;
+    max-width: 820px;
+    padding: 0 var(--pcom-space-md);
+    margin-bottom: var(--pcom-space-lg);
+    box-sizing: border-box;
+    position: relative;
+  }
+
+  .gallery-slider-outer {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .gallery-slider-inner {
+    width: 100%;
+    display: flex;
+    overflow-x: auto;
+    snap-type: x mandatory;
+    scroll-behavior: smooth;
+    border-radius: 8px;
+    background-color: var(--pcom-color-primary);
+  }
+
+  .gallery-slide {
+    width: 100%;
+    flex-shrink: 0;
+    position: relative;
+    snap-align: start;
+    aspect-ratio: 16 / 9;
+  }
+
+  .gallery-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  .gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(1, 2, 5, 0.85));
+    padding: 40px 20px 20px 20px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  .caption-count {
+    font-size: 9px;
+    font-weight: 700;
+    color: var(--pcom-color-accent);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 4px;
+  }
+
+  .caption-text {
+    font-size: 12px;
+    font-weight: 400;
+    margin: 0;
+    opacity: 0.9;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .nav-button {
+    display: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    color: var(--pcom-color-primary);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s, opacity 0.2s;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 10;
+    opacity: 0;
+  }
+
+  @media (min-width: 768px) {
+    .nav-button { display: flex; }
+    .gallery-slider-outer:hover .nav-button { opacity: 1; }
+  }
+
+  .nav-button.prev { left: 16px; }
+  .nav-button.next { right: 16px; }
+
+  /* Pricing List / Cards */
+  .pcom-pricing-section {
+    width: 100%;
+    max-width: 820px;
+    padding: 0 var(--pcom-space-md);
+    margin-bottom: var(--pcom-space-lg);
+    box-sizing: border-box;
+  }
+
+  .pricing-header {
+    text-align: left;
+    margin-bottom: 24px;
+  }
+
+  .content-heading {
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0 0 8px 0;
+    letter-spacing: -0.01em;
+  }
+
+  .heading-line {
+    width: 40px;
+    height: 2px;
+    background-color: var(--pcom-color-accent);
+    margin-bottom: 16px;
+  }
+
+  .pcom-cabins-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .cabin-rate-card {
+    background-color: #fafafa;
+    border: 1px solid var(--pcom-color-surface);
+    border-radius: 6px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    transition: border-color 0.2s, background-color 0.2s;
+  }
+
+  .cabin-rate-card:hover {
+    border-color: var(--pcom-color-primary);
+    background-color: #ffffff;
+  }
+
+  @media (min-width: 640px) {
+    .cabin-rate-card {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  .cabin-main-info {
+    text-align: left;
+    flex: 1;
+  }
+
+  .cabin-name {
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0 0 4px 0;
+    letter-spacing: -0.01em;
+  }
+
+  .cabin-location {
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--pcom-color-accent);
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  .cabin-details {
+    font-size: 13px;
+    color: var(--pcom-color-text-muted);
+    margin: 0 0 12px 0;
+    line-height: 1.5;
+  }
+
+  .cabin-trip-tag {
+    display: inline-block;
+    background-color: var(--pcom-color-surface);
+    color: var(--pcom-color-primary);
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .price-amount {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--pcom-color-primary);
+    line-height: 1;
+  }
+
+  .price-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    color: var(--pcom-color-text-muted);
+    font-weight: 600;
+    margin-top: 2px;
+    letter-spacing: 0.5px;
+    display: block;
+  }
+
+  /* Inclusions & Fees */
+  .pcom-details-grid-section {
+    width: 100%;
+    max-width: 820px;
+    padding: 0 var(--pcom-space-md);
+    margin-bottom: var(--pcom-space-lg);
+    box-sizing: border-box;
+  }
+
+  .details-split-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  @media (min-width: 768px) {
+    .details-split-container {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .details-column {
+    background-color: #fafafa;
+    border: 1px solid var(--pcom-color-surface);
+    border-radius: 6px;
+    padding: 32px 24px;
+    text-align: left;
+  }
+
+  .details-col-title {
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0 0 24px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .title-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+
+  .icon-inc { color: var(--pcom-color-accent); }
+  .icon-exc { color: var(--pcom-color-danger); }
+
+  .details-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .details-item {
+    display: flex;
+    align-items: flex-start;
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: var(--pcom-color-primary);
+  }
+
+  .item-dot {
+    width: 6px;
+    height: 6px;
+    margin-right: 12px;
+    margin-top: 7px;
+    flex-shrink: 0;
+  }
+
+  .dot-inc { color: var(--pcom-color-accent); }
+  .dot-exc { color: var(--pcom-color-danger); }
+
+  .exc-item { width: 100%; }
+
+  .exc-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  @media (min-width: 400px) {
+    .exc-text-wrapper {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+    }
+  }
+
+  .exc-main-text { font-weight: 500; }
+
+  .exc-highlight {
+    font-size: 11px;
+    font-weight: 700;
+    background-color: var(--pcom-color-surface);
+    color: var(--pcom-color-primary);
+    padding: 2px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-block;
+    margin-top: 4px;
+    width: fit-content;
+  }
+
+  @media (min-width: 400px) {
+    .exc-highlight {
+      margin-top: 0;
+      flex-shrink: 0;
+    }
+  }
+
+  /* Schedule Table */
+  .pcom-schedule-section {
+    width: 100%;
+    max-width: 820px;
+    padding: 0 var(--pcom-space-md);
+    margin-bottom: var(--pcom-space-lg);
+    box-sizing: border-box;
+  }
+
+  .table-responsive-container {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid var(--pcom-color-surface);
+    border-radius: 6px;
+    background-color: #fafafa;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 13.5px;
+  }
+
+  .schedule-table th {
+    background-color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 16px 20px;
+    color: var(--pcom-color-text-muted);
+    border-bottom: 1px solid var(--pcom-color-surface);
+  }
+
+  .schedule-table td {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--pcom-color-surface);
+    vertical-align: middle;
+    white-space: nowrap;
+  }
+
+  .schedule-table tr:last-child td { border-bottom: none; }
+  .schedule-table tr:hover td { background-color: #ffffff; }
+
+  .td-dates { font-weight: 700; color: var(--pcom-color-primary); }
+  
+  .td-itinerary {
+    font-weight: 500;
+  }
+
+  .price-sub-usd {
+    font-size: 11px;
+    color: var(--pcom-color-text-muted);
+    font-weight: 600;
+    margin-top: 2px;
+  }
+
+  .type-badge {
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    display: inline-block;
+    background-color: var(--pcom-color-surface);
+  }
+
+  .td-route { color: var(--pcom-color-text-muted); }
+  .table-action-header { text-align: right; }
+  .td-action { text-align: right; }
+
+  .table-book-btn {
+    display: inline-block;
+    background-color: var(--pcom-color-primary);
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    transition: background-color 0.2s;
+  }
+
+  .table-book-btn:hover {
+    background-color: var(--pcom-color-accent);
+  }
+
+  /* Bottom Structure */
+  .pcom-content-grid {
+    width: 100%;
+    max-width: 820px;
+    padding: 0 var(--pcom-space-md) var(--pcom-space-lg) var(--pcom-space-md);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    box-sizing: border-box;
+  }
+
+  @media (min-width: 768px) {
+    .pcom-content-grid {
+      grid-template-columns: 1.6fr 1fr;
+    }
+  }
+
+  .content-main { text-align: left; }
+
+  .paragraph {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--pcom-color-text-muted);
+    margin-bottom: 20px;
+  }
+
+  .paragraph strong {
+    color: var(--pcom-color-primary);
+  }
+
+  .sub-heading {
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 28px 0 12px 0;
+    color: var(--pcom-color-primary);
+  }
+
+  .toy-list {
+    list-style: disc;
+    padding-left: 20px;
+    margin-bottom: 24px;
+    color: var(--pcom-color-text-muted);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .content-sidebar {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .booking-sticky-box {
+    background-color: #fafafa;
+    border: 1px solid var(--pcom-color-surface);
+    border-radius: 6px;
+    padding: 24px;
+    text-align: left;
+    position: sticky;
+    top: 120px;
+  }
+
+  .sidebar-heading {
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0 0 8px 0;
+  }
+
+  .sidebar-text {
+    font-size: 12.5px;
+    color: var(--pcom-color-text-muted);
+    line-height: 1.5;
+    margin: 0 0 20px 0;
+  }
+
+  .pcom-btn-primary {
+    display: block;
+    width: 100%;
+    background-color: var(--pcom-color-primary);
+    color: #fff;
+    text-align: center;
+    padding: 12px 16px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: background-color 0.2s;
+    box-sizing: border-box;
+  }
+
+  .pcom-btn-primary:hover {
+    background-color: var(--pcom-color-accent);
+  }
+
+  /* WhatsApp Floating Button */
+  .pcom-whatsapp-float {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 56px;
+    height: 56px;
+    background-color: #25d366;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    transition: transform 0.2s, background-color 0.2s;
+  }
+
+  .pcom-whatsapp-float:hover {
+    transform: scale(1.08);
+    background-color: #22bf5b;
+  }
+
+  .pcom-whatsapp-float svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  /* Utility */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
