@@ -1,8 +1,8 @@
 ---
 // src/layouts/Layout.astro
 import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro'; // <-- IMPORT AGGIUNTO
-
+import Footer from '../components/Footer.astro';
+import GoogleAnalytics from '../components/GoogleAnalytics.astro'; // <-- 1. IMPORTA IL COMPONENTE
 interface Props {
   title?: string;
 }
@@ -19,6 +19,9 @@ const { title = "Luna Diving | Premium Thailand Liveaboards" } = Astro.props;
     <link rel="icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+
+    <!-- 2. INSERISCI GOOGLE ANALYTICS QUI NEL HEAD -->
+    <GoogleAnalytics />
   </head>
   <body>
     <!-- L'Header viene inserito qui e rimarrà fisso in alto su tutte le pagine -->
@@ -28,7 +31,7 @@ const { title = "Luna Diving | Premium Thailand Liveaboards" } = Astro.props;
     <slot />
 
     <!-- Il Footer viene inserito qui in fondo a tutte le pagine -->
-    <Footer /> <!-- <-- TAG AGGIUNTO -->
+    <Footer />
   </body>
 </html>
 
@@ -37,7 +40,7 @@ const { title = "Luna Diving | Premium Thailand Liveaboards" } = Astro.props;
   body {
     margin: 0;
     width: 100%;
-    min-height: 100vh; /* Cambiato da height: 100% a min-height: 100vh per gestire lo scroll corretto */
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
   }
